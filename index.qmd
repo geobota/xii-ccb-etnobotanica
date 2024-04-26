@@ -17,7 +17,7 @@ subtitle: "XII Congreso Colombiano de Botánica <br>Popayán, Colombia <br>Novie
 
 {{< fa users >}} Cupos: 20
 
-{{< fa money-bill-1 >}} Inversión: desde $100.000 COP ([ver detalles](#sec-inversión))
+{{< fa money-bill-1 >}} Inversión: desde $100.000 COP ([ver detalles](#sec-inversion))
 
 {{< fa file-signature >}} Registro: Disponible en breve
 
@@ -53,7 +53,7 @@ A lo largo del curso, se fomentará la participación activa, el intercambio de 
 
 -   Debido a las restricciones impuestas por la universidad organizadora, se requiere que cada participante disponga de su propio ordenador personal. En este equipo, deberá estar instalado el software necesario para el desarrollo del curso. Las instrucciones pertinentes se enviarán varios días antes de la fecha programada. 
 
-# Inversión {#sec-inversión}
+# Inversión {#sec-inversion}
 
 |  **Tipo de participante**   | **Valor (COP)** |
 |:---------------------------:|:---------------:|

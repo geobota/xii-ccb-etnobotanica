@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Etnobotánica cuantitativa en R",
+    "section": "",
+    "text": "Fecha: 2-3 de noviembre del 2024\n Lugar: Popayán, Colombia\n Duración: 16 horas\n Cupos: 20\n Inversión: desde $100.000 COP (ver detalles)\n Registro: Disponible en breve\n Contacto: bladimirvera4395@correo.itm.edu.co"
+  },
+  {
+    "objectID": "index.html#unidad-0-pre-trabajo",
+    "href": "index.html#unidad-0-pre-trabajo",
+    "title": "Etnobotánica cuantitativa en R",
+    "section": "Unidad 0: Pre-trabajo",
+    "text": "Unidad 0: Pre-trabajo\n\nInstalación y configuración del software necesario"
+  },
+  {
+    "objectID": "index.html#unidad-1-flujo-de-trabajo",
+    "href": "index.html#unidad-1-flujo-de-trabajo",
+    "title": "Etnobotánica cuantitativa en R",
+    "section": "Unidad 1: Flujo de trabajo",
+    "text": "Unidad 1: Flujo de trabajo\n\nIntroducción a R y RStudio\nIntroducción a Quarto\nAnálisis reproducibles"
+  },
+  {
+    "objectID": "index.html#unidad-2-etnobotánica-descriptiva",
+    "href": "index.html#unidad-2-etnobotánica-descriptiva",
+    "title": "Etnobotánica cuantitativa en R",
+    "section": "Unidad 2: Etnobotánica descriptiva",
+    "text": "Unidad 2: Etnobotánica descriptiva\n\nAnálisis descriptivos realizados en etnobotánica\nRealización de gráficos en R\níndices etnobotánicos\nDiagramaciones índices etnobotánicos"
+  },
+  {
+    "objectID": "index.html#unidad-3-análisis-multivariados-i",
+    "href": "index.html#unidad-3-análisis-multivariados-i",
+    "title": "Etnobotánica cuantitativa en R",
+    "section": "Unidad 3: Análisis multivariados I",
+    "text": "Unidad 3: Análisis multivariados I\n\nPruebas de normalidad\nHomogeneidad de varianza\nChi cuadrado\nAnova simple"
+  },
+  {
+    "objectID": "index.html#unidad-4-análisis-multivariados-ii",
+    "href": "index.html#unidad-4-análisis-multivariados-ii",
+    "title": "Etnobotánica cuantitativa en R",
+    "section": "Unidad 4: Análisis multivariados II",
+    "text": "Unidad 4: Análisis multivariados II\n\nPruebas no paramétricas\nPruebas de correlación\nRegresión lineal\nClúster\nAnálisis de Componentes Principales (PCA)\nAnálisis de redundancia (RDA)"
+  }
+]

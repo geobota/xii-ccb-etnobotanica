@@ -1,4 +1,4 @@
-# Etnobotánica cuantitativa en R
+# Etnobotánica Cuantitativa en R
 
 ## XII Congreso Colombiano de Botánica <br>Popayán, Colombia <br>Noviembre 4 al 8 del 2024
 

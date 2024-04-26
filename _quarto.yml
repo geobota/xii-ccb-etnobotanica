@@ -8,8 +8,8 @@ execute:
     freeze: auto
 
 website:
-  title: "Etnobotánica cuantitativa en R"
-  description: "Website del curso Etnobotánica cuantitativa en R - XII Congreso Colombiano de Botánica"
+  title: "Etnobotánica Cuantitativa en R"
+  description: "Website del curso Etnobotánica Cuantitativa en R - XII Congreso Colombiano de Botánica"
   site-url: https://geobota.github.io/xii-ccb-etnobotanica/
   repo-url: https://github.com/geobota/xii-ccb-etnobotanica
 

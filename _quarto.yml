@@ -1,0 +1,30 @@
+project:
+  type: website
+
+lang: es
+date-format: iso
+
+execute:
+    freeze: auto
+
+website:
+  title: "Investigación Reproducible con Quarto"
+  description: "Website del curso Investigación Reproducible con Quarto - XII Congreso Colombiano de Botánica"
+
+  navbar:
+    # logo: images/logo_reproducible_quarto.png
+    right:
+      - href: index.qmd
+        text: Inicio
+      - href: https://congresobotanica.org
+        text: XII CCB
+      - href: http://geobota.github.io
+        text: GEOBOTA
+      - href: https://github.com/geobota/xii-ccb-etnobotanica
+        text: "{{< fa brands github >}}"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true

@@ -1,4 +1,141 @@
 ---
 title: "Etnobotánica cuantitativa en R"
-subtitle: "XII Congreso Colombiano de Botánica. Popayán, Colombia. Noviembre 4 al 8 del 2024."
+subtitle: "XII Congreso Colombiano de Botánica <br>Popayán, Colombia <br>Noviembre 4 al 8 del 2024"
+
+# author: 
+#   - name: "Bladimir Vera Marín"
+#   - name: "Álex Espinosa Correa"
 ---
+
+# Información general
+
+{{< fa calendar-days >}} Fecha: 2-3 de noviembre del 2024
+
+{{< fa location-dot >}} Lugar: Popayán, Colombia
+
+{{< fa clock >}} Duración: 16 horas
+
+{{< fa users >}} Cupos: 20
+
+{{< fa money-bill-1 >}} Inversión: desde $100.000 COP ([ver detalles](@sec-inversión))
+
+{{< fa file-signature >}} Registro: Disponible en breve
+
+{{< fa envelope >}} Contacto: [bladimirvera4395\@correo.itm.edu.co](mailto:bladimirvera4395@correo.itm.edu.co)
+
+# Descripción
+
+El curso de Etnobotánica Cuantitativa con R tiene como objetivos principales: dominar habilidades básicas de programación en R para manipular, visualizar y analizar datos etnobotánicos; familiarizarse con técnicas estadísticas y de visualización aplicadas a la etnobotánica; y adquirir la capacidad de diseñar y ejecutar proyectos reproducibles en investigación etnobotánica. Esta formación se justifica en la intersección de la botánica, la antropología y la estadística, donde el uso de herramientas computacionales como R es crucial para avanzar en la comprensión de la relación entre plantas y culturas humanas. La metodología del curso combina clases teóricas con sesiones prácticas, abordando tanto fundamentos teóricos como ejercicios prácticos en R. A través de esta estructura, los participantes desarrollarán competencias técnicas para realizar análisis rigurosos y reproducibles en el campo de la etnobotánica cuantitativa.
+
+# Introducción
+
+La etnobotánica cuantitativa, en la intersección de la botánica, la antropología y la estadística, ofrece una perspectiva única sobre la relación entre plantas y culturas. Este curso en R proporciona habilidades para analizar datos etnobotánicos de manera rigurosa y eficiente. El uso de R permite explorar grandes conjuntos de datos, aplicar técnicas estadísticas avanzadas y visualizar resultados de forma clara. Además, fomenta la reproducibilidad y transparencia en la investigación, aspectos cruciales en el ámbito científico actual. Al participar, los estudiantes adquieren competencias en un software esencial y contribuyen al avance del conocimiento en etnobotánica.
+
+# Objetivos
+
+1.  Dominar las habilidades básicas de programación en R para manipular, visualizar y analizar datos etnobotánicos, permitiendo a los participantes utilizar eficientemente las herramientas disponibles en este entorno de programación para abordar preguntas específicas en etnobotánica cuantitativa.
+
+2.  Familiarizarse con las principales técnicas estadísticas y de visualización de datos disponibles en R aplicadas a la etnobotánica, lo que capacitará a los estudiantes para realizar análisis rigurosos y presentar resultados de manera clara y efectiva.
+
+3.  Adquirir la capacidad de diseñar y ejecutar proyectos reproducibles en investigación etnobotánica utilizando R como herramienta principal, integrando métodos cuantitativos para explorar patrones y relaciones en datos etnobotánicos y contribuir al avance del campo mediante la aplicación de enfoques computacionales avanzados.
+
+# Metodología
+
+El curso de Etnobotánica Cuantitativa con R se estructura en una combinación de clases teóricas y sesiones prácticas para proporcionar a los participantes una comprensión profunda de los principios y aplicaciones de la etnobotánica cuantitativa. La metodología se divide en dos etapas principales:
+
+1.  *Fundamentos teóricos*: Se imparten clases magistrales para introducir conceptos clave de etnobotánica, métodos de recolección de datos y técnicas estadísticas. Se explorarán temas como la relación entre plantas y culturas humanas, la importancia de la cuantificación en la investigación etnobotánica y la selección adecuada de herramientas estadísticas en R.
+
+2.  *Prácticas guiadas*: Los participantes realizarán ejercicios prácticos en el entorno de R bajo la supervisión de los instructores. Se abordarán temas como la importación y manipulación de datos, la exploración visual de datos, la aplicación de pruebas estadísticas y la generación de gráficos descriptivos, multivariados y analíticos.
+
+A lo largo del curso, se fomentará la participación activa, el intercambio de ideas y la colaboración entre los participantes para promover un aprendizaje interactivo y enriquecedor. Al finalizar, los estudiantes habrán desarrollado las habilidades necesarias para llevar a cabo investigaciones etnobotánicas cuantitativas de manera independiente utilizando R.
+
+# Requisitos
+
+-   Debido a las restricciones impuestas por la universidad organizadora, se requiere que cada participante disponga de su propio ordenador personal. En este equipo, deberá estar instalado el software necesario para el desarrollo del curso. Las instrucciones pertinentes se enviarán varios días antes de la fecha programada.
+
+# Inversión {#sec-inversión}
+
+|  **Tipo de participante**   | **Valor (COP)** |
+|:---------------------------:|:---------------:|
+|   Estudiante Asociado ACB   |    \$100.000    |
+| Estudiante NO Asociado ACB  |    \$158.000    |
+|  Profesional Asociado ACB   |    \$146.000    |
+| Profesional NO Asociado ACB |    \$208.000    |
+
+\
+
+¿Quieres ser parte de la Asociación Colombiana de Botánica (ACB)?  
+Conoce como afiliarte en el siguiente enlace: [proceso de afiliación a la ACB](https://congresobotanica.org/afiliacion-acb/).
+
+# Instructores
+
+***
+
+::: columns
+::: {.column width="25%"}
+![](images/bladimir.jpg)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="70%"}
+**Bladimir Vera** es licenciado en Ciencias Naturales y Biólogo, con una Maestría en Bosques y Conservación Ambiental, su trabajo se ha profundizado en estudiar el uso de las plantas medicinales y conocimiento tradicional con poblaciones campesinas. Actualmente, el Profesor Vera ocupa la cátedra de Botánica en la Facultad de Ciencias Exactas y Aplicadas del Instituto Tecnológico Metropolitano (ITM) en Medellín, Antioquia. Su labor se centra en la investigación botánica, etnobotánica, etnobotánica cuantitativa, ecología vegetal e infraestructura verde. Además, ha incursionado en la ciencia de datos con énfasis en la vegetación en entornos viales.
+:::
+:::
+
+***
+
+::: columns
+::: {.column width="25%"}
+![](images/alex.jpeg)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="70%"}
+[**Álex Espinosa Correa**](http://alexespinosaco.github.io) es biólogo y candidato a Doctor en Biología de la Universidad de Antioquia UdeA, especializado en el campo de la botánica, la palinología y la aerobiología. Apasionado de la Ciencia Abierta y Reproducible, R, Quarto, la visualización de datos, los SIG, y el software libre y de código abierto (FLOSS).
+:::
+:::
+
+***
+
+# Contenido
+
+## Unidad 0: Pre-trabajo
+
+-   Instalación y configuración del software necesario
+
+## Unidad 1: Flujo de trabajo
+
+-   Introducción a R y RStudio
+-   Introducción a Quarto
+-   Análisis reproducibles
+
+## Unidad 2: Etnobotánica descriptiva
+
+-   Análisis descriptivos realizados en etnobotánica
+-   Realización de gráficos en R
+-   índices etnobotánicos
+-   Diagramaciones índices etnobotánicos
+
+## Unidad 3: Análisis multivariados I
+
+-   Pruebas de normalidad
+-   Homogeneidad de varianza
+-   Chi cuadrado
+-   Anova simple
+
+## Unidad 4: Análisis multivariados II
+
+-   Pruebas no paramétricas
+-   Pruebas de correlación
+-   Regresión lineal
+-   Clúster
+-   Análisis de Componentes Principales (PCA)
+-   Análisis de redundancia (RDA)
+
+# Licencia
+
+<p xmlns:cc="http://creativecommons.org/ns#" ><a rel="cc:attributionURL" href="https://geobota.github.io/xii-ccb-etnobotanica/">This work</a> by <span property="cc:attributionName">Bladimir Vera & Álex Espinosa-Correa</span> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>

@@ -1,0 +1,5 @@
+---
+title: Introducción a R y RStudio
+execute:
+  output: false
+---

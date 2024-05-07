@@ -1,0 +1,15 @@
+{
+  "hash": "8ca23aedf23a567c15f7134585131779",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Introducción a Quarto\"\n---\n\n::: {.cell}\n\n```{.r .cell-code}\nif (!require(\"tidyverse\")) install.packages(\"tidyverse\")\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\nLoading required package: tidyverse\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.0     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors\n```\n\n\n:::\n\n```{.r .cell-code}\nif (!require(\"ggthemes\")) install.packages(\"ggthemes\")\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\nLoading required package: ggthemes\n```\n\n\n:::\n\n```{.r .cell-code}\nif (!require(\"palmerpenguins\")) install.packages(\"palmerpenguins\")\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\nLoading required package: palmerpenguins\n```\n\n\n:::\n\n```{.r .cell-code}\nif (!require(\"gt\")) install.packages(\"gt\")\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\nLoading required package: gt\n```\n\n\n:::\n\n```{.r .cell-code}\ngrafico <-\n  palmerpenguins::penguins |>\n  ggplot2::ggplot(\n    ggplot2::aes(\n      x = bill_length_mm,\n      y = bill_depth_mm\n    )\n  ) +\n  ggplot2::geom_point(\n    ggplot2::aes(\n      color = species,\n      shape = species\n    )\n  ) +\n  ggplot2::labs(\n    x = \"Bill length (mm)\",\n    y = \"Bill depth (mm)\"\n  ) +\n  ggplot2::theme_minimal() +\n  ggthemes::scale_color_colorblind()\n\ntabla <-\n  palmerpenguins::penguins |>\n  dplyr::slice_head(n = 10) |>\n  dplyr::select(species, island, bill_length_mm, bill_depth_mm) |>\n  gt::gt()\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

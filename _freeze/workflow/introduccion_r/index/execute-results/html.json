@@ -1,0 +1,17 @@
+{
+  "hash": "6122be6c3cc04d07d96c22e91a14055d",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: Introducción a R y RStudio\nexecute:\n  output: false\n---\n\n::: {.cell}\n\n```{.r .cell-code}\nif (!require(\"tidyverse\")) install.packages(\"tidyverse\")\nif (!require(\"ggthemes\")) install.packages(\"ggthemes\")\nif (!require(\"palmerpenguins\")) install.packages(\"palmerpenguins\")\nif (!require(\"gt\")) install.packages(\"gt\")\n\ngrafico <-\n  palmerpenguins::penguins |>\n  ggplot2::ggplot(\n    ggplot2::aes(\n      x = bill_length_mm,\n      y = bill_depth_mm\n    )\n  ) +\n  ggplot2::geom_point(\n    ggplot2::aes(\n      color = species,\n      shape = species\n    )\n  ) +\n  ggplot2::labs(\n    x = \"Bill length (mm)\",\n    y = \"Bill depth (mm)\"\n  ) +\n  ggplot2::theme_minimal() +\n  ggthemes::scale_color_colorblind()\n\ntabla <-\n  palmerpenguins::penguins |>\n  dplyr::slice_head(n = 10) |>\n  dplyr::select(species, island, bill_length_mm, bill_depth_mm) |>\n  gt::gt()\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\ngrafico\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\ntabla\n```\n:::\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

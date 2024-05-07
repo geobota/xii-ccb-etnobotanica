@@ -113,21 +113,21 @@ Conoce como afiliarte en el siguiente enlace: [proceso de afiliación a la ACB](
 -   Introducción a Quarto
 -   Análisis reproducibles
 
-## Unidad 2: Etnobotánica descriptiva
+## Unidad 2: Análisis I
 
 -   Análisis descriptivos realizados en etnobotánica
 -   Realización de gráficos en R
 -   índices etnobotánicos
 -   Diagramaciones índices etnobotánicos
 
-## Unidad 3: Análisis multivariados I
+## Unidad 3: Análisis II
 
 -   Pruebas de normalidad
 -   Homogeneidad de varianza
 -   Chi cuadrado
 -   Anova simple
 
-## Unidad 4: Análisis multivariados II
+## Unidad 4: Análisis III
 
 -   Pruebas no paramétricas
 -   Pruebas de correlación

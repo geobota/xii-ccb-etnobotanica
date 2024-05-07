@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "workflow/introduccion_r/index.html",
+    "href": "workflow/introduccion_r/index.html",
+    "title": "Introducción a R y RStudio",
+    "section": "",
+    "text": "Volver arriba"
+  },
+  {
+    "objectID": "workflow/index.html",
+    "href": "workflow/index.html",
+    "title": "Workflow",
+    "section": "",
+    "text": "Volver arriba"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Etnobotánica Cuantitativa en R",
@@ -21,24 +35,31 @@
     "text": "Unidad 1: Flujo de trabajo\n\nIntroducción a R y RStudio\nIntroducción a Quarto\nAnálisis reproducibles"
   },
   {
-    "objectID": "index.html#unidad-2-etnobotánica-descriptiva",
-    "href": "index.html#unidad-2-etnobotánica-descriptiva",
+    "objectID": "index.html#unidad-2-análisis-i",
+    "href": "index.html#unidad-2-análisis-i",
     "title": "Etnobotánica Cuantitativa en R",
-    "section": "Unidad 2: Etnobotánica descriptiva",
-    "text": "Unidad 2: Etnobotánica descriptiva\n\nAnálisis descriptivos realizados en etnobotánica\nRealización de gráficos en R\níndices etnobotánicos\nDiagramaciones índices etnobotánicos"
+    "section": "Unidad 2: Análisis I",
+    "text": "Unidad 2: Análisis I\n\nAnálisis descriptivos realizados en etnobotánica\nRealización de gráficos en R\níndices etnobotánicos\nDiagramaciones índices etnobotánicos"
   },
   {
-    "objectID": "index.html#unidad-3-análisis-multivariados-i",
-    "href": "index.html#unidad-3-análisis-multivariados-i",
+    "objectID": "index.html#unidad-3-análisis-ii",
+    "href": "index.html#unidad-3-análisis-ii",
     "title": "Etnobotánica Cuantitativa en R",
-    "section": "Unidad 3: Análisis multivariados I",
-    "text": "Unidad 3: Análisis multivariados I\n\nPruebas de normalidad\nHomogeneidad de varianza\nChi cuadrado\nAnova simple"
+    "section": "Unidad 3: Análisis II",
+    "text": "Unidad 3: Análisis II\n\nPruebas de normalidad\nHomogeneidad de varianza\nChi cuadrado\nAnova simple"
   },
   {
-    "objectID": "index.html#unidad-4-análisis-multivariados-ii",
-    "href": "index.html#unidad-4-análisis-multivariados-ii",
+    "objectID": "index.html#unidad-4-análisis-iii",
+    "href": "index.html#unidad-4-análisis-iii",
     "title": "Etnobotánica Cuantitativa en R",
-    "section": "Unidad 4: Análisis multivariados II",
-    "text": "Unidad 4: Análisis multivariados II\n\nPruebas no paramétricas\nPruebas de correlación\nRegresión lineal\nClúster\nAnálisis de Componentes Principales (PCA)\nAnálisis de redundancia (RDA)"
+    "section": "Unidad 4: Análisis III",
+    "text": "Unidad 4: Análisis III\n\nPruebas no paramétricas\nPruebas de correlación\nRegresión lineal\nClúster\nAnálisis de Componentes Principales (PCA)\nAnálisis de redundancia (RDA)"
+  },
+  {
+    "objectID": "workflow/introduccion_quarto/index.html",
+    "href": "workflow/introduccion_quarto/index.html",
+    "title": "Introducción a Quarto",
+    "section": "",
+    "text": "Volver arriba"
   }
 ]

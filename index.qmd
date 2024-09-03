@@ -9,19 +9,19 @@ subtitle: "XII Congreso Colombiano de Botánica <br>Popayán, Colombia <br>Novie
 
 # Información general
 
-{{< fa calendar-days >}} Fecha: 2-3 de noviembre del 2024
+{{< fa calendar-days >}} **Fecha:** 2-3 de noviembre del 2024
 
-{{< fa location-dot >}} Lugar: Popayán, Colombia
+{{< fa location-dot >}} **Lugar:** Popayán, Colombia
 
-{{< fa clock >}} Duración: 16 horas
+{{< fa clock >}} **Duración:** 16 horas
 
-{{< fa users >}} Cupos: 20
+{{< fa users >}} **Cupos:** 20
 
-{{< fa money-bill-1 >}} Inversión: desde $100.000 COP ([ver detalles](#sec-inversion))
+{{< fa money-bill-1 >}} **Inversión:** desde $100.000 COP ([ver detalles](#sec-inversion))
 
-{{< fa file-signature >}} Registro: Disponible en breve
+{{< fa file-signature >}} **Inscripción:** en la página del [XII Congreso Colombiano de Botánica](https://congresobotanica.org/actividades/)
 
-{{< fa envelope >}} Contacto: [bladimirvera4395\@correo.itm.edu.co](mailto:bladimirvera4395@correo.itm.edu.co)
+{{< fa envelope >}} **Contacto:** [bladimirvera4395\@correo.itm.edu.co](mailto:bladimirvera4395@correo.itm.edu.co)
 
 # Descripción
 

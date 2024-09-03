@@ -136,6 +136,13 @@ Conoce como afiliarte en el siguiente enlace: [proceso de afiliación a la ACB](
 -   Análisis de Componentes Principales (PCA)
 -   Análisis de redundancia (RDA)
 
+# Otros cursos
+
+Quizá te pueda interesar alguno de nuestros otros cursos que tendremos durante el congreso:
+
+-   [Introducción a la Aerobiología](https://geobota.github.io/xii-ccb-aerobiologia/)
+-   [Investigación Reproducible con Quarto](https://geobota.github.io/xii-ccb-quarto/)
+
 # Licencia
 
 <p xmlns:cc="http://creativecommons.org/ns#" ><a rel="cc:attributionURL" href="https://geobota.github.io/xii-ccb-etnobotanica/">This work</a> by <span property="cc:attributionName">Bladimir Vera & Álex Espinosa-Correa</span> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>

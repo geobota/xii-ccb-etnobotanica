@@ -1,0 +1,18 @@
+---
+title: "Introducción a Quarto"
+author: "Álex Espinosa-Correa"
+institute: Grupo de Estudios Botánicos GEOBOTA, Universidad de Antioquia
+
+format: 
+  revealjs:
+    theme: simple
+    width: 1920
+    height: 1080
+    slide-number: true
+    preview-links: true
+    controls: true
+    touch: false
+    # chalkboard: true
+    logo: "https://github.com/geobota/geobota.github.io/blob/main/images/xii-ccb/xii-ccb-logo.png?raw=true"
+    footer: "[Etnobotánica Cuantitativa en R](https://geobota.github.io/xii-ccb-etnobotanica/)"
+---

@@ -1,13 +1,21 @@
 ---
 title: "Introducción a Quarto"
-author: "Álex Espinosa-Correa"
-institute: Grupo de Estudios Botánicos GEOBOTA, Universidad de Antioquia
+subtitle: "XII Congreso Colombiano de Botánica"
+author:
+  - name: "Álex Espinosa Correa"
+    affiliation: "Universidad de Antioquia"
+  - name: "Bladimir Vera Marín"
+    affiliation: "Instituto Tecnológico Metropolitano"
+# date: 2024-11-02
 
 format: 
   revealjs:
-    theme: simple
+    theme:
+      - simple
+      - ../../custom.scss
     width: 1920
     height: 1080
+    embed-resources: true
     slide-number: true
     preview-links: true
     controls: true
@@ -16,3 +24,400 @@ format:
     logo: "https://github.com/geobota/geobota.github.io/blob/main/images/xii-ccb/xii-ccb-logo.png?raw=true"
     footer: "[Etnobotánica Cuantitativa en R](https://geobota.github.io/xii-ccb-etnobotanica/)"
 ---
+
+```{r}
+#| label: setup
+
+if (!require("fontawesome")) install.packages("fontawesome")
+if (!require("countdown")) install.packages("countdown")
+```
+
+```{r}
+#| label: countdown
+#| echo: false
+#| 
+countdown_timer <- function(
+    minutes = 1, 
+    play_sound = TRUE, 
+    font_size = "2em", 
+    ...
+) {
+  countdown(
+    minutes = minutes,
+    play_sound = play_sound,
+    color_border              = "#white",
+    color_text                = "white",
+    color_running_background  = "#009E73",
+    color_running_text        = "white",
+    color_finished_background = "#D55E00",
+    color_finished_text       = "white",
+    font_size = font_size,
+    ...
+  )
+}
+```
+
+# `r fontawesome::fa("person-chalkboard", "white")` Demostración {background-color="#009E73" transition="slide-in"}
+
+-   «Siempre lo hemos hecho así»
+
+<br> <br>
+
+```{R}
+#| echo: false
+countdown_timer(5)
+```
+
+## Proposito
+
+# `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
+
+-   Abrir RStudio
+-   Si no ha clonado/descargado los archivos necesarios: `https://github.com/geobota/etnobotanica-workshop.git`
+-   Abrir el Rproject `etnobotanica-workshop`
+
+<br> <br>
+
+```{R}
+#| echo: false
+countdown_timer(1)
+```
+
+## Qué es Quarto
+
+[Quarto es un sistema open-source de publicación técnica y científica.]{.fragment} [Quarto es una interfaz de línea de comandos (CLI) que convierte formatos de texto plano (.qmd, .rmd, .md) o formatos mixtos (.ipynb/Jupyter notebook) en documentos estaticos o interactivos.]{.fragment}
+
+::: fragment
+Quarto permite combinar en un mismo entorno texto y código para producir resultados elegantemente formateados como documentos, páginas web, entradas de blog, libros y más.
+
+![Represantación esquemática de Quarto. [Allison Horst](https://allisonhorst.com/cetinkaya-rundel-lowndes-quarto-keynote).](images/quarto_esquema.png){fig-align="center" width="1244"}
+:::
+
+## Por qué Quarto
+
+::: columns
+::: {.column .incremental width="50%"}
+-   Open-source
+-   Un único framework
+-   Sintaxis coherente
+-   Multiplataforma, multiengine, multilenguaje, multilingüe
+-   Mejor integración con IDEs (JupyterLab, RStudio, VScode)
+-   Compatibilidad con formatos existentes (.Rmd, ipynb)
+-   Integración más sencilla con filtros Lua
+-   Más de 40 formatos de salida
+-   Extensiones
+:::
+
+::: {.column .fragment width="50%"}
+![](images/quarto_org.png){fig-align="center"}
+:::
+:::
+
+## Qué puedo hacer con Quarto: artículos
+
+![](images/quarto_article.png){fig-align="center"}
+
+::: footer
+<https://dx.doi.org/10.2139/ssrn.4960885>
+:::
+
+## Qué puedo hacer con Quarto: dashboards
+
+![](images/quarto_dashboard.png){fig-align="center"}
+
+::: footer
+<https://geobota.github.io/dia-biologo-2024/>
+:::
+
+## Qué puedo hacer con Quarto: libros
+
+![](images/quarto_book.png){fig-align="center"}
+
+::: footer
+<https://alexespinosaco.github.io/biologia-plantas-manual/>
+:::
+
+## Qué puedo hacer con Quarto: presentaciones
+
+![](images/quarto_presentation.png){fig-align="center"}
+
+::: footer
+<https://geobota.github.io/xii-ccb-etnobotanica/>
+:::
+
+## Qué puedo hacer con Quarto: sitios web
+
+![](images/quarto_website.png){fig-align="center"}
+
+::: footer
+<https://geobota.github.io/>
+:::
+
+## Cómo funciona Quarto
+
+![Representación esquemática de cómo funciona Quarto. [Allison Horst](https://allisonhorst.com/cetinkaya-rundel-lowndes-quarto-keynote).](images/quarto_renderin.png){fig-align="center"}
+
+## No es sólo R y RStudio
+
+::: {layout-nrow="1"}
+![](images/julia_hexsticker.png){.fragment width="300" fig-align="center"}
+
+![](images/python_hexsticker.png){.fragment width="300" fig-align="center"}
+
+![](images/r_hexsticker.png){.fragment width="300" fig-align="center"}
+:::
+
+::: {layout-nrow="1"}
+![](images/jupyter_logo.png){.fragment width="300" fig-align="center"}
+
+![](images/rstudio_logo.png){.fragment width="300" fig-align="center"}
+
+![](images/vscode_logo.png){.fragment width="300" fig-align="center"}
+
+![](images/text_editor_logo.png){.fragment width="300" fig-align="center"}
+:::
+
+## What You See Is What You Get (WYSIWYG)
+
+::: {.columns}
+::: {.column width="50%"}
+![](images/ms_word.png){.fragment fig-align="center"}
+:::
+
+::: {.column width="50%"}
+![](images/ms_word.png){.fragment fig-align="center"}
+:::
+:::
+
+::: footer
+What you see is what you get: lo que ves es lo que hay
+:::
+
+## What You See Is What You Mean (WYSIWYM)
+
+::: {.columns}
+::: {.column .fragments width="50%"}
+![Views Iceberg <a href="https://commons.wikimedia.org/wiki/File:ViewsIceberg.svg">Traced by User:Jc86035</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons](images/views_iceberg.png){width="500" fig-align="center"}
+
+::: {.fragment}
+````markdown
+---
+title: "ggplot2 demo"
+author: "Norah Jones"
+date: "5/22/2021"
+format: 
+  html:
+    fig-width: 8
+    fig-height: 4
+    code-fold: true
+---
+
+## Air Quality
+
+@fig-airquality further explores the impact of temperature on ozone level.
+
+```{{r}}
+#| label: fig-airquality
+#| fig-cap: "Temperature and ozone level."
+#| warning: false
+
+library(ggplot2)
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+
+````
+:::
+:::
+
+::: {.column width="50%" .fragment}
+![Resultado obtenido del código de la izquierda. [Quarto](https://quarto.org)](images/hello_knitr.png)
+:::
+:::
+
+::: footer
+What you see is what you mean: lo que ves es lo que quieres decir
+:::
+
+## Integrated development environment (IDE)
+
+::: fragment
+> Aplicación que proporciona servicios integrales para facilitar el desarrollo de software. 
+:::
+
+::: {.columns}
+::: {.column .fragment width="60%"}
+![[Apariencia por defecto de RStudio.](https://docs.posit.co/ide/user/ide/get-started/)](images/rstudio_ide.jpeg){fig-align="center"}
+:::
+
+::: {.column .fragment width="40%"}
+![[Editor Visual de RStudio. Quarto.](https://quarto.org/docs/visual-editor/)](images/visual_editing.png){fig-align="center"}
+:::
+:::
+
+::: footer
+Integrated development environment: entorno de desarrollo integrado
+:::
+
+## Renderizar y formatos
+
+::: columns
+::: {.column .fragment width="60%"}
+### Tres formas de renderizar
+
+1.  Utilizando el boton ![](images/render-icon.png){width="100"} en RStudio
+
+![](images/rstudio-render.png)
+
+2.  Utilizando la consola de R
+
+```r
+library(quarto)
+quarto::quarto_render(input = "documento.qmd") # html por defecto
+quarto::quarto_render(input = "documento.qmd", output_format = "pdf")
+```
+
+3.  Utilizando la terminal
+
+```bash
+quarto render document.qmd # html por defecto
+quarto render document.qmd --to pdf
+```
+:::
+
+::: {.column .fragment width="40%"}
+### Más de 40 formatos de salida
+
+-   html
+-   pdf
+-   typst
+-   docx
+-   odt
+-   revealjs
+-   pptx
+-   dashboard
+-   [muchos más!](https://quarto.org/docs/output-formats/all-formats.html)
+:::
+:::
+
+# `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
+
+-   Abrir `pinguinos.qmd`
+-   Renderizar el documento
+-   Cambiar el nombre por el suyo y renderizar el documento
+-   Inspeccionar los elemento del documento, realizar dos cambios y renderizar el documento.
+
+<br> <br>
+
+```{R}
+#| echo: false
+countdown_timer(5)
+```
+
+## Anatomía de un archivo `.qmd` 
+
+Los archivos de Quarto (`.qmd`) son archivos de texto con terminación plano conformado por:
+
+\
+
+### Metadata (YAML)
+
+::: {.columns style="font-size: 70px"}
+::: {.column width="50%"}
+``` yaml
+format: html
+engine: knitr
+```
+:::
+
+::: {.column width="50%"}
+``` yaml
+format: html
+engine: jupyter
+```
+:::
+:::
+
+\
+
+### Código
+
+::: {.columns style="font-size: 70px"}
+::: {.column width="50%"}
+````code
+```{{r}}
+library(dplyr)
+mtcars |> 
+  group_by(cyl) |> 
+  summarize(mean = mean(mpg))
+```
+````
+:::
+
+::: {.column width="50%"}
+````code
+```{{python}}
+from siuba import *
+(mtcars
+  >> group_by(_.cyl)
+  >> summarize(avg_mpg = _.mpg.mean()))
+```
+````
+:::
+:::
+
+\
+
+### Texto
+
+::: {style="font-size: 70px"}
+``` markdown
+# Título 1
+Esta es una frase con algo de **texto en negrita**, *texto en cursiva* y una 
+![Descripción de la imagen](imagen.png){fig-alt=«Alt text para la imagen»}.
+```
+:::
+
+## Metadata (YAML)
+
+«Yet Another Markup Language» o “YAML Ain't Markup Language” se utiliza para proporcionar metadatos a nivel de documento o proyecto. 
+
+::: {.columns}
+::: {.column width="50%"}
+-   Se coloca al principio del documento entre `---`
+-   Siempre en pares `key:` y `value`
+-   Pueden anidarse
+-   Quisquilloso con la sangría y espaciado
+:::
+
+::: {.column width="50%"}
+::: {style="font-size: 70px"}
+``` yaml
+---
+title: "El origen de las especies"
+author: "Charles Darwin"
+format: 
+  html:
+    toc: true
+----
+```
+:::
+:::
+:::
+
+### Quarto YAML Intelligence
+
+::: columns
+::: {.column .fragment width="50%"}
+#### Autocompletar
+![](images/rstudio-yaml-completion.png){fig-align="center"}
+:::
+
+::: {.column .fragment width="50%"}
+#### Detección de errores
+![](images/rstudio-yaml-diagnostics.png){fig-align="center"}
+:::
+:::
+
+## Texto en Markdown `r fontawesome::fa("markdown")`

@@ -6,8 +6,7 @@ author:
     affiliation: "Instituto Tecnológico Metropolitano"
   - name: "Álex Espinosa Correa"
     affiliation: "Universidad de Antioquia"
-date: 2024-11-02
-
+# date: 2024-11-02
 
 format: 
   revealjs:

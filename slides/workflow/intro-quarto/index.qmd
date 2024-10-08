@@ -243,7 +243,7 @@ What you see is what you mean: lo que ves es lo que quieres decir
 ## Integrated development environment (IDE)
 
 ::: fragment
-> Aplicación que proporciona servicios integrales para facilitar el desarrollo de software. 
+Aplicación que proporciona servicios integrales para facilitar el desarrollo de software. 
 :::
 
 ::: {.columns}
@@ -406,18 +406,189 @@ format:
 :::
 :::
 
-### Quarto YAML Intelligence
-
 ::: columns
 ::: {.column .fragment width="50%"}
-#### Autocompletar
+### Quarto YAML Intelligence:<br>autocompletar
 ![](images/rstudio-yaml-completion.png){fig-align="center"}
 :::
 
 ::: {.column .fragment width="50%"}
-#### Detección de errores
+### Quarto linting:<br>detección de errores
 ![](images/rstudio-yaml-diagnostics.png){fig-align="center"}
 :::
 :::
 
-## Texto en Markdown `r fontawesome::fa("markdown")`
+## Markdown `r fontawesome::fa("markdown")`
+
+::: columns
+::: {.column .fragment width="50%"}
+Markdown es un formato de texto plano creado por John Gruber y Aaron Swartz, está diseñado para ser fácil de escribir y fácil de leer. Quarto se basa en Pandoc y utiliza su variante de [Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown), la cual es una versión ampliada y ligeramente revisada de la sintaxis [Markdown de John Gruber](https://daringfireball.net/projects/markdown/).
+
+::: fragment
+> Un documento con formato Markdown debería poder publicarse tal cual, como texto sin formato, sin que parezca que ha sido marcado con etiquetas o instrucciones de formato.
+>John Gruber
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Aaron Swartz (1986-2013) una de las personas más importantes en la historia del Internet. <a href="https://commons.wikimedia.org/wiki/File:Aaron_Swartz_profile.jpg">Fred Benenson / www.fredbenenson.com</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>.](images/aaron_swartz.jpg){fig-align="center"}
+:::
+:::
+
+## Markdown: formato de texto
+
+### Sintaxis básica
+
++------------------------------+--------------------------+
+| Markdown                     | Salida                   |
++==============================+==========================+
+|     *cursiva*                | *cursiva*                |
++------------------------------+--------------------------+
+|     **negrilla**             | **negrilla**             |
++------------------------------+--------------------------+
+|     ***cursiva y negrilla*** | ***cursiva y negrilla*** |
++------------------------------+--------------------------+
+|     superíndice^2^           | superíndice^2^           |
++------------------------------+--------------------------+
+|     subíndice~2~             | subíndice~2~             |
++------------------------------+--------------------------+
+|     ~~tachado~~              | ~~tachado~~              |
++------------------------------+--------------------------+
+|     `código puro`            | `código puro`            |
++------------------------------+--------------------------+
+
+### Párrafos
+
+En Markdown los párrafos se construyen dejando una linea en blanco. De lo contrario, el salto de línea se trata como un espacio.
+
+:::columns
+:::{.column width=50%}
+
+```{.markdown style="font-size: 70px"}
+Lorem ipsum dolor sit amet,
+consectetur adipiscing elit.
+
+Sed do eiusmod tempor.
+```
+:::
+
+:::{.column width=50%}
+Lorem ipsum dolor sit amet,
+consectetur adipiscing elit.
+
+Sed do eiusmod tempor.
+:::
+:::
+
+## Markdown: encabezados
+
++-------------------------+---------------------+
+| Markdown                | Salida              |
++=========================+=====================+
+|     # Encabezado 1      | # Encabezado 1      |
++-------------------------+---------------------+
+|     ## Encabezado 2     | ## Encabezado 2     |
++-------------------------+---------------------+
+|     ### Encabezado 3    | ### Encabezado 3    |
++-------------------------+---------------------+
+|     #### Encabezado 4   | #### Encabezado 4   |
++-------------------------+---------------------+
+|     ##### Encabezado 5  | ##### Encabezado 5  |
++-------------------------+---------------------+
+|     ###### Encabezado 6 | ###### Encabezado 6 |
++-------------------------+---------------------+
+
+## Markdown: listas
+
+### Lista desordenada
+Para los elementos de una lista desordenada se puede utilizar: `*`, `-`, o `+`.
+
+:::columns
+:::{.column width=50%}
+#### Markdown
+```{.markdown style="font-size: 70px"}
+*   Elemento 1
+    +   Elemento 1.1
+        -   Elemento 1.1.1
+    +   Elemento 1.2
+*   Elemento 2
+```
+:::
+
+:::{.column width=50%}
+#### Salida
+
+*   Elemento 1
+    +   Elemento 1.1
+        -   Elemento 1.1.1
+    +   Elemento 1.2
+*   Elemento 2
+:::
+:::
+
+### Lista ordenada
+
+:::columns
+:::{.column width=50%}
+#### Markdown
+```{.markdown style="font-size: 70px"}
+1.  Elemento 1
+    i)  Elemento 1.1
+        A.  Elemento 1.1.1
+        A.  Elemento 1.1.2
+    i)  Elemento 1.2
+1.  Elemento 2
+```
+:::
+
+:::{.column width=50%}
+#### Salida
+
+1.  Elemento 1
+    i)  Elemento 1.1
+        A.  Elemento 1.1.1
+        A.  Elemento 1.1.2
+    i)  Elemento 1.2
+1.  Elemento 2
+:::
+:::
+
+## Markdown: enlaces e imágene
+
++----------------------------------------+----------------------------------------------------+
+| Markdown Syntax                        | Output                                             |
++========================================+====================================================+
+| ``` markdown                           | <https://quarto.org>                               |
+| <https://quarto.org>                   |                                                    |
+| ```                                    |                                                    |
++----------------------------------------+----------------------------------------------------+
+| ``` markdown                           | [Quarto](https://quarto.org)                       |
+| [Quarto](https://quarto.org)           |                                                    |
+| ```                                    |                                                    |
++----------------------------------------+----------------------------------------------------+
+| ``` markdown                           | ![Descripción](images/quarto_logo.png){width="50"} |
+| ![Descripción](images/quarto_logo.png) |                                                    |
+| ```                                    |                                                    |
++----------------------------------------+----------------------------------------------------+
+
+## Markdown: tablas
+
+# `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
+
+-   En `pinguinos.qmd`
+-   Practicar la sintaxis de Markdown vista hasta ahora
+    -   enlaces
+    -   encabezados
+    -   formato de texto
+    -   imágenes
+    -   listas
+    -   tablas
+
+<br> <br>
+
+```{R}
+#| echo: false
+countdown_timer(5)
+```
+
+## Código

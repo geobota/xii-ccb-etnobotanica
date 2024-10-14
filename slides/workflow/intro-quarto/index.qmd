@@ -23,6 +23,7 @@ format:
     # chalkboard: true
     logo: "https://github.com/geobota/geobota.github.io/blob/main/images/xii-ccb/xii-ccb-logo.png?raw=true"
     footer: "[Etnobotánica Cuantitativa en R](https://geobota.github.io/xii-ccb-etnobotanica/)"
+bibliography: references.bib
 ---
 
 ```{r}
@@ -61,7 +62,8 @@ countdown_timer <- function(
 
 -   «Siempre lo hemos hecho así»
 
-<br> <br>
+<br> 
+<br>
 
 ```{R}
 #| echo: false
@@ -70,13 +72,26 @@ countdown_timer(5)
 
 ## Proposito
 
+::: columns
+::: {.column .fragment width="50%"}
+### Pasar de Word…
+![](images/ms_word.png){fig-align="center" width="700"}
+:::
+
+::: {.column .fragment width="50%"}
+### a Quarto
+![](images/hello_knitr.png){fig-align="center" width="700"}
+:::
+::: 
+
 # `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
 
 -   Abrir RStudio
 -   Si no ha clonado/descargado los archivos necesarios: `https://github.com/geobota/etnobotanica-workshop.git`
 -   Abrir el Rproject `etnobotanica-workshop`
 
-<br> <br>
+<br> 
+<br>
 
 ```{R}
 #| echo: false
@@ -90,7 +105,7 @@ countdown_timer(1)
 ::: fragment
 Quarto permite combinar en un mismo entorno texto y código para producir resultados elegantemente formateados como documentos, páginas web, entradas de blog, libros y más.
 
-![Represantación esquemática de Quarto. [Allison Horst](https://allisonhorst.com/cetinkaya-rundel-lowndes-quarto-keynote).](images/quarto_esquema.png){fig-align="center" width="1244"}
+![Represantación esquemática de Quarto. [Allison Horst](https://allisonhorst.com/cetinkaya-rundel-lowndes-quarto-keynote).](images/quarto_esquema.png){fig-align="center" width="1000"}
 :::
 
 ## Por qué Quarto
@@ -197,7 +212,7 @@ What you see is what you get: lo que ves es lo que hay
 
 ::: {.columns}
 ::: {.column .fragments width="50%"}
-![Views Iceberg <a href="https://commons.wikimedia.org/wiki/File:ViewsIceberg.svg">Traced by User:Jc86035</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons](images/views_iceberg.png){width="500" fig-align="center"}
+![Views Iceberg <a href="https://commons.wikimedia.org/wiki/File:ViewsIceberg.svg">Traced by User:Jc86035</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons](images/views_iceberg.png){width="450" fig-align="center"}
 
 ::: {.fragment}
 ````markdown
@@ -232,7 +247,7 @@ ggplot(airquality, aes(Temp, Ozone)) +
 :::
 
 ::: {.column width="50%" .fragment}
-![Resultado obtenido del código de la izquierda. [Quarto](https://quarto.org)](images/hello_knitr.png)
+![Resultado obtenido del código de la izquierda. [Quarto](https://quarto.org)](images/hello_knitr.png){width="750" fig-align="center"}
 :::
 :::
 
@@ -308,7 +323,8 @@ quarto render document.qmd --to pdf
 -   Cambiar el nombre por el suyo y renderizar el documento
 -   Inspeccionar los elemento del documento, realizar dos cambios y renderizar el documento.
 
-<br> <br>
+<br> 
+<br>
 
 ```{R}
 #| echo: false
@@ -317,9 +333,7 @@ countdown_timer(5)
 
 ## Anatomía de un archivo `.qmd` 
 
-Los archivos de Quarto (`.qmd`) son archivos de texto con terminación plano conformado por:
-
-\
+Los archivos de Quarto (`.qmd`) son archivos de texto plano conformado por:
 
 ### Metadata (YAML)
 
@@ -338,8 +352,6 @@ engine: jupyter
 ```
 :::
 :::
-
-\
 
 ### Código
 
@@ -367,9 +379,7 @@ from siuba import *
 :::
 :::
 
-\
-
-### Texto
+### Texto 
 
 ::: {style="font-size: 70px"}
 ``` markdown
@@ -421,21 +431,23 @@ format:
 ## Markdown `r fontawesome::fa("markdown")`
 
 ::: columns
-::: {.column .fragment width="50%"}
+::: {.column .fragment fragment-index=1 width="50%"}
 Markdown es un formato de texto plano creado por John Gruber y Aaron Swartz, está diseñado para ser fácil de escribir y fácil de leer. Quarto se basa en Pandoc y utiliza su variante de [Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown), la cual es una versión ampliada y ligeramente revisada de la sintaxis [Markdown de John Gruber](https://daringfireball.net/projects/markdown/).
 
-::: fragment
+::: {.fragment fragment-index=2}
 > Un documento con formato Markdown debería poder publicarse tal cual, como texto sin formato, sin que parezca que ha sido marcado con etiquetas o instrucciones de formato.
 >John Gruber
 :::
 :::
 
-::: {.column .fragment width="50%"}
-![Aaron Swartz (1986-2013) una de las personas más importantes en la historia del Internet. <a href="https://commons.wikimedia.org/wiki/File:Aaron_Swartz_profile.jpg">Fred Benenson / www.fredbenenson.com</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>.](images/aaron_swartz.jpg){fig-align="center"}
+::: {.column .fragment fragment-index=3 width="50%"}
+![Aaron Swartz (1986-2013) una de las personas más importantes en la historia de Internet. <a href="https://commons.wikimedia.org/wiki/File:Aaron_Swartz_profile.jpg">Fred Benenson / www.fredbenenson.com</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>.](images/aaron_swartz.jpg){fig-align="center"}
 :::
 :::
 
 ## Markdown: formato de texto
+
+En Quarto se puede agregar texto en diferentes formatos.
 
 ### Sintaxis básica
 
@@ -457,7 +469,7 @@ Markdown es un formato de texto plano creado por John Gruber y Aaron Swartz, est
 |     `código puro`            | `código puro`            |
 +------------------------------+--------------------------+
 
-### Párrafos
+## Markdown: párrafos
 
 En Markdown los párrafos se construyen dejando una linea en blanco. De lo contrario, el salto de línea se trata como un espacio.
 
@@ -481,6 +493,8 @@ Sed do eiusmod tempor.
 :::
 
 ## Markdown: encabezados
+
+En Quarto se pueden agregar hasta seis niveles de encabezados o títulos.
 
 +-------------------------+---------------------+
 | Markdown                | Salida              |
@@ -555,8 +569,10 @@ Para los elementos de una lista desordenada se puede utilizar: `*`, `-`, o `+`.
 
 ## Markdown: enlaces e imágene
 
+La sintaxis para agregar enlaces e imágenes e relativamente similar.
+
 +----------------------------------------+----------------------------------------------------+
-| Markdown Syntax                        | Output                                             |
+| Markdown                               | Output                                             |
 +========================================+====================================================+
 | ``` markdown                           | <https://quarto.org>                               |
 | <https://quarto.org>                   |                                                    |
@@ -571,7 +587,127 @@ Para los elementos de una lista desordenada se puede utilizar: `*`, `-`, o `+`.
 | ```                                    |                                                    |
 +----------------------------------------+----------------------------------------------------+
 
-## Markdown: tablas
+## Markdown: tablas {#sec-markdown-tablas}
+
+Quarto incluye características destinadas a facilitar la creación y personalización de tablas: especificar la alineación y el ancho de las columnas; proporcionar títulos y referencias cruzadas; generar tablas a partir de código. En Markdown las tablas pueden ser pipe tables o grid tables. Las tablas se pueden construir usando el Editor Visual o generadores <https://www.tablesgenerator.com>
+
+. . .
+
+::: columns
+::: {.column width="50%"}
+### Markdown
+
+::: {style="font-size: 70px"}
+``` markdown
+| Por defecto | Izquierda | Derecha | Centro |
+|-------------|:----------|--------:|:------:|
+| 12          | 12        |      12 |   12   |
+| 123         | 123       |     123 |  123   |
+| 1           | 1         |       1 |   1    |
+
+: Demostración de pipe table.
+```
+:::
+:::
+
+::: {.column width="50%"}
+### Salida
+
+| Por defecto | Izquierda | Derecha | Centro |
+|-------------|:----------|--------:|:------:|
+| 12          | 12        |      12 |   12   |
+| 123         | 123       |     123 |  123   |
+| 1           | 1         |       1 |   1    |
+
+: Demostración de pipe table.
+:::
+:::
+
+. . .
+
+::: columns
+::: {.column width="50%"}
+::: {style="font-size: 70px"}
+``` markdown
++-----------+-----------+--------------------------+
+| Fruta     | Precio    | Ventajas                 |
++==========:+:=========:+:=========================+
+| Banano    | $1.34     | - envoltorio incorporado |
+|           |           | - color brillante        |
++-----------+-----------+--------------------------+
+
+: Demostración de grid table.
+```
+:::
+:::
+
+::: {.column width="50%"}
++-----------+-----------+--------------------------+
+| Fruta     | Precio    | Ventajas                 |
++==========:+:=========:+:=========================+
+| Banano    | $1.34     | - envoltorio incorporado |
+|           |           | - color brillante        |
++-----------+-----------+--------------------------+
+
+: Demostración de grid table.
+:::
+:::
+
+## Referencias cruzadas
+
+Las referencias cruzadas facilitan a los lectores la navegación por el documento proporcionando referencias numeradas e hipervínculos a diversas entidades, como figuras y tablas. Toda entidad con la que se puedan establecer referencias cruzadas requiere una etiqueta (`fig-` y `tbl-`), un identificador único precedido de un tipo de referencia cruzada (`fig-elemento` y `tbl-elemento`).
+
+::: {.fragment}
+::: {style="font-size: 70px"}
+``` markdown
+![Istopipo de Quarto](images/quarto_logo.png){#fig-quarto}
+
+La @fig-quarto muestra el isotipo de Quarto.
+```
+:::
+
+![Isotipo de Quarto](images/quarto_logo.png){#fig-quarto fig-align="center" width="10%"}
+
+La @fig-quarto muestra el isotipo de Quarto.
+:::
+
+::: {.fragment}
+Quarto tiene algunos prefijos reservados: `fig`, `tbl`, `lst`, `tip`, `nte`, `wrn`, `imp`, `cau`, `thm`, `lem`, `cor`, `prp`, `cnj`, `def`, `exm`, `exr`, `sol`, `rem`, `eq`, `sec`.
+
+Es recomendable evitar el uso de guiones bajos `_`.
+:::
+
+## Citación
+
+::: {style="font-size: 40px"}
+Quarto utiliza Pandoc para generar automáticamente citas y una bibliografía en varios estilos. Es necesario tener:
+
+-   Un documento Quarto formateado con citas.
+
+-   Una fuente de datos bibliográficos, por ejemplo un archivo BibLaTeX (.bib) o BibTeX (.bibtex).
+
+-   Opcionalmente, un archivo CSL que especifique el formato a utilizar al generar las citas y la bibliografía.
+:::
+
+::: {.fragment style="font-size: 40px"}
+::: {style="font-size: 70px"}
+``` markdown
+El conjunto de datos flor Iris fue tomado por @anderson1936 y popularizado 
+posteriormente [@fisher1936]. El conjunto de datos contiene 150 muestras de 
+tres especies [@anderson1936; @fisher1936].
+```
+:::
+
+El conjunto de datos flor Iris fue tomado por @anderson1936 y popularizado 
+posteriormente [@fisher1936]. El conjunto de datos contiene 150 muestras de
+tres especies [@anderson1936; @fisher1936].
+:::
+
+::: {.fragment}
+### Referencias
+::: {#refs}
+:::
+:::
 
 # `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
 
@@ -583,12 +719,126 @@ Para los elementos de una lista desordenada se puede utilizar: `*`, `-`, o `+`.
     -   imágenes
     -   listas
     -   tablas
+    -   referencias cruzadas
+    -   citación
 
-<br> <br>
+<br> 
+<br>
 
 ```{R}
 #| echo: false
-countdown_timer(5)
+countdown_timer(7)
 ```
 
 ## Código
+
+[En Quarto el código puede insertarse en linea o como bloques de código (conocidos como *chunks*). Los chunks siempre se encuentran entre ```` ``` ````, mientras el código en linea se encuentra entre ```` ` ````.]{.fragment} [Para que el código sea ejecutable se ha de poner el nombre del lenguaje entre `{}`, ej. ```` {R} ````. Si sólo se pone el nombre del lenguaje, el código no se ejecutará y se resaltará la sintaxis del lenguaje.]{.fragment} [Los chunks pueden tener opciones que se indican con un ` #| ` (hash pipe) y siguen la sintaxis del YAML.]{.fragment}
+ 
+::: {.fragment style="font-size: 70px"}
+```{r}
+#| label: fig-ejemplo-chunk
+#| fig-cap: "Descripción de la figura. Note el prefijo generado automáticamente" 
+#| fig-dpi: 300
+#| output-location: column-fragment
+#| code-line-numbers: "|1|2-8|2|3-4"
+#| echo: fenced
+
+library(ggplot2)
+
+iris |> 
+  ggplot2::ggplot(
+    ggplot2::aes(x = Petal.Length, y = Petal.Width)
+  ) + 
+  ggplot2::geom_point(
+    ggplot2::aes(color = Species, shape = Species)
+  ) + 
+  ggplot2::geom_smooth(
+    formula = y ~ x, method = "loess"
+  ) + 
+  ggplot2::theme_classic()
+```
+:::
+
+## De opciones de chunk al YAML
+
+Hay una gran variedad de opciones disponibles para personalizar la salida del código ejecutado. Todas estas opciones se pueden especificar globalmente (YAML) o por bloque de código.
+
+::: {.columns style="font-size: 70px"}
+::: {.column .fragment width="50%"}
+````{.markdown code-line-numbers="7"}
+---
+title: "El origen de las especies"
+format: html
+---
+
+```{{r}}
+#| echo: true
+
+pi + 1
+```
+````
+:::
+
+::: {.column .fragment width="50%"}
+````{.markdown code-line-numbers="4,5"}
+---
+title: "El origen de las especies"
+format: html
+execute:
+  echo: true
+---
+
+```{{r}}
+pi + 1
+```
+````
+:::
+:::
+
+## Opciones de ejecución
+
+Las opciones disponibles para personalizar la salida incluyen:
+
+| Opción    | Descripción                                                                                                                                                     |
+|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `eval`    | Evalúa el fragmento de código (si es `false`, sólo muestra el código en la salida).                                                                             |
+| `echo`    | Incluye el código fuente en la salida.                                                                                                                          |
+| `output`  | Incluye los resultados de ejecutar el código en la salida (`true`, `false`, o `asis` para indicar que la salida es markdown crudo)                              |
+| `warning` | Incluye advertencias en la salida.                                                                                                                              |
+| `error`   | Incluye errores en la salida (esto implica que los errores de ejecución de código no detendrán el procesamiento del documento).                                 |
+| `include` | Captura general para evitar que se incluya cualquier salida (código o resultados). Por ejemplo, `include: false` suprime toda la salida del bloque de código. |
+
+# `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
+
+-   En `pinguinos.qmd`
+-   Practicar la opciones de ejecución
+
+<br> 
+<br>
+
+```{R}
+#| echo: false
+countdown_timer(3)
+```
+
+# `r fontawesome::fa("person-chalkboard", "white")` Demostración {background-color="#009E73" transition="slide-in"}
+
+-   Editor Visual de Quarto
+
+<br> 
+<br>
+
+```{R}
+#| echo: false
+countdown_timer(10)
+```
+
+# `r fontawesome::fa("mug-saucer", "white")` Pausa {background-color="#000000" transition="slide-in"}
+
+<br>
+<br>
+
+```{R}
+#| echo: false
+countdown_timer(10)
+```

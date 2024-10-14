@@ -6,7 +6,7 @@ author:
     affiliation: "Universidad de Antioquia"
   - name: "Bladimir Vera Marín"
     affiliation: "Instituto Tecnológico Metropolitano"
-date: 2024-11-02
+# date: 2024-11-02
 
 format: 
   revealjs:
@@ -23,6 +23,8 @@ format:
     # chalkboard: true
     logo: "https://github.com/geobota/geobota.github.io/blob/main/images/xii-ccb/xii-ccb-logo.png?raw=true"
     footer: "[Etnobotánica Cuantitativa en R](https://geobota.github.io/xii-ccb-etnobotanica/)"
+bibliography: references.bib
+csl: apa.csl
 ---
 
 ```{r}
@@ -78,7 +80,7 @@ palmerpenguins::penguins |>
   ggthemes::scale_color_colorblind()
 ```
 
-## Proposito 2 {.r-fit-text}
+## Proposito 2
 
 ```{r}
 #| label: tabla-proposito
@@ -189,10 +191,6 @@ Hay tres reglas interrelacionadas que hacen que un conjunto de datos esté orden
 ::: fragment
 ![¡Ya cómete la maldita naranja!](images/meme_comete-naranja.jpeg){fig-align="center"}
 :::
-
-## RStudio
-
-![Los diferentes paneles en RStudio.](../workflow/images/rstudio.jpeg){#fig-RStudio-IDE fig-align="center"}
 
 ## Ejecutar código
 

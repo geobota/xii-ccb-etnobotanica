@@ -36,11 +36,20 @@ if (!require("tidyverse")) install.packages("tidyverse")
 if (!require("palmerpenguins")) install.packages("palmerpenguins")
 if (!require("ggthemes")) install.packages("ggthemes")
 if (!require("flextable")) install.packages("flextable")
+if (!require("sysfonts")) install.packages("sysfonts")
+if (!require("showtext")) install.packages("showtext")
+
+sysfonts::font_add_google(
+  name = "Atkinson Hyperlegible",
+  family = "atkinson"
+)
+
+showtext::showtext_auto()
 
 ggplot2::theme_set(
   ggplot2::theme_classic(
     # base_size = 18,
-    base_family = "Atkinson Hyperlegible"
+    base_family = "atkinson"
   )
 )
 ```

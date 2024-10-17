@@ -31,13 +31,13 @@ csl: apa.csl
 #| label: setup
 #| output: false
 
-if (!require("here")) install.packages("here")
-if (!require("tidyverse")) install.packages("tidyverse")
-if (!require("palmerpenguins")) install.packages("palmerpenguins")
-if (!require("ggthemes")) install.packages("ggthemes")
-if (!require("flextable")) install.packages("flextable")
-if (!require("sysfonts")) install.packages("sysfonts")
-if (!require("showtext")) install.packages("showtext")
+if (!require("here")) install.packages("here"); library("here")
+if (!require("tidyverse")) install.packages("tidyverse"); library("tidyverse")
+if (!require("palmerpenguins")) install.packages("palmerpenguins"); library("palmerpenguins")
+if (!require("ggthemes")) install.packages("ggthemes"); library("ggthemes")
+if (!require("flextable")) install.packages("flextable"); library("flextable")
+if (!require("sysfonts")) install.packages("sysfonts"); library("sysfonts")
+if (!require("showtext")) install.packages("showtext"); library("showtext")
 
 sysfonts::font_add_google(
   name = "Atkinson Hyperlegible",
@@ -261,13 +261,15 @@ Los operadores lógicos son: `|` OR, `&` AND, `!` NOT.
 
 ## Crear objetos
 
-Las entidades que R crea y manipula se denominan objetos. Un objeto es un nombre que puedes usar para llamar a los datos almacenados[^1]. Los objetos se crean utilizando el operador de asignación `<-`. Cuando se crea un objeto este aparecerá en el *environment pane* de RStudio.
-
-[^1]: En R los nombres se pueden nombrar de cualquier manera, con dos excepciones. Primero, un nombre no puede comenzar con un número. Segundo, un nombre no puede usar algunos símbolos especiales, como \^, !, \$, \@, +, -, /, o \*.
+Las entidades que R crea y manipula se denominan objetos. Un objeto es un nombre que puedes usar para llamar a los datos almacenados. Los objetos se crean utilizando el operador de asignación `<-`. Cuando se crea un objeto este aparecerá en el *environment pane* de RStudio. El atajo de teclado para `<-` es {{< kbd Alt-— >}}
 
 ``` {.r filename="console" code-line-numbers="false" style="font-size: 150%"}
 > x <- 4 * 2
 ```
+
+En R los nombres se pueden nombrar de cualquier manera, con dos excepciones. Primero, un nombre no puede comenzar con un número. Segundo, un nombre no puede usar algunos símbolos especiales, como \^, !, \$, \@, +, -, /, o \*.
+
+### Llamar objetos
 
 El valor de `x` no se imprime en consola, sólo se almacena. Si se quiere ver el valor, hay que llamarlo.
 
@@ -285,6 +287,8 @@ Se pueden **c**ombinar múltiples elementos en un vector usando `c()`
 numeros_primos <- c(2, 3, 5, 7, 11, 13)
 ```
 
+### Operación con vectores
+
 Así mismo, se pueden realizar operación con los vectores.
 
 ``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
@@ -297,7 +301,7 @@ R ignora cualquier texto después de `#`. Esto permite escribir comentarios, tex
 
 ## Funciones
 
-> Las funciones son bloques de código que realizan una tarea específica y que pueden ser invocadas (llamadas) desde cualquier parte. 
+Las funciones son bloques de código que realizan una tarea específica y que pueden ser invocadas (llamadas) desde cualquier parte. 
 
 En R las funciones se han de llamar así:
 
@@ -308,7 +312,7 @@ nombre_funcion(argumento_1 = valor_1, argumento_2 = valor_2, ...)
 Probemos la función `seq()` que crea secuencias regulares de números.
 
 ``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
-seq(from = 1, to = 10)
+> seq(from = 1, to = 10)
  [1]  1  2  3  4  5  6  7  8  9 10
 ```
 
@@ -319,13 +323,13 @@ A menudo omitimos los nombres de los primeros varios argumentos en las llamadas 
  [1]  1  2  3  4  5  6  7  8  9 10
 ```
 
+Algunas funciones de R: `mean` calcula la media de un vector. `sum` suma los elementos de un vector. `summary` proporciona un resumen estadístico de un objeto. `str` muestra la estructura de un objeto.
+
 ## Paquetes
 
-> Los paquetes son las unidades fundamentales del código reproducible en R. Incluyen funciones reutilizables de R, la documentación que describe cómo usarlas y datos de muestra. @wickham2023
+Los paquetes son las unidades fundamentales del código reproducible en R. Incluyen funciones reutilizables de R, la documentación que describe cómo usarlas y datos de muestra. @wickham2023 Muchos paquetes de R se encuentran en The Comprehensive R Archive Network (CRAN). CRAN es una red de servidores FTP y web alrededor del mundo que almacenan versiones idénticas y actualizadas del código y la documentación de R.
 
-### The Comprehensive R Archive Network (CRAN)
-
-> CRAN es una red de servidores FTP y web alrededor del mundo que almacenan versiones idénticas y actualizadas del código y la documentación de R.
+### Instalar y usar paquetes
 
 En R (casi) todos los paquetes se pueden instalar utilizando la función `install.packages`.
 
@@ -333,13 +337,47 @@ En R (casi) todos los paquetes se pueden instalar utilizando la función `instal
 install.packages("ethnobotanyR")
 ```
 
-Para poder usar las funciones se han de llamar usando la función `library()`.
+Para poder usar los paquetes se han de cargar (llamar) usando la función `library()`.
 
 ``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
 library(ethnobotanyR)
 ```
 
-## Pipe `|>`
+Funciones de diferentes paquetes pueden tener el mismo nombre. Por lo cual es recomendable ser explicito a la hora de llamarlas, para lo cual se utilizan `::` entre el nombre del paquete y el nombre de la función.
+
+``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
+nombre_paquete::nombre_funcion()
+```
+
+
+
+## Esto no es una pipa `|>`
+
+R 4.1.0 introdujo el operador `|>` (pipe). Este operador toma la salida de una función y la pasa a otra función como argumento. Enlaza todos los pasos del análisis de datos haciendo que el código sea más eficiente y legible. 
+
+
+``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
+> media_numeros_primos <- mean(c(2, 3, 5, 7, 11, 13))
+> print(media_numeros_primos)
+[1] 6.833333
+```
+
+``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
+> numeros_primos <- c(2, 3, 5, 7, 11, 13)
+> media_numeros_primos <- mean(numeros_primos)
+> print(media_numeros_primos)
+[1] 6.833333
+```
+
+``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
+> media_numeros_primos <- 
++   c(2, 3, 5, 7, 11, 13) |> 
++   mean() |> 
++   print()
+[1] 6.833333
+```
+
+En RStudio hay que activarlo yendo a la opción `code` de las opciones globales. El atajo de teclado para `|>` es {{< kbd Shift-Ctrl-M >}}
 
 ## Scripts
 
@@ -376,6 +414,12 @@ fig_pinguinos
 ```
 
 ## Que alguien llame a alguien
+
+Muchas veces necesitaremos ayuda o aclarar algo sobre algún paquete o función, tenemos varias alternativas de buscar ayuda.
+
+``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
+
+```
 
 # `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
 

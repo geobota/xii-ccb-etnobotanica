@@ -261,7 +261,7 @@ Los operadores lógicos son: `|` OR, `&` AND, `!` NOT.
 
 ## Crear objetos
 
-Las entidades que R crea y manipula se denominan objetos. Un objeto es un nombre que puedes usar para llamar a los datos almacenados. Los objetos se crean utilizando el operador de asignación `<-`. Cuando se crea un objeto este aparecerá en el *environment pane* de RStudio. El atajo de teclado para `<-` es {{< kbd Alt-— >}}
+Las entidades que R crea y manipula se denominan objetos. Un objeto es un nombre que puedes usar para llamar a los datos almacenados. Los objetos se crean utilizando el operador de asignación `<-`. Cuando se crea un objeto este aparecerá en el *environment pane* de RStudio. El atajo de teclado para `<-` es {{< kbd Alt-- >}}
 
 ``` {.r filename="console" code-line-numbers="false" style="font-size: 150%"}
 > x <- 4 * 2

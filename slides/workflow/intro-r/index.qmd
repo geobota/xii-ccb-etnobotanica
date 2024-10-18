@@ -21,6 +21,7 @@ format:
     controls: true
     touch: false
     # chalkboard: true
+    code-block-height: 800px
     logo: "https://github.com/geobota/geobota.github.io/blob/main/images/xii-ccb/xii-ccb-logo.png?raw=true"
     footer: "[Etnobotánica Cuantitativa en R](https://geobota.github.io/xii-ccb-etnobotanica/)"
 bibliography: references.bib
@@ -316,7 +317,7 @@ Probemos la función `seq()` que crea secuencias regulares de números.
  [1]  1  2  3  4  5  6  7  8  9 10
 ```
 
-A menudo omitimos los nombres de los primeros varios argumentos en las llamadas a funciones, por lo que podemos reescribir esto de la siguiente manera:
+A menudo omitimos los nombres de los primeros argumentos en las llamadas a funciones, por lo que podemos reescribir esto de la siguiente manera:
 
 ``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
 > seq(1, 10)
@@ -383,7 +384,7 @@ En RStudio hay que activarlo yendo a la opción `code` de las opciones globales.
 
 Los scripts son archivos que contienen código en lenguaje R, organizado de manera secuencial para realizar operaciones específicas, análisis de datos, o cualquier tarea que se pueda automatizar.
 
-``` {.r filename="script.r" code-line-numbers="true" style="font-size: 150%"}
+``` {.r filename="script.r" code-line-numbers="true" style="font-size: 100%"}
 # Instalar paquetes
 install.packages(
   c(
@@ -415,11 +416,15 @@ fig_pinguinos
 
 ## Que alguien llame a alguien
 
-Muchas veces necesitaremos ayuda o aclarar algo sobre algún paquete o función, tenemos varias alternativas de buscar ayuda.
+Antes de pedir ayuda a los demás, suele ser buena idea que intentes ayudarte a ti mismo.
 
-``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
+### Dentro de R
 
-```
+La función `help` o el operador `?` proporcionan acceso a documentación de las funciones, conjuntos de datos y otros objetos de R. Por ejemplo: `help(lm)` o `help("lm")`, o `?lm` o `?"lm"`. Si el paquete de la función no está cargado se tendría que usar `help(rlm, package="MASS")`. Para acceder a la documentación de un paquete se ha usar `help(package="MASS")`.
+
+Algunos paquetes incluyen viñetas o demos. Pueden consultarse usando: `browseVignettes` y `vignette` muestra las viñetas de los paquetes instalados. `browseVignettes(package="package-name")` muestra las viñetas del paquete buscado. `vignette("vignette-name")` muestra la viñeta buscada. `demo` muestra los demo de los paquetes instalados. `demo(package="package-name")` muestra los demo del paquete buscado. `demo("demo-name")` inicia el demo buscado.
+
+### Fuera de R
 
 # `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
 

@@ -1,5 +1,5 @@
 ---
-title: "Introducción a R y RStudio"
+title: "Introducción a R"
 subtitle: "XII Congreso Colombiano de Botánica"
 author:
   - name: "Álex Espinosa Correa"
@@ -21,7 +21,7 @@ format:
     controls: true
     touch: false
     # chalkboard: true
-    code-block-height: 800px
+    code-block-height: 850px
     logo: "https://github.com/geobota/geobota.github.io/blob/main/images/xii-ccb/xii-ccb-logo.png?raw=true"
     footer: "[Etnobotánica Cuantitativa en R](https://geobota.github.io/xii-ccb-etnobotanica/)"
 bibliography: references.bib
@@ -39,6 +39,7 @@ if (!require("ggthemes")) install.packages("ggthemes"); library("ggthemes")
 if (!require("flextable")) install.packages("flextable"); library("flextable")
 if (!require("sysfonts")) install.packages("sysfonts"); library("sysfonts")
 if (!require("showtext")) install.packages("showtext"); library("showtext")
+if (!require("countdown")) install.packages("countdown"); library("countdown")
 
 sysfonts::font_add_google(
   name = "Atkinson Hyperlegible",
@@ -47,12 +48,37 @@ sysfonts::font_add_google(
 
 showtext::showtext_auto()
 
-ggplot2::theme_set(
-  ggplot2::theme_classic(
-    # base_size = 18,
-    base_family = "atkinson"
+# ggplot2::theme_set(
+#   ggplot2::theme_classic(
+#     # base_size = 18,
+#     base_family = "atkinson"
+#   )
+# )
+```
+
+```{r}
+#| label: countdown
+#| echo: false
+#| 
+countdown_timer <- function(
+    minutes = 1, 
+    play_sound = TRUE, 
+    font_size = "2em", 
+    ...
+) {
+  countdown::countdown(
+    minutes = minutes,
+    play_sound = play_sound,
+    color_border              = "#white",
+    color_text                = "white",
+    color_running_background  = "#009E73",
+    color_running_text        = "white",
+    color_finished_background = "#D55E00",
+    color_finished_text       = "white",
+    font_size = font_size,
+    ...
   )
-)
+}
 ```
 
 ## Proposotio 1
@@ -86,6 +112,9 @@ palmerpenguins::penguins |>
     y = "Masa corporal (g)",
     color = "Especies",
     shape = "Especies"
+  ) + 
+  ggplot2::theme_classic(
+    base_family = "atkinson"
   ) + 
   ggthemes::scale_color_colorblind()
 ```
@@ -186,7 +215,7 @@ palmerpenguins::penguins |>
 
 ## Flujo de trabajo en ciencias de datos
 
-![En este modelo, todo comienza con la importación y limpieza de los datos. Seguido de un ciclo iterativo de transformación, visualización y modelado. Finalmente, termina con comunicar. Tomado de @wickham2023a.](images/data-science.png){data-science-1 fig-align="center" width="600"}
+![En este modelo, todo comienza con la importación y limpieza de los datos. Seguido de un ciclo iterativo de transformación, visualización y modelado. Finalmente, termina con comunicar. Tomado de @wickham2023a.](images/data-science.png){#data-science-1 fig-align="center" width="600"}
 
 ## Programar es como llevar un buen matrimonio
 
@@ -413,7 +442,7 @@ En RStudio hay que activarlo yendo a la opción `code` de las opciones globales.
 
 Los scripts son archivos que contienen código en lenguaje R, organizado de manera secuencial para realizar operaciones específicas, análisis de datos, o cualquier tarea que se pueda automatizar.
 
-``` {.r filename="script.r" code-line-numbers="true" style="font-size: 100%"}
+``` {.r filename="script.r" code-line-numbers="true"}
 # Instalar paquetes
 install.packages(
   c(
@@ -464,7 +493,7 @@ La función `help` o el operador `?` proporcionan acceso a documentación de las
 :::
 
 ::: {.column width="50%"}
-Siempre es buena idea hacer un [reprex]() (minimal reproducible example). Un buen reprex facilita que otras personas puedan ayudarlo y, a menudo, usted mismo descubrirá el problema durante el proceso. Hacer un reprex consiste en:
+Siempre es buena idea hacer un [reprex](https://reprex.tidyverse.org) (minimal reproducible example). Un buen reprex facilita que otras personas puedan ayudarlo y, a menudo, usted mismo descubrirá el problema durante el proceso. Hacer un reprex consiste en:
 
 -   Hacer que tu código sea reproducible, usando `reprex`
 -   Hacerlo mínimo eliminando todo lo que no esté relacionado con el problema.
@@ -479,6 +508,11 @@ Siempre es buena idea hacer un [reprex]() (minimal reproducible example). Un bue
 
 <br>
 <br>
+
+```{R}
+#| echo: false
+countdown_timer(1)
+```
 
 ## {background-color="black" background-image="images/tidyverse.png" transition="slide-in"}
 
@@ -604,12 +638,11 @@ Utilice `?palmerpenguins::penguins` o `?penguins` para saber más sobre los dato
 
 ::: columns
 ::: {.column width="60%"}
-Sistema para la creación de gráficos. Se basa en la gramática de gráficos[^1], permitiendo construir gráficos de manera declarativa mediante capas de componentes, como datos, escalas, geoms (formas geométricas), facetas y temas.
+Sistema para la creación de gráficos. Se basa en la gramática de gráficos (marco teórico desarrollada por Leland Wilkinson para construir gráficos de manera sistemática y coherente), permitiendo construir gráficos de manera declarativa mediante capas de componentes, como datos, escalas, geoms (formas geométricas), facetas y temas.
 :::
 
 ::: {.column width="40%"}
-![](images/ggplot2.png){fig-align="center" width="300"}
-
+![](images/ggplot2.png){fig-align="center" width="250"}
 :::
 :::
 
@@ -623,7 +656,621 @@ Sistema para la creación de gráficos. Se basa en la gramática de gráficos[^1
 :::
 :::
 
+## `ggplot2` --- Data
 
-[^1]: Marco teórico para construir gráficos de manera sistemática y coherente. Fue desarrollada por Leland Wilkinson.
+Para comenzar un gráfico, primero definimos un objeto gráfico usando la función `ggplot2::ggplot()`. El primer argumento de `ggplot2::ggplot()` son los datos que se utilizará en el gráfico:
+
+```{r}
+#| echo: true
+#| fig-align: center
+#| output-location: column-fragment
+
+ggplot2::ggplot(
+  data = palmerpenguins::penguins
+)
+```
+
+## `ggplot2` --- Mapping
+
+`mapping` define cómo las variables de los datos se asignan a propiedades visuales (**aesthetics**) del gráfico. Se definen con `ggplot2::aes()`. `x` e `y` especifican qué variables se asignarán a los ejes x e y.
+
+```{r}
+#| echo: true
+#| fig-align: center
+#| output-location: column-fragment
+
+ggplot2::ggplot(
+  data = palmerpenguins::penguins,
+  mapping = ggplot2::aes(
+    x = flipper_length_mm,
+    y = body_mass_g
+  )
+)
+```
+
+## `ggplot2` --- Layers: geometry
+
+`geometry` es el objeto geométrico que se utiliza para representar datos: puntos, líneas o rectángulos. Se definen con `geom_*()`. A menudo se describen los gráficos por el tipo de geom que utilizan[^1].
+
+[^1]: `geom_bar()` = gráficos de barras, `geom_line()` = gráficos de líneas, `geom_boxplot()` = diagramas de caja, `geom_point()` = gráficos de dispersión, entre otros.
+
+```{r}
+#| echo: true
+#| fig-align: center
+#| output-location: column-fragment
+
+ggplot2::ggplot(
+  data = palmerpenguins::penguins,
+  mapping = ggplot2::aes(
+    x = flipper_length_mm,
+    y = body_mass_g
+  )
+) +
+  ggplot2::geom_point()
+```
+
+## Agregando aesthetics
+
+Podemos agregar más propiedades visuales (**aesthetics**). `ggplot2` asigna un valor único (como color) a cada nivel de una variable categórica y añade una leyenda que lo explica. Este proceso se llama **scaling**.
+
+```{r}
+#| echo: true
+#| fig-align: center
+#| output-location: column-fragment
+
+ggplot2::ggplot(
+  data = palmerpenguins::penguins,
+  mapping = ggplot2::aes(
+    x = flipper_length_mm,
+    y = body_mass_g,
+    color = species
+  )
+) +
+  ggplot2::geom_point()
+```
+
+## Agregando layers
+
+Podemos hacer los gráficos más informativos agregando más layers, ya sean objetos geométricos (`geom_*`), transformaciones estadísticas (`stats_*`) o ajustes de posición (`position_*`).
+
+```{r}
+#| echo: true
+#| fig-align: center
+#| output-location: column-fragment
+
+ggplot2::ggplot(
+  data = palmerpenguins::penguins,
+  mapping = ggplot2::aes(
+    x = flipper_length_mm,
+    y = body_mass_g,
+    color = species
+  )
+) +
+  ggplot2::geom_point() + 
+  ggplot2::geom_smooth(
+    method = "lm"
+  )
+```
+
+## Asignación global o local
+
+Los aesthetics pueden agregarse de forma global para todo los `geom` del gráfico o pueden asignarse de forma local para un `geom` especifico. 
+
+```{r}
+#| echo: true
+#| fig-align: center
+#| output-location: column-fragment
+
+ggplot2::ggplot(
+  data = palmerpenguins::penguins,
+  mapping = ggplot2::aes(
+    x = flipper_length_mm,
+    y = body_mass_g
+  )
+) +
+  ggplot2::geom_point(
+    mapping = ggplot2::aes(
+      color = species
+    )
+  ) + 
+  ggplot2::geom_smooth(
+    method = "lm"
+  )
+```
+
+## Accesibilidad
+
+Generalmente no es una buena idea representar información usando sólo colores, por lo cual podemos combinar con formas o usando paletas de colores apta para personas con limitaciones visuales.
+
+```{r}
+#| echo: true
+#| fig-align: center
+#| output-location: column-fragment
+
+ggplot2::ggplot(
+  data = palmerpenguins::penguins,
+  mapping = ggplot2::aes(
+    x = flipper_length_mm,
+    y = body_mass_g
+  )
+) +
+  ggplot2::geom_point(
+    mapping = ggplot2::aes(
+      color = species,
+      shape = species
+    )
+  ) + 
+  ggplot2::geom_smooth(
+    method = "lm"
+  ) + 
+  ggthemes::scale_color_colorblind()
+```
+
+## `ggplot2` --- Labs
+
+`ggplot2::labs()` permite agregar o mejorar las etiquetas agregándolas en una nueva layer. Algunos de los argumentos de labs() pueden explicarse por sí solos, otros  coinciden con los **aesthetics**.
+
+```{r}
+#| echo: true
+#| fig-align: center
+#| output-location: column-fragment
+
+ggplot2::ggplot(
+  data = palmerpenguins::penguins,
+  mapping = ggplot2::aes(
+    x = flipper_length_mm,
+    y = body_mass_g
+  )
+) +
+  ggplot2::geom_point(
+    mapping = ggplot2::aes(
+      color = species,
+      shape = species
+    )
+  ) + 
+  ggplot2::geom_smooth(
+    method = "lm"
+  ) + 
+  ggplot2::labs(
+    title = "Masa corporal y longitud de la aleta",
+    subtitle = "Dimensiones para los Pingüinos Adelie (Adelia), Chinstrap (Barbijo) y Gentoo (Papúa)",
+    x = "Longitud de la aleta (mm)",
+    y = "Masa corporal (g)",
+    color = "Especies",
+    shape = "Especies"
+  ) + 
+  ggthemes::scale_color_colorblind()
+```
+
+## `ggplot2` --- Themes
+
+`theme` controla casi todos los elementos visuales del gráfico que no están controlados por los datos y es importante para el aspecto del gráfico. Puede utilizarse muchas de las funciones de `theme_*( )`.
+
+```{r}
+#| echo: true
+#| fig-align: center
+#| output-location: column-fragment
+
+ggplot2::ggplot(
+  data = palmerpenguins::penguins,
+  mapping = ggplot2::aes(
+    x = flipper_length_mm,
+    y = body_mass_g
+  )
+) +
+  ggplot2::geom_point(
+    mapping = ggplot2::aes(
+      color = species,
+      shape = species
+    )
+  ) + 
+  ggplot2::geom_smooth(
+    method = "lm"
+  ) + 
+  ggplot2::labs(
+    title = "Masa corporal y longitud de la aleta",
+    subtitle = "Dimensiones para los Pingüinos Adelie (Adelia), Chinstrap (Barbijo) y Gentoo (Papúa)",
+    x = "Longitud de la aleta (mm)",
+    y = "Masa corporal (g)",
+    color = "Especies",
+    shape = "Especies"
+  ) + 
+  ggplot2::theme_minimal() +
+  ggthemes::scale_color_colorblind()
+```
+
+## Invocando a `ggplot2` {.r}
+
+Mientras se aprende, es bueno ser explicito con los argumentos y los valores.
+
+```{r}
+#| echo: true
+#| eval: false
+
+ggplot2::ggplot(
+  data = palmerpenguins::penguins,
+  mapping = ggplot2::aes(
+    x = flipper_length_mm,
+    y = body_mass_g
+  )
+) +
+  ggplot2::geom_point()
+```
+
+::: columns
+::: {.column width="50%"}
+Es común que se omita el nombre de los argumentos o que se adopten estilos o formas de escribir código.
+
+```{r}
+#| echo: true
+#| eval: false
+
+ggplot2::ggplot(
+  palmerpenguins::penguins,
+  ggplot2::aes(
+    x = flipper_length_mm,
+    y = body_mass_g
+  )
+) +
+  ggplot2::geom_point()
+```
+:::
+
+::: {.column width="50%"}
+Lo anterior, en un flujo de trabajo usando `|>` se vería así:
+
+```{r}
+#| echo: true
+#| eval: false
+
+palmerpenguins::penguins |> 
+  ggplot2::ggplot(
+    ggplot2::aes(
+      x = flipper_length_mm,
+      y = body_mass_g)
+  ) +
+  ggplot2::geom_point()
+```
+:::
+:::
+
+::: footer
+Uno de los estilos recomendables es [la guía de estilo del tidyverse](https://style.tidyverse.org)
+:::
+
+# `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
+
+-   Ejemplo de actividad
+-   Ejemplo de actividad
+-   Ejemplo de actividad
+
+<br>
+<br>
+
+```{R}
+#| echo: false
+countdown_timer(1)
+```
+
+# Visualizando distribuciones
+
+## Una variable categórica
+
+::: columns
+::: {.column .fragment width="50%"}
+Una variable es categórica si solo puede tomar uno de un pequeño conjunto de valores. Para examinar la distribución de una variable categórica, se puede utilizar un gráfico de barras. La altura de las barras muestra cuántas observaciones ocurrieron con cada valor de x.
+
+```{r}
+#| echo: true
+#| fig-align: center
+#| output-location: fragment 
+
+palmerpenguins::penguins |> 
+  ggplot2::ggplot(
+    ggplot2::aes(
+      x = species
+    )
+  ) +
+  ggplot2::geom_bar()
+```
+:::
+
+::: {.column .fragment width="50%"}
+En gráficos de barras de variables categóricas con niveles no ordenados, a menudo es preferible reordenar las barras según sus frecuencias. Para hacerlo, es necesario transformar la variable en un factor y luego reordenar los niveles de ese factor. Lo podemos hacer con `forcats::fct_infreq()`.
+
+```{r}
+#| echo: true
+#| fig-align: center
+#| output-location: fragment 
+
+palmerpenguins::penguins |> 
+  ggplot2::ggplot(
+    ggplot2::aes(
+      x = forcats::fct_infreq(species)
+    )
+  ) +
+  ggplot2::geom_bar()
+```
+:::
+:::
+
+## Una variable numérica
+
+Una variable es numérica (o cuantitativa) si puede tomar una amplia gama de valores numéricos y tiene sentido sumarlos, restarlos o calcular promedios con esos valores. Las variables numéricas pueden ser continuas o discretas. Una visualización comúnmente utilizada para distribuciones de variables continuas es un histograma.
+
+```{r}
+#| echo: true
+#| fig-align: center
+#| output-location: column-fragment
+
+palmerpenguins::penguins |> 
+  ggplot2::ggplot(
+    ggplot2::aes(
+      x = body_mass_g
+    )
+  ) +
+  ggplot2::geom_histogram(
+    binwidth = 200
+  )
+```
+
+## Una variable numérica
+
+Un gráfico de densidad es una versión suavizada de un histograma y una alternativa práctica, especialmente para datos continuos que provienen de una distribución subyacente suave. Muestra menos detalles que un histograma, pero puede facilitar la comprensión rápida de la forma de la distribución, especialmente con respecto a la moda y la asimetría.
+
+```{r}
+#| echo: true
+#| fig-align: center
+#| output-location: column-fragment
+
+palmerpenguins::penguins |> 
+  ggplot2::ggplot(
+    ggplot2::aes(
+      x = body_mass_g
+    )
+  ) +
+  ggplot2::geom_density()
+```
+
+# Visualizando relaciones
+
+## Una variable numérica y categórica
+
+Para visualizar la relación entre una variable numérica y una variable categórica, podemos usar diagramas de caja (box plots). Un diagrama de caja es un tipo de representación visual para medidas de posición (percentiles) que describen una distribución. También es útil para identificar posibles valores atípicos.
+
+```{r}
+#| echo: true
+#| fig-align: center
+#| output-location: column-fragment
+
+palmerpenguins::penguins |> 
+  ggplot2::ggplot(
+    ggplot2::aes(
+      x = species,
+      y = body_mass_g
+    )
+  ) +
+  ggplot2::geom_boxplot()
+```
+
+## Una variable numérica y categórica
+
+Alternativamente, podemos hacer gráficos de densidad con `ggplot2::geom_density()`.
+
+::: columns
+::: {.column .fragment width="50%"}
+```{r}
+#| echo: true
+#| fig-align: center
+#| output-location: fragment 
+
+palmerpenguins::penguins |> 
+  ggplot2::ggplot(
+    ggplot2::aes(
+      x = body_mass_g,
+      color = species
+    )
+  ) +
+  ggplot2::geom_density(
+    linewidth = 0.75
+  )
+```
+:::
+
+::: {.column .fragment width="50%"}
+```{r}
+#| echo: true
+#| fig-align: center
+#| output-location: fragment 
+
+palmerpenguins::penguins |> 
+  ggplot2::ggplot(
+    ggplot2::aes(
+      x = body_mass_g,
+      color = species,
+      fill = species
+    )
+  ) +
+  ggplot2::geom_density(
+    alpha = 0.5
+  )
+```
+:::
+:::
+
+## Dos variables categóricas
+
+Podemos utilizar gráficos de barras apiladas para visualizar la relación entre dos variables categóricas.
+
+::: columns
+::: {.column .fragment width="50%"}
+```{r}
+#| echo: true
+#| fig-align: center
+#| output-location: fragment 
+
+palmerpenguins::penguins |> 
+  ggplot2::ggplot(
+    ggplot2::aes(
+      x = island,
+      fill = species
+    )
+  ) +
+  ggplot2::geom_bar()
+```
+:::
+
+::: {.column .fragment width="50%"}
+```{r}
+#| echo: true
+#| fig-align: center
+#| output-location: fragment 
+
+palmerpenguins::penguins |> 
+  ggplot2::ggplot(
+    ggplot2::aes(
+      x = island,
+      fill = species
+    )
+  ) +
+  ggplot2::geom_bar(
+    position = "fill"
+  )
+```
+:::
+:::
+
+## Dos variables numéricas
+Un diagrama de dispersión es probablemente el gráfico más utilizado para visualizar la relación entre dos variables numéricas.
+
+```{r}
+#| echo: true
+#| fig-align: center
+#| output-location: column-fragment
+
+palmerpenguins::penguins |> 
+  ggplot2::ggplot(
+    ggplot2::aes(
+      x = flipper_length_mm,
+      y = body_mass_g
+    )
+  ) +
+  ggplot2::geom_point(
+    ggplot2::aes(
+      color = species,
+      shape = island
+    )
+  )
+```
+
+## Tres o más variables
+
+En `ggplot2` podemos incorporar más variables en un gráfico asignándolas a estéticas adicionales. Agregar demasiadas asignaciones estéticas a un gráfico lo hace confuso y difícil de interpretar. Una forma particularmente útil para variables categóricas es dividir el gráfico en **facets**, subgráficos que muestran cada uno un subconjunto de los datos.
+
+```{r}
+#| echo: true
+#| fig-align: center
+#| output-location: column-fragment
+
+palmerpenguins::penguins |> 
+  ggplot2::ggplot(
+    ggplot2::aes(
+      x = flipper_length_mm,
+      y = body_mass_g
+    )
+  ) +
+  ggplot2::geom_point(
+    ggplot2::aes(
+      color = species,
+      shape = species
+    )
+  ) + 
+  ggplot2::facet_wrap(
+    ~island
+  )
+```
+
+## Problemas comunes con `ggplot2`
+
+Un problema común al crear gráficos con ggplot2 es colocar el `+` en el lugar incorrecto: debe ir al final de la línea, no al inicio.
+
+::: columns
+::: {.column width="50%"}
+### Forma incorrecta
+
+```{r}
+#| eval: false
+#| echo: true
+
+ggplot2::ggplot(
+  data = palmerpenguins::penguins
+) 
++ ggplot2::geom_point(
+  mapping = ggplot2::aes(
+    x = flipper_length_mm,
+    y = body_mass_g
+  )
+)
+```
+:::
+
+::: {.column width="50%"}
+### Forma correcta: 
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: center
+
+ggplot2::ggplot(
+  data = palmerpenguins::penguins
+) + 
+  ggplot2::geom_point(
+    mapping = ggplot2::aes(
+      x = flipper_length_mm,
+      y = body_mass_g
+    )
+  )
+```
+:::
+:::
+
+## Resumen de `ggplot2`
+
+```{r}
+#| eval: false
+#| echo: true
+
+DATA |> 
+  ggplot2::ggplot(
+    ggplot2::aes(MAPPINGS)
+  ) + 
+  ggplot2::geom_*()
+```
+
+\
+
+```{r}
+#| eval: false
+#| echo: true
+
+DATA |> 
+  ggplot2::ggplot() + 
+  ggplot2::geom_*(ggplot2::aes(MAPPINGS))
+```
+
+# `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
+
+-   Ejemplo de actividad
+-   Ejemplo de actividad
+-   Ejemplo de actividad
+
+<br>
+<br>
+
+```{R}
+#| echo: false
+countdown_timer(1)
+```
 
 ## Referencias

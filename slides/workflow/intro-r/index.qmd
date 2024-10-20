@@ -188,20 +188,6 @@ palmerpenguins::penguins |>
 
 ![En este modelo, todo comienza con la importación y limpieza de los datos. Seguido de un ciclo iterativo de transformación, visualización y modelado. Finalmente, termina con comunicar. Tomado de @wickham2023a.](images/data-science.png){data-science-1 fig-align="center" width="600"}
 
-## Datos ordenados
-
-Hay tres reglas interrelacionadas que hacen que un conjunto de datos esté ordenado:
-
-1.  Cada variable es una columna; cada columna es una variable.
-2.  Cada observación es una fila; cada fila es una observación.
-3.  Cada valor es una celda; cada celda es un único valor.
-
-![Las siguientes tres reglas hacen que un conjunto de datos esté ordenado: las variables son columnas, las observaciones son filas y los valores son celdas. Tomado de @wickham2023a.](images/tidy-1.svg){#tidydata fig-align="center"}
-
-::: footer
-Artículo original @wickham2014
-:::
-
 ## Programar es como llevar un buen matrimonio
 
 ::: fragment
@@ -216,7 +202,7 @@ Artículo original @wickham2014
 
 Ejecutar código en la consola de R es muy sencillo. Sólo tienes que escribirlo al lado de símbolo de mayor que `>` y presionar `enter` para ejecutarlo. En la consola de R, el signo `>` se conoce como **prompt**, mientras que el código que escribes se llama un comando.
 
-``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
+``` {.r filename="Console" code-line-numbers="false"}
 > 4 + 2
 [1] 6
 > 4 * 2
@@ -235,14 +221,14 @@ Los símbolos `+`, suma; `-`, resta; `*`, multiplicación; `/`, división; `**` 
 
 El operador dos puntos `:` devuelve todos los enteros entre dos enteros. Es una forma fácil de crear una secuencia de números.
 
-``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
+``` {.r filename="Console" code-line-numbers="false"}
 > 4:2
 [1] 4 3 2
 ```
 
 Los operadores de comparación son: `==` igual `!=` no igual, `>` mayor que, `<` menor que, `>=` mayor o igual que, `<=`menor o igual que.
 
-``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
+``` {.r filename="Console" code-line-numbers="false"}
 > 4 == 2
 [1] FALSE
 > 4 != 2
@@ -251,7 +237,7 @@ Los operadores de comparación son: `==` igual `!=` no igual, `>` mayor que, `<`
 
 Los operadores lógicos son: `|` OR, `&` AND, `!` NOT.
 
-``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
+``` {.r filename="Console" code-line-numbers="false"}
 > TRUE | FALSE
 [1] TRUE
 > TRUE & FALSE
@@ -264,7 +250,7 @@ Los operadores lógicos son: `|` OR, `&` AND, `!` NOT.
 
 Las entidades que R crea y manipula se denominan objetos. Un objeto es un nombre que puedes usar para llamar a los datos almacenados. Los objetos se crean utilizando el operador de asignación `<-`. Cuando se crea un objeto este aparecerá en el *environment pane* de RStudio. El atajo de teclado para `<-` es {{< kbd Alt-- >}}
 
-``` {.r filename="console" code-line-numbers="false" style="font-size: 150%"}
+``` {.r filename="console" code-line-numbers="false"}
 > x <- 4 * 2
 ```
 
@@ -274,7 +260,7 @@ En R los nombres se pueden nombrar de cualquier manera, con dos excepciones. Pri
 
 El valor de `x` no se imprime en consola, sólo se almacena. Si se quiere ver el valor, hay que llamarlo.
 
-``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
+``` {.r filename="Console" code-line-numbers="false"}
 > x
 [1] 8
 ```
@@ -283,7 +269,7 @@ El valor de `x` no se imprime en consola, sólo se almacena. Si se quiere ver el
 
 Se pueden **c**ombinar múltiples elementos en un vector usando `c()`
 
-``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
+``` {.r filename="Console" code-line-numbers="false"}
 # crear vector de números primos
 numeros_primos <- c(2, 3, 5, 7, 11, 13)
 ```
@@ -292,7 +278,7 @@ numeros_primos <- c(2, 3, 5, 7, 11, 13)
 
 Así mismo, se pueden realizar operación con los vectores.
 
-``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
+``` {.r filename="Console" code-line-numbers="false"}
 # Multiplicar vector de números primos por dos.
 > numeros_primos * 2
 [1]  4  6 10 14 22 26
@@ -300,26 +286,69 @@ Así mismo, se pueden realizar operación con los vectores.
 
 R ignora cualquier texto después de `#`. Esto permite escribir comentarios, texto que es ignorado por R pero leído por otras personas. Usa comentarios para explicar el porqué de tu código, no el cómo ni el qué.
 
+## Tipos de datos y estructura de datos
+
+::: columns
+::: {.column width="50%"}
+### Tipos de datos
+
+En R, hay 5 tipos de datos principales:
+
+-   `numeric`: 
+    -   `double`: números reales (con decimales)
+    -   `integer`: números enteros
+-   `character`: cadenas de texto (a.k.a. *strings*)
+-   `complex`: números complejos. 
+-   `logical`: `TRUE`, `FALSE`, `NA`. (a.k.a. *booleanos*)
+
+**Para identificar el tipo de datos:**
+
+1. `class()`: dvuelve la clase de un objeto.
+2. `typeof()`: muestra el tipo de dato subyacente.
+3. `mode()`: informa el modo de almacenamiento.
+4. `is.numeric()`, `is.character()`, `is.logical()`, etc.: verifica si el dato es de un tipo específico.
+:::
+
+::: {.column width="50%"}
+### Estructura de datos
+
+-   Vectores: unidimensionales y homogéneos.
+-   Matrices: bidimensionales y homogéneas.
+-   Arrays: multidimensionales y homogéneos.
+-   Data frames: bidimensionales y heterogéneos.
+-   Listas: estructuras heterogéneas y unidimensionales.
+-   Factores: datos categorizados
+
+**Para identificar la estructura de datos:**
+
+1. `str()`: muestra la estructura compacta del objeto.
+2. `dim()`: devuelve las dimensiones (filas y columnas).
+3. `length()`: número total de elementos.
+4. `attributes()`: verifica los atributos del objeto.
+5. `summary()`: resumen estadístico o descriptivo del objeto.
+:::
+:::
+
 ## Funciones
 
 Las funciones son bloques de código que realizan una tarea específica y que pueden ser invocadas (llamadas) desde cualquier parte. 
 
 En R las funciones se han de llamar así:
 
-``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
+``` {.r filename="Console" code-line-numbers="false"}
 nombre_funcion(argumento_1 = valor_1, argumento_2 = valor_2, ...)
 ```
 
 Probemos la función `seq()` que crea secuencias regulares de números.
 
-``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
+``` {.r filename="Console" code-line-numbers="false"}
 > seq(from = 1, to = 10)
  [1]  1  2  3  4  5  6  7  8  9 10
 ```
 
 A menudo omitimos los nombres de los primeros argumentos en las llamadas a funciones, por lo que podemos reescribir esto de la siguiente manera:
 
-``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
+``` {.r filename="Console" code-line-numbers="false"}
 > seq(1, 10)
  [1]  1  2  3  4  5  6  7  8  9 10
 ```
@@ -334,19 +363,19 @@ Los paquetes son las unidades fundamentales del código reproducible en R. Inclu
 
 En R (casi) todos los paquetes se pueden instalar utilizando la función `install.packages`.
 
-``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
+``` {.r filename="Console" code-line-numbers="false"}
 install.packages("ethnobotanyR")
 ```
 
 Para poder usar los paquetes se han de cargar (llamar) usando la función `library()`.
 
-``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
+``` {.r filename="Console" code-line-numbers="false"}
 library(ethnobotanyR)
 ```
 
 Funciones de diferentes paquetes pueden tener el mismo nombre. Por lo cual es recomendable ser explicito a la hora de llamarlas, para lo cual se utilizan `::` entre el nombre del paquete y el nombre de la función.
 
-``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
+``` {.r filename="Console" code-line-numbers="false"}
 nombre_paquete::nombre_funcion()
 ```
 
@@ -357,20 +386,20 @@ nombre_paquete::nombre_funcion()
 R 4.1.0 introdujo el operador `|>` (pipe). Este operador toma la salida de una función y la pasa a otra función como argumento. Enlaza todos los pasos del análisis de datos haciendo que el código sea más eficiente y legible. 
 
 
-``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
+``` {.r filename="Console" code-line-numbers="false"}
 > media_numeros_primos <- mean(c(2, 3, 5, 7, 11, 13))
 > print(media_numeros_primos)
 [1] 6.833333
 ```
 
-``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
+``` {.r filename="Console" code-line-numbers="false"}
 > numeros_primos <- c(2, 3, 5, 7, 11, 13)
 > media_numeros_primos <- mean(numeros_primos)
 > print(media_numeros_primos)
 [1] 6.833333
 ```
 
-``` {.r filename="Console" code-line-numbers="false" style="font-size: 150%"}
+``` {.r filename="Console" code-line-numbers="false"}
 > media_numeros_primos <- 
 +   c(2, 3, 5, 7, 11, 13) |> 
 +   mean() |> 
@@ -420,11 +449,27 @@ Antes de pedir ayuda a los demás, suele ser buena idea que intentes ayudarte a 
 
 ### Dentro de R
 
-La función `help` o el operador `?` proporcionan acceso a documentación de las funciones, conjuntos de datos y otros objetos de R. Por ejemplo: `help(lm)` o `help("lm")`, o `?lm` o `?"lm"`. Si el paquete de la función no está cargado se tendría que usar `help(rlm, package="MASS")`. Para acceder a la documentación de un paquete se ha usar `help(package="MASS")`.
+La función `help` o el operador `?` proporcionan acceso a documentación de las funciones, conjuntos de datos y otros objetos de R. Por ejemplo: `help(lm)` o `help("lm")`, o `?lm` o `?"lm"`. Si el paquete de la función no está cargado se tendría que usar `help(rlm, package="MASS")`. Para acceder a la documentación de un paquete se ha usar `help(package="MASS")`. Se puede usar `??` para una palabra o frase en la documentación.
 
-Algunos paquetes incluyen viñetas o demos. Pueden consultarse usando: `browseVignettes` y `vignette` muestra las viñetas de los paquetes instalados. `browseVignettes(package="package-name")` muestra las viñetas del paquete buscado. `vignette("vignette-name")` muestra la viñeta buscada. `demo` muestra los demo de los paquetes instalados. `demo(package="package-name")` muestra los demo del paquete buscado. `demo("demo-name")` inicia el demo buscado.
+<!-- Algunos paquetes incluyen viñetas o demos. Pueden consultarse usando: `browseVignettes` y `vignette` muestra las viñetas de los paquetes instalados. `browseVignettes(package="package-name")` muestra las viñetas del paquete buscado. `vignette("vignette-name")` muestra la viñeta buscada. `demo` muestra los demo de los paquetes instalados. `demo(package="package-name")` muestra los demo del paquete buscado. `demo("demo-name")` inicia el demo buscado. -->
 
 ### Fuera de R
+
+::: columns
+::: {.column width="50%"}
+-   Google is your friend
+-   Stack Overflow
+-   <https://search.r-project.org>
+-   <https://rseek.org>
+:::
+
+::: {.column width="50%"}
+Siempre es buena idea hacer un [reprex]() (minimal reproducible example). Un buen reprex facilita que otras personas puedan ayudarlo y, a menudo, usted mismo descubrirá el problema durante el proceso. Hacer un reprex consiste en:
+
+-   Hacer que tu código sea reproducible, usando `reprex`
+-   Hacerlo mínimo eliminando todo lo que no esté relacionado con el problema.
+:::
+:::
 
 # `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
 
@@ -435,21 +480,19 @@ Algunos paquetes incluyen viñetas o demos. Pueden consultarse usando: `browseVi
 <br>
 <br>
 
-#  {background-color="#009E73" transition="slide-in"}
-
-[¡Bienvenidos al Tidyverse!]{.r-fit-text}
+## {background-color="black" background-image="images/tidyverse.png" transition="slide-in"}
 
 ## Tidyverse
 
 El tidyverse es una colección estructurada de paquetes de R diseñados para la ciencia de datos. Todos los paquetes comparten una filosofía de diseño subyacente, una gramática y estructuras de datos. @wickham2019.
 
-``` {.r filename="console" code-line-numbers="false" style="font-size: 150%"}
+``` {.r filename="console" code-line-numbers="false"}
 install.packages("tidyverse")
 ```
 
 Carguemos el `tidyverse` y observemos la salida.
 
-``` {.r filename="console" code-line-numbers="false" style="font-size: 150%"}
+``` {.r filename="console" code-line-numbers="false"}
 > library(tidyverse)
 ── Attaching core tidyverse packages ─────────────────────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
@@ -465,7 +508,122 @@ Carguemos el `tidyverse` y observemos la salida.
 
 ## Tidyverse y la ciencia de datos
 
-![El Tidyverse tiene multipes paquetes que nos ayudaran durante todo el proceso de analizar los datos. Tomado de @çetinkaya-rundel2023.](images/data-science_tidyverse.png){#fig-data-science-2 fig-align="center"}
+![El Tidyverse tiene multipes paquetes que nos ayudaran durante todo el proceso de analizar los datos. Tomado de @çetinkaya-rundel2023.](images/data-science_tidyverse.png){#data-science-2 fig-align="center"}
 
+## Datos ordenados
+
+Hay tres reglas interrelacionadas que hacen que un conjunto de datos esté ordenado:
+
+1.  Cada variable es una columna; cada columna es una variable.
+2.  Cada observación es una fila; cada fila es una observación.
+3.  Cada valor es una celda; cada celda es un único valor.
+
+![Las siguientes tres reglas hacen que un conjunto de datos esté ordenado: las variables son columnas, las observaciones son filas y los valores son celdas. Tomado de @wickham2023a.](images/tidy-1.svg){#tidydata fig-align="center"}
+
+::: footer
+Artículo original @wickham2014
+:::
+
+## Tibbles
+
+-   **Data frame:** estructura de datos bidimensional de variables (en las columnas) y observaciones (en las filas), puede almacenar diferentes tipos de datos.
+
+```{r}
+#| eval: false
+#| echo: true
+
+iris
+```
+
+```{r}
+#| echo: false
+
+iris |> 
+  dplyr::slice_head(
+    n = 5
+  )
+```
+
+
+-   **Tibble:** versión moderna de un data frame, optimizados para un manejo de datos más intuitivo y legible. Pertenece al `tidyverse`.
+
+::: columns
+::: {.column width="60%"}
+```{r}
+#| eval: false
+#| echo: true
+
+palmerpenguins::penguins
+```
+
+```{r}
+#| echo: false
+
+palmerpenguins::penguins |> 
+  dplyr::slice_head(
+    n = 5
+  )
+```
+:::
+
+::: {.column width="40%"}
+![](images/tibble.png){fig-align="center" width="400"}
+:::
+:::
+
+## Conozcamos los datos
+
+La función `dplyr::glimpse()` es similar a `utils::str()`, pero intenta mostrar la mayor cantidad de datos posible.
+
+```{r}
+#| echo: true
+
+palmerpenguins::penguins |> 
+  dplyr::glimpse()
+```
+
+::: columns
+::: {.column width="60%"}
+Las tres variables de `palmerpenguins::penguins` que usaremos son:
+
+-   `species`: la especie de un pingüino (Adelie, Chinstrap o Gentoo).
+-   `flipper_length_mm`: longitud de la aleta de un pingüino, en milímetros.
+-   `body_mass_g`: masa corporal de un pingüino, en gramos.
+:::
+
+::: {.column width="40%"}
+![](images/culmen_depth.png)
+:::
+:::
+
+::: footer
+Utilice `?palmerpenguins::penguins` o `?penguins` para saber más sobre los datos.
+:::
+
+## `ggplot2`
+
+::: columns
+::: {.column width="60%"}
+Sistema para la creación de gráficos. Se basa en la gramática de gráficos[^1], permitiendo construir gráficos de manera declarativa mediante capas de componentes, como datos, escalas, geoms (formas geométricas), facetas y temas.
+:::
+
+::: {.column width="40%"}
+![](images/ggplot2.png){fig-align="center" width="300"}
+
+:::
+:::
+
+::: columns
+::: {.column width="50%"}
+![`ggplot2` es como los ogros.](images/meme_shrek.jpeg){fig-align="center"}
+:::
+
+::: {.column width="50%"}
+![Los siete componentes que permiten crear un gráfico en `ggplot2`.](images/diagram_ggplot2.png){fig-align="center"}
+:::
+:::
+
+
+[^1]: Marco teórico para construir gráficos de manera sistemática y coherente. Fue desarrollada por Leland Wilkinson.
 
 ## Referencias

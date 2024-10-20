@@ -11,3 +11,8 @@ $presentation-heading-font: "Atkinson Hyperlegible";
 
 $link-color: #0072B2;
 $hover-color: lighten($link-color, 40%);
+
+code.sourceCode {
+  font-size: 150%;
+  /* or try font-size: xx-large; */
+}

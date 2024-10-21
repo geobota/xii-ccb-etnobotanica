@@ -255,7 +255,7 @@ El operador dos puntos `:` devuelve todos los enteros entre dos enteros. Es una 
 [1] 4 3 2
 ```
 
-Los operadores de comparación son: `==` igual `!=` no igual, `>` mayor que, `<` menor que, `>=` mayor o igual que, `<=`menor o igual que.
+Los operadores de comparación son: `==` igual `!=` no igual, `>` mayor que, `<` menor que, `>=` mayor o igual que, `<=` menor o igual que.
 
 ``` {.r filename="Console" code-line-numbers="false"}
 > 4 == 2
@@ -490,6 +490,8 @@ La función `help` o el operador `?` proporcionan acceso a documentación de las
 -   Stack Overflow
 -   <https://search.r-project.org>
 -   <https://rseek.org>
+
+![](images/help-me-help-you.png){fig-align="center"}
 :::
 
 ::: {.column width="50%"}
@@ -607,6 +609,8 @@ palmerpenguins::penguins |>
 
 ## Conozcamos los datos
 
+::: columns
+::: {.column width="60%"}
 La función `dplyr::glimpse()` es similar a `utils::str()`, pero intenta mostrar la mayor cantidad de datos posible.
 
 ```{r}
@@ -616,8 +620,6 @@ palmerpenguins::penguins |>
   dplyr::glimpse()
 ```
 
-::: columns
-::: {.column width="60%"}
 Las tres variables de `palmerpenguins::penguins` que usaremos son:
 
 -   `species`: la especie de un pingüino (Adelie, Chinstrap o Gentoo).
@@ -626,7 +628,13 @@ Las tres variables de `palmerpenguins::penguins` que usaremos son:
 :::
 
 ::: {.column width="40%"}
+::: {layout-ncol=1}
+![](images/lter_penguins.png)
+
 ![](images/culmen_depth.png)
+
+Tomado de @palmerpenguins.
+:::
 :::
 :::
 
@@ -1273,4 +1281,419 @@ DATA |>
 countdown_timer(1)
 ```
 
+# «En el principio era el Verbo»
+
+## Tidyverse y la ciencia de datos
+
+![El Tidyverse tiene multipes paquetes que nos ayudaran durante todo el proceso de analizar los datos. Tomado de @çetinkaya-rundel2023.](images/data-science_tidyverse.png){#data-science-2 fig-align="center"}
+
+## `dplyr`
+
+::: columns
+::: {.column width="50%"}
+`dplyr` es una gramática de transformación de datos que proporciona un conjunto consistente de verbos (funciones) que ayudan a resolver los desafíos de manipulación de datos más comunes. 
+
+![](images/dplyr.png){fig-align="center" width="250"}
+:::
+
+::: {.column width="50%"}
+Todas las funciones tienen estás características en común:
+
+1.    El primer argumento es siempre un data frame.
+2.    Los argumentos siguientes suelen describir las columnas sobre las que se va a operar utilizando los nombres de las variables (sin comillas).
+3.    La salida es siempre un nuevo data frame.
+:::
+:::
+
+Los verbos de `dplyr` están organizados en cuatro grupos basados en lo que operan:
+
+::: columns
+::: {.column width="25%"}
+### Filas
+-   `arrange`
+-   `distinct`
+-   `filter`
+-   `slice_*`
+:::
+
+::: {.column width="25%"}
+### Columnas
+-   `mutate`
+-   `relocate`
+-   `rename`
+-   `select`
+:::
+
+::: {.column width="25%"}
+### Grupos
+-   `count`
+-   `group_by`
+-   `summarise`
+:::
+
+::: {.column width="25%"}
+### Data frames
+-   `*_join`
+:::
+:::
+
+## `dplyr` --- filas: `arrange`
+
+`arrange` Ordena las filas utilizando los valores de las columnas
+
+```{r}
+#| echo: true
+
+palmerpenguins::penguins |> 
+  dplyr::arrange(island)
+```
+
+Para ordenar de mayor a menor se ha de usar `dplyr::desc` dentro de `dplyr::arrange`.
+
+```{r}
+#| echo: true
+
+palmerpenguins::penguins |> 
+  dplyr::arrange(dplyr::desc(island))
+```
+
+## `dplyr` --- filas: `distinct`
+
+`distinct` Mantiene filas distintas/únicas
+
+```{r}
+#| echo: true
+
+palmerpenguins::penguins |> 
+  dplyr::distinct(island)
+```
+
+## `dplyr` --- filas: `filter`
+
+`filter` Mantiene las filas que cumplen una condición
+
+```{r}
+#| echo: true
+
+palmerpenguins::penguins |> 
+  dplyr::filter(island == "Dream")
+```
+
+Hay muchas funciones y operadores que resultan útiles a la hora de construir las expresiones utilizadas para filtrar los datos:
+
+-   Operadores de comparación (`==`, `!=`, `>`, `<`, `>=`, `<=`)
+-   Operadores lógicos (`|`, `&`, `!`)
+-   `base::is.na()`
+-   `dplyr::between()`, `dplyr::near()`
+
+## `dplyr` --- filas: `slice_*`
+
+`slice_*` Subconjunto de filas utilizando sus posiciones
+
+```{r}
+#| echo: true
+
+palmerpenguins::penguins |> 
+  dplyr::slice_min(body_mass_g, n = 5)
+```
+
+Podemos encontrar varias funciones: `slice()`, `slice_head()`, `slice_tail()`, `slice_min()`, `slice_max()`, `slice_sample()`.
+
+## `dplyr` --- filas
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: center
+#| output-location: fragment
+
+palmerpenguins::penguins |>
+  dplyr::filter(
+    species == "Chinstrap"
+  ) |> 
+  dplyr::slice_max(
+    body_mass_g,
+    n = 5
+  ) |> 
+  dplyr::arrange(
+    bill_length_mm
+  ) |> 
+  dplyr::distinct(
+    flipper_length_mm,
+    .keep_all = TRUE
+  )
+```
+
+## `dplyr` --- columnas: `mutate`
+
+`mutate` Crear, modificar y eliminar columnas
+
+```{r}
+#| echo: true
+
+palmerpenguins::penguins |> 
+  dplyr::mutate(
+    volume = (pi * bill_depth_mm * bill_length_mm) / 3,
+    .after = bill_depth_mm
+  )
+```
+
+Hay muchas funciones que pueden ser usadas, `?dplyr::mutate` para ver un listado de ellas.
+
+## `dplyr` --- columnas: `pull`
+
+`pull` Extraer una sola columna
+
+```{r}
+#| echo: true
+
+palmerpenguins::penguins |> 
+  dplyr::pull(species)
+```
+
+
+## `dplyr` --- columnas: `relocate`
+
+`relocate` Cambiar el orden de las columnas
+
+```{r}
+#| echo: true
+
+palmerpenguins::penguins |> 
+  dplyr::relocate(
+    year,
+    sex
+  )
+```
+
+Tiene dos argumentos muy útiles *.before* y *.after*.
+
+
+## `dplyr` --- columnas: `rename`
+
+`rename` Renombrar columnas
+
+```{r}
+#| echo: true
+
+palmerpenguins::penguins |> 
+  dplyr::rename(
+    Pygoscelis = species
+  )
+```
+
+La sintaxis siempre es `nuevo_nombre = viejo_nombre`. `rename_with()` renombra columnas utilizando una función. 
+
+Si se tiene un montón de columnas con nombres inconsistentes y sería complicado corregirlas todas manualmente, consulte `janitor::clean_names()`.
+
+## `dplyr` --- columnas: `select`
+
+`select` Mantener o eliminar columnas utilizando sus nombres y tipos
+
+```{r}
+#| echo: true
+
+palmerpenguins::penguins |> 
+  dplyr::select(
+    species,
+    sex
+  )
+```
+
+Las selecciones Tidyverse implementan un dialecto de R en el que los operadores facilitan la selección de variables: `:` selecciona un rango de variables consecutivas. `!` toma el complemento de un conjunto de variables. `&` y `|` selecciona la intersección o la unión de dos conjuntos de variables. `c()` para combinar selecciones.
+
+Además, puede utilizar ayudantes de selección. `?dplyr::select` para ver el listado completo.
+
+## `dplyr` --- columnas
+
+```{r}
+#| echo: true
+
+palmerpenguins::penguins |> 
+  dplyr::rename(
+    pygoscelis = species
+  ) |> 
+  dplyr::mutate(
+    volume = (pi * bill_depth_mm * bill_length_mm) / 3,
+  ) |> 
+  dplyr::select(
+    pygoscelis,
+    volume,
+    body_mass_g:sex
+  )
+```
+
+## `dplyr` --- grupos: `count`
+
+`count` Contar las observaciones de cada grupo
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+palmerpenguins::penguins |> 
+  dplyr::count(
+    species,
+    island
+  )
+```
+
+Al utilizar `sort = TRUE` como argumento, se mostrará los grupos más grandes en la parte superior.
+
+`add_count()` y `add_tally()` son equivalentes a `count()` y `tally()` pero utilizan `mutate()` en lugar de `summarise()` para añadir una nueva columna con recuentos por grupos.
+
+## `dplyr` --- grupos: `group_by`
+
+`group_by` Agrupar por una o varias variables
+
+```{r}
+#| echo: true
+
+palmerpenguins::penguins |> 
+  dplyr::group_by(
+    species,
+    island
+  )
+```
+
+`group_by` no cambia los datos pero, si observa detenidamente la salida, se dará cuenta de que la salida indica que está «agrupada por» (`Groups: species, island [5]`). Esto significa que las operaciones posteriores funcionarán ahora por grupo. Por lo cual es recomendable usar `dplyr::ungroup` cuando sea necesario.
+
+## `dplyr` --- grupos: `summarise`
+
+`summarise` Resumir cada grupo en una fila
+
+```{r}
+#| echo: true
+
+palmerpenguins::penguins |> 
+  dplyr::group_by(
+    species,
+    island
+  ) |> 
+  dplyr::summarise(
+    n = dplyr::n()
+  )
+```
+
+La operación de agrupamiento más importante. Reduce el data frame para que tenga una sola fila para cada grupo. `summarise()` y `summary()` son sinónimos.
+
+Funciones útiles: centrales (`mean`, `median`), dispersión (`sd`, `IQR`, `mad`), rango (`min`, `max`), posición (`first`, `last`, `nth`), recuento (`n`, `n_distinto`), lógicas (`any`, `all`).
+
+## `dplyr` --- grupos
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+palmerpenguins::penguins |> 
+  dplyr::group_by(
+    species,
+    island,
+    sex
+  ) |> 
+  dplyr::summarise(
+    mean_body_mass_g = base::mean(body_mass_g, na.rm = TRUE),
+    n = dplyr::n()
+  )
+```
+
+## `dplyr` --- data frames
+
+::: columns
+::: {.column width="40%"}
+Las uniones de transformación (mutating joins) agregan nuevas variables a un data frame a partir de las observaciones coincidentes en otra tabla. Hay cuatro uniones de transformación: la unión interior (inner join) y las tres uniones exteriores (outer joins).
+
+Las uniones de filtro (filtering joins) filtran observaciones en un data frame con base en si coinciden o no con una observación de otra tabla.
+
+Las operaciones de conjuntos (set operations) que tratan las observaciones como elementos de un conjunto.
+:::
+
+::: {.column width="60%"}
+![Tomado de @choueiry2024.](images/mutating_joins.png){fig-align="center"}
+:::
+:::
+
+# `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
+
+-   Ejemplo de actividad
+-   Ejemplo de actividad
+-   Ejemplo de actividad
+
+<br>
+<br>
+
+```{R}
+#| echo: false
+countdown_timer(1)
+```
+
+## Tidyverse y la ciencia de datos
+
+![El Tidyverse tiene multipes paquetes que nos ayudaran durante todo el proceso de analizar los datos. Tomado de @çetinkaya-rundel2023.](images/data-science_tidyverse.png){#data-science-2 fig-align="center"}
+
+## Importando los datos
+
+Hay varias maneras de importar los datos. Todo depende del formato en que estos se encuentren, aunque lo ideal es siempre tenerlos en formatos de texto plano: .csv, .tsv, txt.
+
+::: columns
+::: {.column width="50%"}
+### Texto plano
+
+![](images/readr.png){fig-align="center" width="250"}
+
+Hay varias funciones: `read_csv`, `read_tsv`, `read_csv2`, `read_delim`.
+
+```{r}
+#| eval: false
+#| echo: true
+
+reardr::read_csv(
+  "ruta/al/archivo/archivo.csv"
+)
+```
+:::
+
+::: {.column width="50%"}
+### Excel
+
+![](images/readxl.png){fig-align="center" width="250"}
+
+Hay varias funciones: `read_excel`, `read_xls`, `read_xlsx`.
+
+```{r}
+#| eval: false
+#| echo: true
+
+readxl::read_excel(
+  "ruta/al/archivo/archivo.xlsx"
+)
+```
+:::
+:::
+
+## {background-color="black" background-image="images/hay_tabla.jpg" transition="slide-in"}
+
+## Tablas
+
+Hay varios paquetes para realizar tablas en R. Cada uno con enfoques, curvas de aprendizaje y formatos de salida diferentes. Una forma de agruparlos es si producen tablas estáticas o tablas dinámicas.
+
+::: footer
+[2024 Table Contest](https://posit.co/blog/2024-table-contest-winners/)
+:::
+
+# `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
+
+-   Ejemplo de actividad
+-   Ejemplo de actividad
+-   Ejemplo de actividad
+
+<br>
+<br>
+
+```{R}
+#| echo: false
+countdown_timer(1)
+```
+
 ## Referencias
+

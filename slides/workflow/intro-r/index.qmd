@@ -1677,9 +1677,155 @@ readxl::read_excel(
 
 Hay varios paquetes para realizar tablas en R. Cada uno con enfoques, curvas de aprendizaje y formatos de salida diferentes. Una forma de agruparlos es si producen tablas estáticas o tablas dinámicas.
 
+![](images/r-packages-for-table-summary.png){fig-align="center}
+
 ::: footer
 [2024 Table Contest](https://posit.co/blog/2024-table-contest-winners/)
 :::
+
+## Organizando los datos
+
+La idea de una tabla es que sea informativa y legible, por lo cual es recomendable hacer una buena selección de los datos.
+
+```{r}
+#| echo: true
+#| output-location: column-fragment
+
+penguins_resumen <- 
+  palmerpenguins::penguins |> 
+  dplyr::count(
+    species,
+    island,
+    sex
+  ) |> 
+  dplyr::group_by(
+    species,
+    island
+  ) |> 
+  dplyr::mutate(
+    percentage = n / sum(n) * 100
+  ) |> 
+  dplyr::ungroup()
+
+penguins_resumen
+```
+
+## `knitr::kable()`
+
+`kable()` es un generador de tablas muy simple, y es simple por diseño. Sólo genera tablas para datos estrictamente rectangulares. No puede formatear mucho las celdas de la tabla ni combinar celdas. Algunas de las limitaciones de `knitr::kable()` pueden ser subsanadas utilizando el paquete `kableExtra`.
+
+```{r}
+#| echo: true
+#| output-location: column-fragment
+
+penguins_resumen |> 
+  dplyr::mutate(
+    species = base::paste0(
+      "*", species, "*"
+    ),
+    sex = dplyr::case_match(
+      sex,
+      "female" ~ "Hembra",
+      "male" ~ "Macho",
+      .default = sex
+    )
+  ) |> 
+  knitr::kable(
+    col.names = c(
+      "Especie", "Isla", "Sexo", "n", "Porcentaje (%)"
+    ),
+    digits = c(2)
+  )
+```
+
+## `gt`
+
+`gt` permite construir una amplia variedad de tablas útiles con un conjunto cohesivo de partes de tabla.
+
+![](images/gt_parts_of_a_table.png){.r-stretch fig-align="center"}
+
+## `gt`
+
+```{r}
+#| echo: true
+#| output-location: column-fragment
+
+penguins_resumen |> 
+  gt::gt() |>
+  gt::tab_style(
+    style = gt::cell_text(
+      style = "italic"
+    ),
+    locations = gt::cells_body(
+      columns = species,
+    )
+  ) |> 
+  gt::sub_values(
+    value = "female",
+    replacement = "Hembra"
+  ) |> 
+  gt::sub_values(
+    value = "male",
+    replacement = "Macno"
+  ) |>
+  gt::cols_label(
+    species = "Especie", 
+    island = "Isla", 
+    sex = "Sexo", 
+    n = "n", 
+    percentage = "Porcentaje (%)"
+  ) |> 
+  gt::fmt_number(
+    columns = "percentage",
+    decimals = 2
+  ) |> 
+  gt::opt_stylize(style = 1)
+```
+
+## `flextable`
+
+`flextable` proporciona un marco para crear fácilmente tablas para informes y publicaciones. Un objeto `flextable` es una representación data.frame compuesto por tres partes (header, body, footer). El paquete proporciona funciones que permiten controlar estas tres partes y texto, párrafos, celdas,formato de borde de cualquier elemento y valores mostrados.
+
+![](images/flextable_layout.png){fig-align="center"}
+
+## `flextable`
+
+```{r}
+#| echo: true
+#| output-location: column-fragment
+
+penguins_resumen |> 
+  flextable::flextable() |> 
+  flextable::mk_par(
+    j = "species",
+    value = flextable::as_paragraph(flextable::as_i(species)),
+  ) |>
+  flextable::mk_par(
+    i = ~ sex == "female",
+    j = "sex",
+    value = flextable::as_paragraph("Hembra")
+  ) |> 
+  flextable::mk_par(
+    i = ~ sex == "male",
+    j = "sex",
+    value = flextable::as_paragraph("Macho")
+  ) |> 
+  flextable::set_header_labels(
+    species = "Especie",
+    island = "Isla",
+    sex = "Sexo",
+    percentage = "Porcentaje (%)"
+  ) |> 
+  flextable::merge_v(
+    j = c("species", "island")
+  ) |> 
+  flextable::colformat_char(
+    j = "sex",
+    na_str = "NA",
+  ) |> 
+  flextable::theme_apa() |> 
+  flextable::autofit()
+```
 
 # `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
 

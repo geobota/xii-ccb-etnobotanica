@@ -110,8 +110,8 @@ palmerpenguins::penguins |>
     subtitle = "Dimensiones para los Pingüinos Adelie (Adelia), Chinstrap (Barbijo) y Gentoo (Papúa)",
     x = "Longitud de la aleta (mm)",
     y = "Masa corporal (g)",
-    color = "Especies",
-    shape = "Especies"
+    color = "Especie",
+    shape = "Especie"
   ) + 
   ggplot2::theme_classic(
     base_family = "atkinson"
@@ -442,6 +442,8 @@ En RStudio hay que activarlo yendo a la opción `code` de las opciones globales.
 
 Los scripts son archivos que contienen código en lenguaje R, organizado de manera secuencial para realizar operaciones específicas, análisis de datos, o cualquier tarea que se pueda automatizar.
 
+::: columns
+::: {.column width="60%"}
 ``` {.r filename="script.r" code-line-numbers="true"}
 # Instalar paquetes
 install.packages(
@@ -471,6 +473,20 @@ fig_pinguinos <-
 # Muestras el gráfico
 fig_pinguinos
 ```
+:::
+
+::: {.column width="40%"}
+En RStudio hay varias maneras de crear un script y otros archivos.
+
+-   En la opción a **File** -> **New File** -> **New R script**
+-   Usando el atajo de teclado {{< kbd Shift-Ctrl-N >}}
+-   En la opción New File, sobre la esquina superior derecha del Source pane, en este icono ![](images/new-file.png){width="49"}
+-   En la opción New Blank File de la pestaña Files en el Output pane ![](images/new-blank-file.png){width="156"}
+-   Usando la Paleta de comandos {{< kbd Ctrl-Shift-P >}} o **Tools** > **Show Command Palette**
+
+El código de un script se puede correr linea por linea usando {{< kbd Ctrl-Enter >}} o {{< kbd Ctrl-Shift-Enter >}} corre todo el script.
+:::
+:::
 
 ## Que alguien llame a alguien
 
@@ -504,16 +520,16 @@ Siempre es buena idea hacer un [reprex](https://reprex.tidyverse.org) (minimal r
 
 # `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
 
--   Ejemplo de actividad
--   Ejemplo de actividad
--   Ejemplo de actividad
+-   Crear un script dentro de la carpeta `intro-r`
+-   Practicar la sintaxis vista en esta sección
+-   Consultar la ayuda del paquete `palmerpenguins`
 
 <br>
 <br>
 
 ```{R}
 #| echo: false
-countdown_timer(1)
+countdown_timer(5)
 ```
 
 ## {background-color="black" background-image="images/tidyverse.png" transition="slide-in"}
@@ -844,8 +860,8 @@ ggplot2::ggplot(
     subtitle = "Dimensiones para los Pingüinos Adelie (Adelia), Chinstrap (Barbijo) y Gentoo (Papúa)",
     x = "Longitud de la aleta (mm)",
     y = "Masa corporal (g)",
-    color = "Especies",
-    shape = "Especies"
+    color = "Especie",
+    shape = "Especie"
   ) + 
   ggthemes::scale_color_colorblind()
 ```
@@ -948,16 +964,15 @@ Uno de los estilos recomendables es [la guía de estilo del tidyverse](https://s
 
 # `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
 
--   Ejemplo de actividad
--   Ejemplo de actividad
--   Ejemplo de actividad
+-   Abrir el archivo `ggplot.qmd` que se encuentra en la carpeta `intro-r`
+-   Realizar la **Actividad 1**.
 
 <br>
 <br>
 
 ```{R}
 #| echo: false
-countdown_timer(1)
+countdown_timer(10)
 ```
 
 # Visualizando distribuciones
@@ -966,7 +981,7 @@ countdown_timer(1)
 
 ::: columns
 ::: {.column .fragment width="50%"}
-Una variable es categórica si solo puede tomar uno de un pequeño conjunto de valores. Para examinar la distribución de una variable categórica, se puede utilizar un gráfico de barras. La altura de las barras muestra cuántas observaciones ocurrieron con cada valor de x.
+Una variable es categórica si toma uno de varios valores limitados. Para analizar su distribución, se usa un gráfico de barras, donde la altura indica cuántas observaciones tiene cada valor.
 
 ```{r}
 #| echo: true
@@ -984,7 +999,7 @@ palmerpenguins::penguins |>
 :::
 
 ::: {.column .fragment width="50%"}
-En gráficos de barras de variables categóricas con niveles no ordenados, a menudo es preferible reordenar las barras según sus frecuencias. Para hacerlo, es necesario transformar la variable en un factor y luego reordenar los niveles de ese factor. Lo podemos hacer con `forcats::fct_infreq()`.
+En gráficos de barras con categorías no ordenadas, es útil reordenar las barras por frecuencia. Se hace convirtiendo la variable en un factor y reordenando los niveles con `forcats::fct_infreq()`.
 
 ```{r}
 #| echo: true
@@ -1077,6 +1092,7 @@ palmerpenguins::penguins |>
     ggplot2::aes(
       x = body_mass_g,
       color = species
+      
     )
   ) +
   ggplot2::geom_density(
@@ -1141,9 +1157,7 @@ palmerpenguins::penguins |>
       fill = species
     )
   ) +
-  ggplot2::geom_bar(
-    position = "fill"
-  )
+  ggplot2::geom_bar(position = "fill")
 ```
 :::
 :::
@@ -1269,16 +1283,15 @@ DATA |>
 
 # `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
 
--   Ejemplo de actividad
--   Ejemplo de actividad
--   Ejemplo de actividad
+-   Abrir el archivo `ggplot.qmd` que se encuentra en la carpeta `intro-r`
+-   Realizar la **Actividad 2**.
 
 <br>
 <br>
 
 ```{R}
 #| echo: false
-countdown_timer(1)
+countdown_timer(7)
 ```
 
 # «En el principio era el Verbo»
@@ -1615,16 +1628,15 @@ Las operaciones de conjuntos (set operations) que tratan las observaciones como 
 
 # `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
 
--   Ejemplo de actividad
--   Ejemplo de actividad
--   Ejemplo de actividad
+-   Abrir el archivo `dplyr.qmd` que se encuentra en la carpeta `intro-r`
+-   Realizar la **Actividad**.
 
 <br>
 <br>
 
 ```{R}
 #| echo: false
-countdown_timer(1)
+countdown_timer(8)
 ```
 
 ## Tidyverse y la ciencia de datos
@@ -1710,7 +1722,7 @@ penguins_resumen <-
 penguins_resumen
 ```
 
-## `knitr::kable()`
+## `knitr::kable()` {.scrollable}
 
 `kable()` es un generador de tablas muy simple, y es simple por diseño. Sólo genera tablas para datos estrictamente rectangulares. No puede formatear mucho las celdas de la tabla ni combinar celdas. Algunas de las limitaciones de `knitr::kable()` pueden ser subsanadas utilizando el paquete `kableExtra`.
 
@@ -1827,19 +1839,30 @@ penguins_resumen |>
   flextable::autofit()
 ```
 
-# `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
+## Recursos
+-   [1 dataset. 100 visualizations](https://100.datavizproject.com)
+-   [Cleaning Biodiversity Data in R](https://cleaning-data-r.ala.org.au)
+-   [Data Viz Project](https://datavizproject.com/)
+-   [From Data to Viz](https://www.data-to-viz.com)
+-   [ggplot2: Elegant Graphics for Data Analysis (3e)](https://ggplot2-book.org/index.html)
+-   [gt](https://gt.rstudio.com)
+-   [Hands-On Programming with R](https://jjallaire.github.io/hopr/)
+-   [R Cookbook, 2nd Edition](https://rc2e.com)
+-   [R for Data Science (2e)](https://r4ds.hadley.nz)
+-   [R for Plant Disease Epidemiology](https://r4pde.netlify.app)
+-   [R Graphics Cookbook, 2nd edition](https://r-graphics.org)
+-   [The R Graph Gallery](https://r-graph-gallery.com/index.html)
+-   [Tidyverse](https://www.tidyverse.org)
+-   [Using the flextable R package](https://ardata-fr.github.io/flextable-book/index.html)
 
--   Ejemplo de actividad
--   Ejemplo de actividad
--   Ejemplo de actividad
+# `r fontawesome::fa("mug-saucer", "white")` Pausa {background-color="#000000" transition="slide-in"}
 
 <br>
 <br>
 
 ```{R}
 #| echo: false
-countdown_timer(1)
+countdown_timer(10)
 ```
 
-## Referencias
-
+## Referencias {visibility="uncounted"}

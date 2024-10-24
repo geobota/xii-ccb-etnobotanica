@@ -1,0 +1,30 @@
+---
+title: "Reproducibilidad"
+subtitle: "XII Congreso Colombiano de Botánica"
+author:
+  - name: "Álex Espinosa Correa"
+    affiliation: "Universidad de Antioquia"
+  - name: "Bladimir Vera Marín"
+    affiliation: "Universidad de Antioquia"
+# date: 2024-11-02
+
+format: 
+  revealjs:
+    theme:
+      - simple
+      - ../../custom.scss
+    width: 1920
+    height: 1080
+    embed-resources: true
+    slide-number: true
+    preview-links: true
+    controls: true
+    touch: false
+    # chalkboard: true
+    code-block-height: 850px
+    logo: "https://github.com/geobota/geobota.github.io/blob/main/images/xii-ccb/xii-ccb-logo.png?raw=true"
+    footer: "[Etnobotánica Cuantitativa en R](https://geobota.github.io/xii-ccb-etnobotanica/)"
+bibliography: references.bib
+csl: apa.csl
+---
+

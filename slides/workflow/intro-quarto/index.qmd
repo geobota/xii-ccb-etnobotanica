@@ -5,7 +5,7 @@ author:
   - name: "Álex Espinosa Correa"
     affiliation: "Universidad de Antioquia"
   - name: "Bladimir Vera Marín"
-    affiliation: "Instituto Tecnológico Metropolitano"
+    affiliation: "Universidad de Antioquia"
 # date: 2024-11-02
 
 format: 
@@ -62,7 +62,8 @@ countdown_timer <- function(
 
 -   «Siempre lo hemos hecho así»
 
-<br> 
+<br>
+
 <br>
 
 ```{R}
@@ -88,9 +89,10 @@ countdown_timer(5)
 
 -   Abrir RStudio
 -   Si no ha clonado/descargado los archivos necesarios: `https://github.com/geobota/etnobotanica-workshop.git`
--   Abrir el Rproject `etnobotanica-workshop`
+-   Abrir el proyecto de Rstudio `etnobotanica-workshop.Rproj`
 
-<br> 
+<br>
+
 <br>
 
 ```{R}
@@ -318,12 +320,13 @@ quarto render document.qmd --to pdf
 
 # `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
 
--   Abrir `pinguinos.qmd`
+-   Abrir `pinguinos.qmd` que se encuentra en la carpeta `intro-quarto`.
 -   Renderizar el documento
 -   Cambiar el nombre por el suyo y renderizar el documento
 -   Inspeccionar los elemento del documento, realizar dos cambios y renderizar el documento.
 
-<br> 
+<br>
+
 <br>
 
 ```{R}
@@ -337,7 +340,7 @@ Los archivos de Quarto (`.qmd`) son archivos de texto plano conformado por:
 
 ### Metadata (YAML)
 
-::: {.columns style="font-size: 70px"}
+::: {.columns}
 ::: {.column width="50%"}
 ``` yaml
 format: html
@@ -355,7 +358,7 @@ engine: jupyter
 
 ### Código
 
-::: {.columns style="font-size: 70px"}
+::: {.columns}
 ::: {.column width="50%"}
 ````code
 ```{{r}}
@@ -381,13 +384,11 @@ from siuba import *
 
 ### Texto 
 
-::: {style="font-size: 70px"}
 ``` markdown
 # Título 1
 Esta es una frase con algo de **texto en negrita**, *texto en cursiva* y una 
 ![Descripción de la imagen](imagen.png){fig-alt=«Alt text para la imagen»}.
 ```
-:::
 
 ## Metadata (YAML)
 
@@ -402,7 +403,6 @@ Esta es una frase con algo de **texto en negrita**, *texto en cursiva* y una
 :::
 
 ::: {.column width="50%"}
-::: {style="font-size: 70px"}
 ``` yaml
 ---
 title: "El origen de las especies"
@@ -412,7 +412,6 @@ format:
     toc: true
 ----
 ```
-:::
 :::
 :::
 
@@ -476,7 +475,7 @@ En Markdown los párrafos se construyen dejando una linea en blanco. De lo contr
 :::columns
 :::{.column width=50%}
 
-```{.markdown style="font-size: 70px"}
+```{.markdown}
 Lorem ipsum dolor sit amet,
 consectetur adipiscing elit.
 
@@ -520,7 +519,7 @@ Para los elementos de una lista desordenada se puede utilizar: `*`, `-`, o `+`.
 :::columns
 :::{.column width=50%}
 #### Markdown
-```{.markdown style="font-size: 70px"}
+```{.markdown}
 *   Elemento 1
     +   Elemento 1.1
         -   Elemento 1.1.1
@@ -545,7 +544,7 @@ Para los elementos de una lista desordenada se puede utilizar: `*`, `-`, o `+`.
 :::columns
 :::{.column width=50%}
 #### Markdown
-```{.markdown style="font-size: 70px"}
+```{.markdown}
 1.  Elemento 1
     i)  Elemento 1.1
         A.  Elemento 1.1.1
@@ -597,7 +596,6 @@ Quarto incluye características destinadas a facilitar la creación y personaliz
 ::: {.column width="50%"}
 ### Markdown
 
-::: {style="font-size: 70px"}
 ``` markdown
 | Por defecto | Izquierda | Derecha | Centro |
 |-------------|:----------|--------:|:------:|
@@ -607,7 +605,6 @@ Quarto incluye características destinadas a facilitar la creación y personaliz
 
 : Demostración de pipe table.
 ```
-:::
 :::
 
 ::: {.column width="50%"}
@@ -627,7 +624,6 @@ Quarto incluye características destinadas a facilitar la creación y personaliz
 
 ::: columns
 ::: {.column width="50%"}
-::: {style="font-size: 70px"}
 ``` markdown
 +-----------+-----------+--------------------------+
 | Fruta     | Precio    | Ventajas                 |
@@ -638,7 +634,6 @@ Quarto incluye características destinadas a facilitar la creación y personaliz
 
 : Demostración de grid table.
 ```
-:::
 :::
 
 ::: {.column width="50%"}
@@ -658,13 +653,11 @@ Quarto incluye características destinadas a facilitar la creación y personaliz
 Las referencias cruzadas facilitan a los lectores la navegación por el documento proporcionando referencias numeradas e hipervínculos a diversas entidades, como figuras y tablas. Toda entidad con la que se puedan establecer referencias cruzadas requiere una etiqueta (`fig-` y `tbl-`), un identificador único precedido de un tipo de referencia cruzada (`fig-elemento` y `tbl-elemento`).
 
 ::: {.fragment}
-::: {style="font-size: 70px"}
 ``` markdown
 ![Istopipo de Quarto](images/quarto_logo.png){#fig-quarto}
 
 La @fig-quarto muestra el isotipo de Quarto.
 ```
-:::
 
 ![Isotipo de Quarto](images/quarto_logo.png){#fig-quarto fig-align="center" width="10%"}
 
@@ -679,7 +672,6 @@ Es recomendable evitar el uso de guiones bajos `_`.
 
 ## Citación
 
-::: {style="font-size: 40px"}
 Quarto utiliza Pandoc para generar automáticamente citas y una bibliografía en varios estilos. Es necesario tener:
 
 -   Un documento Quarto formateado con citas.
@@ -687,16 +679,14 @@ Quarto utiliza Pandoc para generar automáticamente citas y una bibliografía en
 -   Una fuente de datos bibliográficos, por ejemplo un archivo BibLaTeX (.bib) o BibTeX (.bibtex).
 
 -   Opcionalmente, un archivo CSL que especifique el formato a utilizar al generar las citas y la bibliografía.
-:::
 
-::: {.fragment style="font-size: 40px"}
-::: {style="font-size: 70px"}
+
+::: {.fragment}
 ``` markdown
 El conjunto de datos flor Iris fue tomado por @anderson1936 y popularizado 
 posteriormente [@fisher1936]. El conjunto de datos contiene 150 muestras de 
 tres especies [@anderson1936; @fisher1936].
 ```
-:::
 
 El conjunto de datos flor Iris fue tomado por @anderson1936 y popularizado 
 posteriormente [@fisher1936]. El conjunto de datos contiene 150 muestras de
@@ -722,7 +712,8 @@ tres especies [@anderson1936; @fisher1936].
     -   referencias cruzadas
     -   citación
 
-<br> 
+<br>
+
 <br>
 
 ```{R}
@@ -732,9 +723,9 @@ countdown_timer(7)
 
 ## Código
 
-[En Quarto el código puede insertarse en linea o como bloques de código (conocidos como *chunks*). Los chunks siempre se encuentran entre ```` ``` ````, mientras el código en linea se encuentra entre ```` ` ````.]{.fragment} [Para que el código sea ejecutable se ha de poner el nombre del lenguaje entre `{}`, ej. ```` {R} ````. Si sólo se pone el nombre del lenguaje, el código no se ejecutará y se resaltará la sintaxis del lenguaje.]{.fragment} [Los chunks pueden tener opciones que se indican con un ` #| ` (hash pipe) y siguen la sintaxis del YAML.]{.fragment}
+[En Quarto el código puede insertarse en linea o como bloques de código (conocidos como *chunks*). Los chunks siempre se encuentran entre ```` ``` ````, mientras el código en linea se encuentra entre ```` ` ````.]{.fragment} [Para que el código sea ejecutable se ha de poner el nombre del lenguaje entre `{}`, ej. ```` {r} ````. Si sólo se pone el nombre del lenguaje, el código no se ejecutará y se resaltará la sintaxis del lenguaje.]{.fragment} [Los chunks pueden tener opciones que se indican con un ` #| ` (hash pipe) y siguen la sintaxis del YAML.]{.fragment}
  
-::: {.fragment style="font-size: 70px"}
+::: {.fragment}
 ```{r}
 #| label: fig-ejemplo-chunk
 #| fig-cap: "Descripción de la figura. Note el prefijo generado automáticamente" 
@@ -763,7 +754,7 @@ iris |>
 
 Hay una gran variedad de opciones disponibles para personalizar la salida del código ejecutado. Todas estas opciones se pueden especificar globalmente (YAML) o por bloque de código.
 
-::: {.columns style="font-size: 70px"}
+::: {.columns}
 ::: {.column .fragment width="50%"}
 ````{.markdown code-line-numbers="7"}
 ---
@@ -813,7 +804,8 @@ Las opciones disponibles para personalizar la salida incluyen:
 -   En `pinguinos.qmd`
 -   Practicar la opciones de ejecución
 
-<br> 
+<br>
+
 <br>
 
 ```{R}
@@ -825,7 +817,8 @@ countdown_timer(3)
 
 -   Editor Visual de Quarto
 
-<br> 
+<br>
+
 <br>
 
 ```{R}
@@ -836,6 +829,7 @@ countdown_timer(10)
 # `r fontawesome::fa("mug-saucer", "white")` Pausa {background-color="#000000" transition="slide-in"}
 
 <br>
+
 <br>
 
 ```{R}

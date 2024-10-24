@@ -43,7 +43,7 @@ countdown_timer <- function(
     font_size = "2em", 
     ...
 ) {
-  countdown(
+  countdown::countdown(
     minutes = minutes,
     play_sound = play_sound,
     color_border              = "#white",
@@ -66,8 +66,10 @@ countdown_timer <- function(
 
 <br>
 
-```{R}
+```{r}
+#| label: timer-1
 #| echo: false
+
 countdown_timer(5)
 ```
 
@@ -95,8 +97,10 @@ countdown_timer(5)
 
 <br>
 
-```{R}
+```{r}
+#| label: timer-2
 #| echo: false
+
 countdown_timer(1)
 ```
 
@@ -329,8 +333,10 @@ quarto render document.qmd --to pdf
 
 <br>
 
-```{R}
+```{r}
+#| label: timer-3
 #| echo: false
+
 countdown_timer(5)
 ```
 
@@ -716,8 +722,10 @@ tres especies [@anderson1936; @fisher1936].
 
 <br>
 
-```{R}
+```{r}
+#| label: timer-4
 #| echo: false
+
 countdown_timer(7)
 ```
 
@@ -808,8 +816,10 @@ Las opciones disponibles para personalizar la salida incluyen:
 
 <br>
 
-```{R}
+```{r}
+#| label: timer-5
 #| echo: false
+
 countdown_timer(3)
 ```
 
@@ -821,8 +831,10 @@ countdown_timer(3)
 
 <br>
 
-```{R}
+```{r}
+#| label: timer-6
 #| echo: false
+
 countdown_timer(10)
 ```
 
@@ -832,7 +844,9 @@ countdown_timer(10)
 
 <br>
 
-```{R}
+```{r}
+#| label: timer-7
 #| echo: false
+
 countdown_timer(10)
 ```

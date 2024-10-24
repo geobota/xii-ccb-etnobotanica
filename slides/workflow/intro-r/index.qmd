@@ -5,7 +5,7 @@ author:
   - name: "Álex Espinosa Correa"
     affiliation: "Universidad de Antioquia"
   - name: "Bladimir Vera Marín"
-    affiliation: "Instituto Tecnológico Metropolitano"
+    affiliation: "Universidad de Antioquia"
 # date: 2024-11-02
 
 format: 
@@ -37,6 +37,7 @@ if (!require("tidyverse")) install.packages("tidyverse"); library("tidyverse")
 if (!require("palmerpenguins")) install.packages("palmerpenguins"); library("palmerpenguins")
 if (!require("ggthemes")) install.packages("ggthemes"); library("ggthemes")
 if (!require("flextable")) install.packages("flextable"); library("flextable")
+if (!require("gt")) install.packages("gt"); library("gt")
 if (!require("sysfonts")) install.packages("sysfonts"); library("sysfonts")
 if (!require("showtext")) install.packages("showtext"); library("showtext")
 if (!require("countdown")) install.packages("countdown"); library("countdown")
@@ -81,7 +82,7 @@ countdown_timer <- function(
 }
 ```
 
-## Proposotio 1
+## Proposito 1
 
 ```{r}
 #| label: figura-proposito
@@ -231,6 +232,7 @@ palmerpenguins::penguins |>
 
 Ejecutar código en la consola de R es muy sencillo. Sólo tienes que escribirlo al lado de símbolo de mayor que `>` y presionar `enter` para ejecutarlo. En la consola de R, el signo `>` se conoce como **prompt**, mientras que el código que escribes se llama un comando.
 
+::: {.fragment}
 ``` {.r filename="Console" code-line-numbers="false"}
 > 4 + 2
 [1] 6
@@ -241,20 +243,26 @@ Ejecutar código en la consola de R es muy sencillo. Sólo tienes que escribirlo
 > 4**2
 [1] 16
 ```
+:::
 
+::: {.fragment}
 El número que aparece entre corchetes `[]` informa que esta línea comienza con ese valor del resultado. Algunos comandos devuelven más de un valor y sus resultados pueden ocupar múltiples líneas. Estos números se pueden ignorara en la mayoría de los casos.
 
 Los símbolos `+`, suma; `-`, resta; `*`, multiplicación; `/`, división; `**` o `^`, exponencial; son algunos de operadores matemáticos que tiene R.
+:::
 
 ## Otros operadores
 
+::: {.fragment}
 El operador dos puntos `:` devuelve todos los enteros entre dos enteros. Es una forma fácil de crear una secuencia de números.
 
 ``` {.r filename="Console" code-line-numbers="false"}
 > 4:2
 [1] 4 3 2
 ```
+:::
 
+::: {.fragment}
 Los operadores de comparación son: `==` igual `!=` no igual, `>` mayor que, `<` menor que, `>=` mayor o igual que, `<=` menor o igual que.
 
 ``` {.r filename="Console" code-line-numbers="false"}
@@ -263,7 +271,9 @@ Los operadores de comparación son: `==` igual `!=` no igual, `>` mayor que, `<`
 > 4 != 2
 [1] TRUE
 ```
+:::
 
+::: {.fragment}
 Los operadores lógicos son: `|` OR, `&` AND, `!` NOT.
 
 ``` {.r filename="Console" code-line-numbers="false"}
@@ -274,17 +284,23 @@ Los operadores lógicos son: `|` OR, `&` AND, `!` NOT.
 > TRUE & !FALSE
 [1] TRUE
 ```
+:::
 
 ## Crear objetos
 
-Las entidades que R crea y manipula se denominan objetos. Un objeto es un nombre que puedes usar para llamar a los datos almacenados. Los objetos se crean utilizando el operador de asignación `<-`. Cuando se crea un objeto este aparecerá en el *environment pane* de RStudio. El atajo de teclado para `<-` es {{< kbd Alt-- >}}
+Las entidades que R crea y manipula se denominan objetos. Un objeto es un nombre que puedes usar para llamar a los datos almacenados. Los objetos se crean utilizando el operador de asignación `<-`. Cuando se crea un objeto este aparecerá en el *environment pane* de RStudio. En RStudio el atajo de teclado para `<-` es {{< kbd Alt-- >}}
 
+::: {.fragment}
 ``` {.r filename="console" code-line-numbers="false"}
 > x <- 4 * 2
 ```
+:::
 
+::: {.fragment}
 En R los nombres se pueden nombrar de cualquier manera, con dos excepciones. Primero, un nombre no puede comenzar con un número. Segundo, un nombre no puede usar algunos símbolos especiales, como \^, !, \$, \@, +, -, /, o \*.
+:::
 
+::: {.fragment}
 ### Llamar objetos
 
 El valor de `x` no se imprime en consola, sólo se almacena. Si se quiere ver el valor, hay que llamarlo.
@@ -293,16 +309,20 @@ El valor de `x` no se imprime en consola, sólo se almacena. Si se quiere ver el
 > x
 [1] 8
 ```
+:::
 
 ## Crear objetos
 
+::: {.fragment}
 Se pueden **c**ombinar múltiples elementos en un vector usando `c()`
 
 ``` {.r filename="Console" code-line-numbers="false"}
 # crear vector de números primos
 numeros_primos <- c(2, 3, 5, 7, 11, 13)
 ```
+:::
 
+::: {.fragment}
 ### Operación con vectores
 
 Así mismo, se pueden realizar operación con los vectores.
@@ -314,22 +334,22 @@ Así mismo, se pueden realizar operación con los vectores.
 ```
 
 R ignora cualquier texto después de `#`. Esto permite escribir comentarios, texto que es ignorado por R pero leído por otras personas. Usa comentarios para explicar el porqué de tu código, no el cómo ni el qué.
+:::
 
-## Tipos de datos y estructura de datos
+## Tipos de datos {.incremental}
 
-::: columns
-::: {.column width="50%"}
-### Tipos de datos
-
+::: {.fragment}
 En R, hay 5 tipos de datos principales:
 
--   `numeric`: 
-    -   `double`: números reales (con decimales)
-    -   `integer`: números enteros
--   `character`: cadenas de texto (a.k.a. *strings*)
--   `complex`: números complejos. 
--   `logical`: `TRUE`, `FALSE`, `NA`. (a.k.a. *booleanos*)
+-   **numeric**: 
+    -   **double**: números reales (con decimales)
+    -   **integer**: números enteros
+-   **character**: cadenas de texto (a.k.a. *strings*)
+-   **complex**: números complejos. 
+-   **logical**: `TRUE`, `FALSE`, `NA`. (a.k.a. *booleanos*)
+:::
 
+::: {.fragment}
 **Para identificar el tipo de datos:**
 
 1. `class()`: dvuelve la clase de un objeto.
@@ -338,16 +358,20 @@ En R, hay 5 tipos de datos principales:
 4. `is.numeric()`, `is.character()`, `is.logical()`, etc.: verifica si el dato es de un tipo específico.
 :::
 
-::: {.column width="50%"}
-### Estructura de datos
+## Estructura de datos  {.incremental}
 
--   Vectores: unidimensionales y homogéneos.
--   Matrices: bidimensionales y homogéneas.
--   Arrays: multidimensionales y homogéneos.
--   Data frames: bidimensionales y heterogéneos.
--   Listas: estructuras heterogéneas y unidimensionales.
--   Factores: datos categorizados
+::: {.fragment}
+En R, estos son las principales estructuras de datos:
 
+-   **Vectores**: unidimensionales y homogéneos.
+-   **Matrices**: bidimensionales y homogéneas.
+-   **Arrays**: multidimensionales y homogéneos.
+-   **Data** frames: bidimensionales y heterogéneos.
+-   **Listas**: estructuras heterogéneas y unidimensionales.
+-   **Factores**: datos categorizados
+:::
+
+::: {.fragment}
 **Para identificar la estructura de datos:**
 
 1. `str()`: muestra la estructura compacta del objeto.
@@ -356,78 +380,93 @@ En R, hay 5 tipos de datos principales:
 4. `attributes()`: verifica los atributos del objeto.
 5. `summary()`: resumen estadístico o descriptivo del objeto.
 :::
-:::
 
 ## Funciones
 
 Las funciones son bloques de código que realizan una tarea específica y que pueden ser invocadas (llamadas) desde cualquier parte. 
 
+::: {.fragment}
 En R las funciones se han de llamar así:
 
 ``` {.r filename="Console" code-line-numbers="false"}
 nombre_funcion(argumento_1 = valor_1, argumento_2 = valor_2, ...)
 ```
+:::
 
-Probemos la función `seq()` que crea secuencias regulares de números.
+::: {.fragment}
+Por ejemplo la función `seq()` que crea secuencias regulares de números.
 
 ``` {.r filename="Console" code-line-numbers="false"}
 > seq(from = 1, to = 10)
  [1]  1  2  3  4  5  6  7  8  9 10
 ```
+:::
 
+::: {.fragment}
 A menudo omitimos los nombres de los primeros argumentos en las llamadas a funciones, por lo que podemos reescribir esto de la siguiente manera:
 
 ``` {.r filename="Console" code-line-numbers="false"}
 > seq(1, 10)
  [1]  1  2  3  4  5  6  7  8  9 10
 ```
+:::
 
-Algunas funciones de R: `mean` calcula la media de un vector. `sum` suma los elementos de un vector. `summary` proporciona un resumen estadístico de un objeto. `str` muestra la estructura de un objeto.
+::: {.fragment}
+Algunas funciones de R: `mean()` calcula la media de un vector. `sum()` suma los elementos de un vector. `summary()` proporciona un resumen estadístico de un objeto. `str()` muestra la estructura de un objeto.
+:::
 
 ## Paquetes
 
 Los paquetes son las unidades fundamentales del código reproducible en R. Incluyen funciones reutilizables de R, la documentación que describe cómo usarlas y datos de muestra. @wickham2023 Muchos paquetes de R se encuentran en The Comprehensive R Archive Network (CRAN). CRAN es una red de servidores FTP y web alrededor del mundo que almacenan versiones idénticas y actualizadas del código y la documentación de R.
 
+::: {.fragment}
 ### Instalar y usar paquetes
 
-En R (casi) todos los paquetes se pueden instalar utilizando la función `install.packages`.
+En R (casi) todos los paquetes se pueden instalar utilizando la función `install.packages()`.
 
 ``` {.r filename="Console" code-line-numbers="false"}
 install.packages("ethnobotanyR")
 ```
+:::
 
+::: {.fragment}
 Para poder usar los paquetes se han de cargar (llamar) usando la función `library()`.
 
 ``` {.r filename="Console" code-line-numbers="false"}
 library(ethnobotanyR)
 ```
+::::
 
+::: {.fragment}
 Funciones de diferentes paquetes pueden tener el mismo nombre. Por lo cual es recomendable ser explicito a la hora de llamarlas, para lo cual se utilizan `::` entre el nombre del paquete y el nombre de la función.
 
 ``` {.r filename="Console" code-line-numbers="false"}
 nombre_paquete::nombre_funcion()
 ```
-
-
+:::
 
 ## Esto no es una pipa `|>`
 
 R 4.1.0 introdujo el operador `|>` (pipe). Este operador toma la salida de una función y la pasa a otra función como argumento. Enlaza todos los pasos del análisis de datos haciendo que el código sea más eficiente y legible. 
 
-
+::: {.fragment}
 ``` {.r filename="Console" code-line-numbers="false"}
 > media_numeros_primos <- mean(c(2, 3, 5, 7, 11, 13))
 > print(media_numeros_primos)
 [1] 6.833333
 ```
+:::
 
+::: {.fragment}
 ``` {.r filename="Console" code-line-numbers="false"}
 > numeros_primos <- c(2, 3, 5, 7, 11, 13)
 > media_numeros_primos <- mean(numeros_primos)
 > print(media_numeros_primos)
 [1] 6.833333
 ```
+:::
 
+::: {.fragment}
 ``` {.r filename="Console" code-line-numbers="false"}
 > media_numeros_primos <- 
 +   c(2, 3, 5, 7, 11, 13) |> 
@@ -436,14 +475,15 @@ R 4.1.0 introdujo el operador `|>` (pipe). Este operador toma la salida de una f
 [1] 6.833333
 ```
 
-En RStudio hay que activarlo yendo a la opción `code` de las opciones globales. El atajo de teclado para `|>` es {{< kbd Shift-Ctrl-M >}}
+En RStudio hay que activarlo yendo **Tools** -> **Global Options** -> **Code** -> **Editing**. El atajo de teclado para `|>` es {{< kbd Shift-Ctrl-M >}}
+:::
 
 ## Scripts
 
 Los scripts son archivos que contienen código en lenguaje R, organizado de manera secuencial para realizar operaciones específicas, análisis de datos, o cualquier tarea que se pueda automatizar.
 
 ::: columns
-::: {.column width="60%"}
+::: {.column .fragment width="60%"}
 ``` {.r filename="script.r" code-line-numbers="true"}
 # Instalar paquetes
 install.packages(
@@ -475,7 +515,7 @@ fig_pinguinos
 ```
 :::
 
-::: {.column width="40%"}
+::: {.column .fragment width="40%"}
 En RStudio hay varias maneras de crear un script y otros archivos.
 
 -   En la opción a **File** -> **New File** -> **New R script**
@@ -492,12 +532,15 @@ El código de un script se puede correr linea por linea usando {{< kbd Ctrl-Ente
 
 Antes de pedir ayuda a los demás, suele ser buena idea que intentes ayudarte a ti mismo.
 
+::: {.fragment}
 ### Dentro de R
 
-La función `help` o el operador `?` proporcionan acceso a documentación de las funciones, conjuntos de datos y otros objetos de R. Por ejemplo: `help(lm)` o `help("lm")`, o `?lm` o `?"lm"`. Si el paquete de la función no está cargado se tendría que usar `help(rlm, package="MASS")`. Para acceder a la documentación de un paquete se ha usar `help(package="MASS")`. Se puede usar `??` para una palabra o frase en la documentación.
+La función `help()` o el operador `?` proporcionan acceso a documentación de las funciones, conjuntos de datos y otros objetos de R. Por ejemplo: `help(lm)` o `help("lm")`, o `?lm` o `?"lm"`. Si el paquete de la función no está cargado se tendría que usar `help(rlm, package="MASS")`. Para acceder a la documentación de un paquete se ha usar `help(package="MASS")`. Se puede usar `??` para una palabra o frase en la documentación.
 
 <!-- Algunos paquetes incluyen viñetas o demos. Pueden consultarse usando: `browseVignettes` y `vignette` muestra las viñetas de los paquetes instalados. `browseVignettes(package="package-name")` muestra las viñetas del paquete buscado. `vignette("vignette-name")` muestra la viñeta buscada. `demo` muestra los demo de los paquetes instalados. `demo(package="package-name")` muestra los demo del paquete buscado. `demo("demo-name")` inicia el demo buscado. -->
+:::
 
+::: {.fragment}
 ### Fuera de R
 
 ::: columns
@@ -511,11 +554,13 @@ La función `help` o el operador `?` proporcionan acceso a documentación de las
 :::
 
 ::: {.column width="50%"}
-Siempre es buena idea hacer un [reprex](https://reprex.tidyverse.org) (minimal reproducible example). Un buen reprex facilita que otras personas puedan ayudarlo y, a menudo, usted mismo descubrirá el problema durante el proceso. Hacer un reprex consiste en:
+Siempre es buena idea hacer un [**reprex**](https://reprex.tidyverse.org) (minimal reproducible example). Un buen reprex facilita que otras personas puedan ayudarlo y, a menudo, usted mismo descubrirá el problema durante el proceso. Hacer un reprex consiste en:
 
 -   Hacer que tu código sea reproducible, usando `reprex`
 -   Hacerlo mínimo eliminando todo lo que no esté relacionado con el problema.
 :::
+:::
+
 :::
 
 # `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
@@ -525,10 +570,13 @@ Siempre es buena idea hacer un [reprex](https://reprex.tidyverse.org) (minimal r
 -   Consultar la ayuda del paquete `palmerpenguins`
 
 <br>
+
 <br>
 
-```{R}
+```{r}
+#| label: timer-1
 #| echo: false
+
 countdown_timer(5)
 ```
 
@@ -538,6 +586,7 @@ countdown_timer(5)
 
 El tidyverse es una colección estructurada de paquetes de R diseñados para la ciencia de datos. Todos los paquetes comparten una filosofía de diseño subyacente, una gramática y estructuras de datos. @wickham2019.
 
+::: {.fragment}
 ``` {.r filename="console" code-line-numbers="false"}
 install.packages("tidyverse")
 ```
@@ -557,6 +606,7 @@ Carguemos el `tidyverse` y observemos la salida.
 ✖ dplyr::lag()    masks stats::lag()
 ℹ Use the conflicted package to force all conflicts to become errors
 ```
+:::
 
 ## Tidyverse y la ciencia de datos
 
@@ -570,7 +620,9 @@ Hay tres reglas interrelacionadas que hacen que un conjunto de datos esté orden
 2.  Cada observación es una fila; cada fila es una observación.
 3.  Cada valor es una celda; cada celda es un único valor.
 
+::: {.fragment}
 ![Las siguientes tres reglas hacen que un conjunto de datos esté ordenado: las variables son columnas, las observaciones son filas y los valores son celdas. Tomado de @wickham2023a.](images/tidy-1.svg){#tidydata fig-align="center"}
+:::
 
 ::: footer
 Artículo original @wickham2014
@@ -581,6 +633,7 @@ Artículo original @wickham2014
 -   **Data frame:** estructura de datos bidimensional de variables (en las columnas) y observaciones (en las filas), puede almacenar diferentes tipos de datos.
 
 ```{r}
+#| label: iris
 #| eval: false
 #| echo: true
 
@@ -588,6 +641,7 @@ iris
 ```
 
 ```{r}
+#| label: iris-slice
 #| echo: false
 
 iris |> 
@@ -596,12 +650,13 @@ iris |>
   )
 ```
 
-
+::: {.fragment}
 -   **Tibble:** versión moderna de un data frame, optimizados para un manejo de datos más intuitivo y legible. Pertenece al `tidyverse`.
 
 ::: columns
 ::: {.column width="60%"}
 ```{r}
+#| label: penguins
 #| eval: false
 #| echo: true
 
@@ -609,6 +664,7 @@ palmerpenguins::penguins
 ```
 
 ```{r}
+#| label: penguins-slice
 #| echo: false
 
 palmerpenguins::penguins |> 
@@ -623,27 +679,34 @@ palmerpenguins::penguins |>
 :::
 :::
 
+:::
+
 ## Conozcamos los datos
 
 ::: columns
 ::: {.column width="60%"}
 La función `dplyr::glimpse()` es similar a `utils::str()`, pero intenta mostrar la mayor cantidad de datos posible.
 
+::: {.fragment fragment-index=2}
 ```{r}
+#| label: penguins-glimpse
 #| echo: true
 
 palmerpenguins::penguins |> 
   dplyr::glimpse()
 ```
+:::
 
+::: {.fragment fragment-index=2}
 Las tres variables de `palmerpenguins::penguins` que usaremos son:
 
 -   `species`: la especie de un pingüino (Adelie, Chinstrap o Gentoo).
 -   `flipper_length_mm`: longitud de la aleta de un pingüino, en milímetros.
 -   `body_mass_g`: masa corporal de un pingüino, en gramos.
 :::
+:::
 
-::: {.column width="40%"}
+::: {.column .fragment fragment-index=2 width="40%"}
 ::: {layout-ncol=1}
 ![](images/lter_penguins.png)
 
@@ -671,37 +734,41 @@ Sistema para la creación de gráficos. Se basa en la gramática de gráficos (m
 :::
 
 ::: columns
-::: {.column width="50%"}
+::: {.column .fragment fragment-index=2 width="50%"}
 ![`ggplot2` es como los ogros.](images/meme_shrek.jpeg){fig-align="center"}
 :::
 
-::: {.column width="50%"}
+::: {.column .fragment fragment-index=1 width="50%"}
 ![Los siete componentes que permiten crear un gráfico en `ggplot2`.](images/diagram_ggplot2.png){fig-align="center"}
 :::
 :::
 
-## `ggplot2` --- Data
+## `ggplot2` --- data {auto-animate="true"}
 
 Para comenzar un gráfico, primero definimos un objeto gráfico usando la función `ggplot2::ggplot()`. El primer argumento de `ggplot2::ggplot()` son los datos que se utilizará en el gráfico:
 
 ```{r}
+#| label: ggplot2-data
 #| echo: true
 #| fig-align: center
-#| output-location: column-fragment
+#| output-location: column
+#| code-line-numbers: "|1,3|2"
 
 ggplot2::ggplot(
   data = palmerpenguins::penguins
 )
 ```
 
-## `ggplot2` --- Mapping
+## `ggplot2` --- mapping {auto-animate="true"}
 
-`mapping` define cómo las variables de los datos se asignan a propiedades visuales (**aesthetics**) del gráfico. Se definen con `ggplot2::aes()`. `x` e `y` especifican qué variables se asignarán a los ejes x e y.
+**mapping** define cómo las variables de los datos se asignan a propiedades visuales (**aesthetics**) del gráfico. Se definen con `ggplot2::aes()`. `x` e `y` especifican qué variables se asignarán a los ejes x e y.
 
 ```{r}
+#| label: ggplot2-mapping
 #| echo: true
 #| fig-align: center
-#| output-location: column-fragment
+#| output-location: column
+#| code-line-numbers: "|3-6|3,6|4|5"
 
 ggplot2::ggplot(
   data = palmerpenguins::penguins,
@@ -712,16 +779,18 @@ ggplot2::ggplot(
 )
 ```
 
-## `ggplot2` --- Layers: geometry
+## `ggplot2` --- layers: geometry {auto-animate="true"}
 
-`geometry` es el objeto geométrico que se utiliza para representar datos: puntos, líneas o rectángulos. Se definen con `geom_*()`. A menudo se describen los gráficos por el tipo de geom que utilizan[^1].
+**geometry** es el objeto geométrico que se utiliza para representar datos: puntos, líneas o rectángulos. Se definen con `geom_*()`. A menudo se describen los gráficos por el tipo de geom que utilizan[^1].
 
 [^1]: `geom_bar()` = gráficos de barras, `geom_line()` = gráficos de líneas, `geom_boxplot()` = diagramas de caja, `geom_point()` = gráficos de dispersión, entre otros.
 
 ```{r}
+#| label: ggplot2-geometry
 #| echo: true
 #| fig-align: center
-#| output-location: column-fragment
+#| output-location: column
+#| code-line-numbers: "|7-9|7|8"
 
 ggplot2::ggplot(
   data = palmerpenguins::penguins,
@@ -733,14 +802,16 @@ ggplot2::ggplot(
   ggplot2::geom_point()
 ```
 
-## Agregando aesthetics
+## `ggplot2` --- agregando aesthetics {auto-animate="true"}
 
-Podemos agregar más propiedades visuales (**aesthetics**). `ggplot2` asigna un valor único (como color) a cada nivel de una variable categórica y añade una leyenda que lo explica. Este proceso se llama **scaling**.
+Podemos agregar más propiedades visuales (aesthetics). `ggplot2` asigna un valor único (como color) a cada nivel de una variable categórica y añade una leyenda que lo explica. Este proceso se llama **scaling**.
 
 ```{r}
+#| label: ggplot2-scaling
 #| echo: true
 #| fig-align: center
-#| output-location: column-fragment
+#| output-location: column
+#| code-line-numbers: "|6"
 
 ggplot2::ggplot(
   data = palmerpenguins::penguins,
@@ -753,14 +824,16 @@ ggplot2::ggplot(
   ggplot2::geom_point()
 ```
 
-## Agregando layers
+## `ggplot2` --- agregando layers {auto-animate="true"}
 
 Podemos hacer los gráficos más informativos agregando más layers, ya sean objetos geométricos (`geom_*`), transformaciones estadísticas (`stats_*`) o ajustes de posición (`position_*`).
 
 ```{r}
+#| label: ggplot2-geoms
 #| echo: true
 #| fig-align: center
-#| output-location: column-fragment
+#| output-location: column
+#| code-line-numbers: "|10-12"
 
 ggplot2::ggplot(
   data = palmerpenguins::penguins,
@@ -776,14 +849,16 @@ ggplot2::ggplot(
   )
 ```
 
-## Asignación global o local
+## `ggplot2` --- asignación global o local {auto-animate="true"}
 
-Los aesthetics pueden agregarse de forma global para todo los `geom` del gráfico o pueden asignarse de forma local para un `geom` especifico. 
+Los aesthetics pueden agregarse de forma global para todo los geom del gráfico o pueden asignarse de forma local para un geom especifico. 
 
 ```{r}
+#| label: ggplot2-asignacion
 #| echo: true
 #| fig-align: center
-#| output-location: column-fragment
+#| output-location: column
+#| code-line-numbers: "|8-12|9-11|10"
 
 ggplot2::ggplot(
   data = palmerpenguins::penguins,
@@ -802,14 +877,16 @@ ggplot2::ggplot(
   )
 ```
 
-## Accesibilidad
+## `ggplot2` --- accesibilidad {auto-animate="true"}
 
 Generalmente no es una buena idea representar información usando sólo colores, por lo cual podemos combinar con formas o usando paletas de colores apta para personas con limitaciones visuales.
 
 ```{r}
+#| label: ggplot2-accesibilidad
 #| echo: true
 #| fig-align: center
-#| output-location: column-fragment
+#| output-location: column
+#| code-line-numbers: "|11,17|11|17"
 
 ggplot2::ggplot(
   data = palmerpenguins::penguins,
@@ -830,14 +907,16 @@ ggplot2::ggplot(
   ggthemes::scale_color_colorblind()
 ```
 
-## `ggplot2` --- Labs
+## `ggplot2` --- scales {auto-animate="true"}
 
-`ggplot2::labs()` permite agregar o mejorar las etiquetas agregándolas en una nueva layer. Algunos de los argumentos de labs() pueden explicarse por sí solos, otros  coinciden con los **aesthetics**.
+**scales** controlan cómo se traducen los datos a propiedades visuales. scales suelen formar parejas con aesthetics, y se representan en los gráficos mediante guías, como ejes o leyendas. `ggplot2::labs()` y `ggplot2::lims()` son para los ajustes más comunes de las etiquetas y los límites.
 
 ```{r}
+#| label: ggplot2-labs
 #| echo: true
 #| fig-align: center
-#| output-location: column-fragment
+#| output-location: column
+#| code-line-numbers: "|17-24|18,19|20,21|22,23"
 
 ggplot2::ggplot(
   data = palmerpenguins::penguins,
@@ -866,14 +945,16 @@ ggplot2::ggplot(
   ggthemes::scale_color_colorblind()
 ```
 
-## `ggplot2` --- Themes
+## `ggplot2` --- theme {auto-animate="true"}
 
 `theme` controla casi todos los elementos visuales del gráfico que no están controlados por los datos y es importante para el aspecto del gráfico. Puede utilizarse muchas de las funciones de `theme_*( )`.
 
 ```{r}
+#| label: ggplot2-themes
 #| echo: true
 #| fig-align: center
-#| output-location: column-fragment
+#| output-location: column
+#| code-line-numbers: "|25"
 
 ggplot2::ggplot(
   data = palmerpenguins::penguins,
@@ -903,11 +984,13 @@ ggplot2::ggplot(
   ggthemes::scale_color_colorblind()
 ```
 
-## Invocando a `ggplot2` {.r}
+## `ggplot2` --- invocanción
 
+::: {.fragment}
 Mientras se aprende, es bueno ser explicito con los argumentos y los valores.
 
 ```{r}
+#| label: ggplot2-invocando-1
 #| echo: true
 #| eval: false
 
@@ -920,12 +1003,14 @@ ggplot2::ggplot(
 ) +
   ggplot2::geom_point()
 ```
+:::
 
 ::: columns
-::: {.column width="50%"}
+::: {.column .fragment width="50%"}
 Es común que se omita el nombre de los argumentos o que se adopten estilos o formas de escribir código.
 
 ```{r}
+#| label: ggplot2-invocando-2
 #| echo: true
 #| eval: false
 
@@ -940,10 +1025,11 @@ ggplot2::ggplot(
 ```
 :::
 
-::: {.column width="50%"}
+::: {.column .fragment width="50%"}
 Lo anterior, en un flujo de trabajo usando `|>` se vería así:
 
 ```{r}
+#| label: ggplot2-invocando-3
 #| echo: true
 #| eval: false
 
@@ -968,10 +1054,13 @@ Uno de los estilos recomendables es [la guía de estilo del tidyverse](https://s
 -   Realizar la **Actividad 1**.
 
 <br>
+
 <br>
 
-```{R}
+```{r}
+#| label: timer-2
 #| echo: false
+
 countdown_timer(10)
 ```
 
@@ -983,7 +1072,9 @@ countdown_timer(10)
 ::: {.column .fragment width="50%"}
 Una variable es categórica si toma uno de varios valores limitados. Para analizar su distribución, se usa un gráfico de barras, donde la altura indica cuántas observaciones tiene cada valor.
 
+::: {.fragment}
 ```{r}
+#| label: ggplot2-categorica-1
 #| echo: true
 #| fig-align: center
 #| output-location: fragment 
@@ -997,11 +1088,14 @@ palmerpenguins::penguins |>
   ggplot2::geom_bar()
 ```
 :::
+:::
 
 ::: {.column .fragment width="50%"}
 En gráficos de barras con categorías no ordenadas, es útil reordenar las barras por frecuencia. Se hace convirtiendo la variable en un factor y reordenando los niveles con `forcats::fct_infreq()`.
 
+::: {.fragment}
 ```{r}
+#| label: ggplot2-categorica-2
 #| echo: true
 #| fig-align: center
 #| output-location: fragment 
@@ -1016,12 +1110,15 @@ palmerpenguins::penguins |>
 ```
 :::
 :::
+:::
 
 ## Una variable numérica
 
 Una variable es numérica (o cuantitativa) si puede tomar una amplia gama de valores numéricos y tiene sentido sumarlos, restarlos o calcular promedios con esos valores. Las variables numéricas pueden ser continuas o discretas. Una visualización comúnmente utilizada para distribuciones de variables continuas es un histograma.
 
+::: {.fragment}
 ```{r}
+#| label: ggplot2-histogram
 #| echo: true
 #| fig-align: center
 #| output-location: column-fragment
@@ -1036,12 +1133,15 @@ palmerpenguins::penguins |>
     binwidth = 200
   )
 ```
+:::
 
 ## Una variable numérica
 
 Un gráfico de densidad es una versión suavizada de un histograma y una alternativa práctica, especialmente para datos continuos que provienen de una distribución subyacente suave. Muestra menos detalles que un histograma, pero puede facilitar la comprensión rápida de la forma de la distribución, especialmente con respecto a la moda y la asimetría.
 
+::: {.fragment}
 ```{r}
+#| label: ggplot2-density
 #| echo: true
 #| fig-align: center
 #| output-location: column-fragment
@@ -1054,6 +1154,7 @@ palmerpenguins::penguins |>
   ) +
   ggplot2::geom_density()
 ```
+:::
 
 # Visualizando relaciones
 
@@ -1061,7 +1162,9 @@ palmerpenguins::penguins |>
 
 Para visualizar la relación entre una variable numérica y una variable categórica, podemos usar diagramas de caja (box plots). Un diagrama de caja es un tipo de representación visual para medidas de posición (percentiles) que describen una distribución. También es útil para identificar posibles valores atípicos.
 
+::: {.fragment}
 ```{r}
+#| label: ggplot2-boxplot
 #| echo: true
 #| fig-align: center
 #| output-location: column-fragment
@@ -1075,6 +1178,7 @@ palmerpenguins::penguins |>
   ) +
   ggplot2::geom_boxplot()
 ```
+:::
 
 ## Una variable numérica y categórica
 
@@ -1083,6 +1187,7 @@ Alternativamente, podemos hacer gráficos de densidad con `ggplot2::geom_density
 ::: columns
 ::: {.column .fragment width="50%"}
 ```{r}
+#| label: ggplot2-numerica-categorica-1
 #| echo: true
 #| fig-align: center
 #| output-location: fragment 
@@ -1103,6 +1208,7 @@ palmerpenguins::penguins |>
 
 ::: {.column .fragment width="50%"}
 ```{r}
+#| label: ggplot2-numerica-categorica-2
 #| echo: true
 #| fig-align: center
 #| output-location: fragment 
@@ -1129,6 +1235,7 @@ Podemos utilizar gráficos de barras apiladas para visualizar la relación entre
 ::: columns
 ::: {.column .fragment width="50%"}
 ```{r}
+#| label: ggplot2-dos-categoricas-1
 #| echo: true
 #| fig-align: center
 #| output-location: fragment 
@@ -1146,9 +1253,11 @@ palmerpenguins::penguins |>
 
 ::: {.column .fragment width="50%"}
 ```{r}
+#| label: ggplot2-dos-categoricas-2
 #| echo: true
 #| fig-align: center
-#| output-location: fragment 
+#| output-location: fragment
+#| code-line-numbers: "|8"
 
 palmerpenguins::penguins |> 
   ggplot2::ggplot(
@@ -1165,7 +1274,9 @@ palmerpenguins::penguins |>
 ## Dos variables numéricas
 Un diagrama de dispersión es probablemente el gráfico más utilizado para visualizar la relación entre dos variables numéricas.
 
+::: {.fragment}
 ```{r}
+#| label: ggplot2-dos-numericas
 #| echo: true
 #| fig-align: center
 #| output-location: column-fragment
@@ -1184,12 +1295,15 @@ palmerpenguins::penguins |>
     )
   )
 ```
+:::
 
 ## Tres o más variables
 
 En `ggplot2` podemos incorporar más variables en un gráfico asignándolas a estéticas adicionales. Agregar demasiadas asignaciones estéticas a un gráfico lo hace confuso y difícil de interpretar. Una forma particularmente útil para variables categóricas es dividir el gráfico en **facets**, subgráficos que muestran cada uno un subconjunto de los datos.
 
+::: {.fragment}
 ```{r}
+#| label: ggplot2-tres-variables
 #| echo: true
 #| fig-align: center
 #| output-location: column-fragment
@@ -1211,16 +1325,18 @@ palmerpenguins::penguins |>
     ~island
   )
 ```
+:::
 
 ## Problemas comunes con `ggplot2`
 
 Un problema común al crear gráficos con ggplot2 es colocar el `+` en el lugar incorrecto: debe ir al final de la línea, no al inicio.
 
 ::: columns
-::: {.column width="50%"}
+::: {.column .fragment width="50%"}
 ### Forma incorrecta
 
 ```{r}
+#| label: ggplot2-incorrecta
 #| eval: false
 #| echo: true
 
@@ -1236,10 +1352,11 @@ ggplot2::ggplot(
 ```
 :::
 
-::: {.column width="50%"}
+::: {.column .fragment width="50%"}
 ### Forma correcta: 
 
 ```{r}
+#| label: ggplot2-correcta
 #| eval: true
 #| echo: true
 #| fig-align: center
@@ -1259,7 +1376,11 @@ ggplot2::ggplot(
 
 ## Resumen de `ggplot2`
 
+::: {.fragment}
+### Asignación global
+
 ```{r}
+#| label: ggplot2-asignacion-global
 #| eval: false
 #| echo: true
 
@@ -1269,17 +1390,23 @@ DATA |>
   ) + 
   ggplot2::geom_*()
 ```
+:::
 
-\
+::: {.fragment}
+### Asignación local
 
 ```{r}
+#| label: ggplot2-asignacion-local
 #| eval: false
 #| echo: true
 
 DATA |> 
-  ggplot2::ggplot() + 
+  ggplot2::ggplot(
+    ggplot2::aes(MAPPINGS)
+  ) + 
   ggplot2::geom_*(ggplot2::aes(MAPPINGS))
 ```
+:::
 
 # `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
 
@@ -1287,10 +1414,13 @@ DATA |>
 -   Realizar la **Actividad 2**.
 
 <br>
+
 <br>
 
-```{R}
+```{r}
+#| label: timer-3
 #| echo: false
+
 countdown_timer(7)
 ```
 
@@ -1303,13 +1433,13 @@ countdown_timer(7)
 ## `dplyr`
 
 ::: columns
-::: {.column width="50%"}
+::: {.column .fragment width="50%"}
 `dplyr` es una gramática de transformación de datos que proporciona un conjunto consistente de verbos (funciones) que ayudan a resolver los desafíos de manipulación de datos más comunes. 
 
 ![](images/dplyr.png){fig-align="center" width="250"}
 :::
 
-::: {.column width="50%"}
+::: {.column .fragment width="50%"}
 Todas las funciones tienen estás características en común:
 
 1.    El primer argumento es siempre un data frame.
@@ -1318,107 +1448,136 @@ Todas las funciones tienen estás características en común:
 :::
 :::
 
+::: {.fragment}
 Los verbos de `dplyr` están organizados en cuatro grupos basados en lo que operan:
 
 ::: columns
 ::: {.column width="25%"}
 ### Filas
--   `arrange`
--   `distinct`
--   `filter`
--   `slice_*`
+-   `arrange()`
+-   `distinct()`
+-   `filter()`
+-   `slice_*()`
 :::
 
 ::: {.column width="25%"}
 ### Columnas
--   `mutate`
--   `relocate`
--   `rename`
--   `select`
+-   `mutate()`
+-   `relocate()`
+-   `rename()`
+-   `select()`
 :::
 
 ::: {.column width="25%"}
 ### Grupos
--   `count`
--   `group_by`
--   `summarise`
+-   `count()`
+-   `group_by()`
+-   `summarise()`
 :::
 
 ::: {.column width="25%"}
 ### Data frames
--   `*_join`
+-   `*_join()`
 :::
 :::
 
-## `dplyr` --- filas: `arrange`
+:::
 
-`arrange` Ordena las filas utilizando los valores de las columnas
+## `dplyr` --- filas: `arrange()`
+
+::: {.fragment}
+`arrange()` Ordena las filas utilizando los valores de las columnas
 
 ```{r}
+#| label: dplyr-arrange
 #| echo: true
+#| output-location: fragment
 
 palmerpenguins::penguins |> 
   dplyr::arrange(island)
 ```
+:::
 
-Para ordenar de mayor a menor se ha de usar `dplyr::desc` dentro de `dplyr::arrange`.
+::: {.fragment}
+Para ordenar de mayor a menor se ha de usar `dplyr::desc()` dentro de `dplyr::arrange()`.
 
 ```{r}
+#| label: dplyr-desc
 #| echo: true
+#| output-location: fragment
 
 palmerpenguins::penguins |> 
   dplyr::arrange(dplyr::desc(island))
 ```
+:::
 
-## `dplyr` --- filas: `distinct`
+## `dplyr` --- filas: `distinct()`
 
-`distinct` Mantiene filas distintas/únicas
+::: {.fragment}
+`distinct()` Mantiene filas distintas/únicas
 
 ```{r}
+#| label: dplyr-distinct
 #| echo: true
+#| output-location: fragment
 
 palmerpenguins::penguins |> 
   dplyr::distinct(island)
 ```
+:::
 
-## `dplyr` --- filas: `filter`
+## `dplyr` --- filas: `filter()`
 
-`filter` Mantiene las filas que cumplen una condición
+::: {.fragment}
+`filter()` Mantiene las filas que cumplen una condición
 
 ```{r}
+#| label: dplyr-filter
 #| echo: true
+#| output-location: fragment
 
 palmerpenguins::penguins |> 
   dplyr::filter(island == "Dream")
 ```
+:::
 
+::: {.fragment}
 Hay muchas funciones y operadores que resultan útiles a la hora de construir las expresiones utilizadas para filtrar los datos:
 
 -   Operadores de comparación (`==`, `!=`, `>`, `<`, `>=`, `<=`)
 -   Operadores lógicos (`|`, `&`, `!`)
 -   `base::is.na()`
 -   `dplyr::between()`, `dplyr::near()`
+:::
 
-## `dplyr` --- filas: `slice_*`
+## `dplyr` --- filas: `slice_()*`
 
-`slice_*` Subconjunto de filas utilizando sus posiciones
+::: {.fragment}
+`slice_()*` Subconjunto de filas utilizando sus posiciones
 
 ```{r}
+#| label: dplyr-slice
 #| echo: true
+#| output-location: fragment
 
 palmerpenguins::penguins |> 
   dplyr::slice_min(body_mass_g, n = 5)
 ```
+:::
 
-Podemos encontrar varias funciones: `slice()`, `slice_head()`, `slice_tail()`, `slice_min()`, `slice_max()`, `slice_sample()`.
+::: {.fragment}
+Podemos encontrar varias funciones: `dplyr::slice()`, `dplyr::slice_head()`, `dplyr::slice_tail()`, `dplyr::slice_min()`, `dplyr::slice_max()`, `dplyr::slice_sample()`.
+:::
 
-## `dplyr` --- filas
+## `dplyr` --- filas: ejemplo
 
 ```{r}
+#| label: dplyr-ejemplo-filas
 #| eval: true
 #| echo: true
 #| fig-align: center
 #| output-location: fragment
+#| code-line-numbers: "|1|2-4|5-8|9-11|12-15"
 
 palmerpenguins::penguins |>
   dplyr::filter(
@@ -1437,12 +1596,15 @@ palmerpenguins::penguins |>
   )
 ```
 
-## `dplyr` --- columnas: `mutate`
+## `dplyr` --- columnas: `mutate()`
 
-`mutate` Crear, modificar y eliminar columnas
+::: {.fragment}
+`mutate()` Crear, modificar y eliminar columnas
 
 ```{r}
+#| label: dplyr-mutate
 #| echo: true
+#| output-location: fragment
 
 palmerpenguins::penguins |> 
   dplyr::mutate(
@@ -1450,27 +1612,36 @@ palmerpenguins::penguins |>
     .after = bill_depth_mm
   )
 ```
+:::
 
-Hay muchas funciones que pueden ser usadas, `?dplyr::mutate` para ver un listado de ellas.
+::: {.fragment}
+Hay muchas funciones que pueden ser usadas, `?dplyr::mutate()` para ver un listado de ellas.
+:::
 
-## `dplyr` --- columnas: `pull`
+## `dplyr` --- columnas: `pull()`
 
-`pull` Extraer una sola columna
+::: {.fragment}
+`pull()` Extraer una sola columna
 
 ```{r}
+#| label: dplyr-pull
 #| echo: true
+#| output-location: fragment
 
 palmerpenguins::penguins |> 
   dplyr::pull(species)
 ```
+:::
 
+## `dplyr` --- columnas: `relocate()`
 
-## `dplyr` --- columnas: `relocate`
-
-`relocate` Cambiar el orden de las columnas
+::: {.fragment}
+`relocate()` Cambiar el orden de las columnas
 
 ```{r}
+#| label: dplyr-relocate
 #| echo: true
+#| output-location: fragment
 
 palmerpenguins::penguins |> 
   dplyr::relocate(
@@ -1478,33 +1649,46 @@ palmerpenguins::penguins |>
     sex
   )
 ```
+:::
 
-Tiene dos argumentos muy útiles *.before* y *.after*.
+::: {.fragment}
+`dplyr::relocate()` tiene dos argumentos muy útiles *.before* y *.after*.
+:::
 
+## `dplyr` --- columnas: `rename()`
 
-## `dplyr` --- columnas: `rename`
-
-`rename` Renombrar columnas
+::: {.fragment}
+`rename()` Renombrar columnas
 
 ```{r}
+#| label: dplyr-rename
 #| echo: true
+#| output-location: fragment
 
 palmerpenguins::penguins |> 
   dplyr::rename(
     Pygoscelis = species
   )
 ```
+:::
 
-La sintaxis siempre es `nuevo_nombre = viejo_nombre`. `rename_with()` renombra columnas utilizando una función. 
+::: {.fragment}
+La sintaxis siempre es `nuevo_nombre = viejo_nombre`. 
+
+`rename_with()` renombra columnas utilizando una función. 
 
 Si se tiene un montón de columnas con nombres inconsistentes y sería complicado corregirlas todas manualmente, consulte `janitor::clean_names()`.
+:::
 
-## `dplyr` --- columnas: `select`
+## `dplyr` --- columnas: `select()`
 
-`select` Mantener o eliminar columnas utilizando sus nombres y tipos
+::: {.fragment}
+`select()` Mantener o eliminar columnas utilizando sus nombres y tipos
 
 ```{r}
+#| label: dplyr-select
 #| echo: true
+#| output-location: fragment
 
 palmerpenguins::penguins |> 
   dplyr::select(
@@ -1512,15 +1696,21 @@ palmerpenguins::penguins |>
     sex
   )
 ```
+:::
 
-Las selecciones Tidyverse implementan un dialecto de R en el que los operadores facilitan la selección de variables: `:` selecciona un rango de variables consecutivas. `!` toma el complemento de un conjunto de variables. `&` y `|` selecciona la intersección o la unión de dos conjuntos de variables. `c()` para combinar selecciones.
+::: {.fragment}
+Las selecciones del Tidyverse implementan un dialecto de R en el que los operadores facilitan la selección de variables: `:` selecciona un rango de variables consecutivas. `!` toma el complemento de un conjunto de variables. `&` y `|` selecciona la intersección o la unión de dos conjuntos de variables. `c()` para combinar selecciones.
 
-Además, puede utilizar ayudantes de selección. `?dplyr::select` para ver el listado completo.
+Además, puede utilizar ayudantes de selección. `?dplyr::select()` para ver el listado completo.
+:::
 
-## `dplyr` --- columnas
+## `dplyr` --- columnas: ejemplo
 
 ```{r}
+#| label: dplyr-ejemplo-columnas
 #| echo: true
+#| output-location: fragment
+#| code-line-numbers: "|1|2-4|5-7|8-12"
 
 palmerpenguins::penguins |> 
   dplyr::rename(
@@ -1536,11 +1726,13 @@ palmerpenguins::penguins |>
   )
 ```
 
-## `dplyr` --- grupos: `count`
+## `dplyr` --- grupos: `count()`
 
-`count` Contar las observaciones de cada grupo
+::: {.fragment}
+`count()` Contar las observaciones de cada grupo
 
 ```{r}
+#| label: dplyr-count
 #| echo: true
 #| output-location: fragment
 
@@ -1550,17 +1742,23 @@ palmerpenguins::penguins |>
     island
   )
 ```
+:::
 
+::: {.fragment}
 Al utilizar `sort = TRUE` como argumento, se mostrará los grupos más grandes en la parte superior.
 
-`add_count()` y `add_tally()` son equivalentes a `count()` y `tally()` pero utilizan `mutate()` en lugar de `summarise()` para añadir una nueva columna con recuentos por grupos.
+`dplyr::add_count()` y `dplyr::add_tally()` son equivalentes a `dplyr::count()` y `dplyr::tally()` pero utilizan `dplyr::mutate()` en lugar de `dplyr::summarise()` para añadir una nueva columna con recuentos por grupos.
+:::
 
-## `dplyr` --- grupos: `group_by`
+## `dplyr` --- grupos: `group_by()`
 
-`group_by` Agrupar por una o varias variables
+::: {.fragment}
+`group_by()` Agrupar por una o varias variables
 
 ```{r}
+#| label: dplyr-group-by
 #| echo: true
+#| output-location: fragment
 
 palmerpenguins::penguins |> 
   dplyr::group_by(
@@ -1568,15 +1766,21 @@ palmerpenguins::penguins |>
     island
   )
 ```
+:::
 
-`group_by` no cambia los datos pero, si observa detenidamente la salida, se dará cuenta de que la salida indica que está «agrupada por» (`Groups: species, island [5]`). Esto significa que las operaciones posteriores funcionarán ahora por grupo. Por lo cual es recomendable usar `dplyr::ungroup` cuando sea necesario.
+::: {.fragment}
+`dplyr::group_by()` no cambia los datos pero, si observa detenidamente la salida, se dará cuenta de que la salida indica que está «agrupada por» (`Groups: species, island [5]`). Esto significa que las operaciones posteriores funcionarán ahora por grupo. Por lo cual es recomendable usar `dplyr::ungroup()` cuando sea necesario.
+:::
 
-## `dplyr` --- grupos: `summarise`
+## `dplyr` --- grupos: `summarise()`
 
-`summarise` Resumir cada grupo en una fila
+::: {.fragment}
+`summarise()` Resumir cada grupo en una fila
 
 ```{r}
+#| label: dplyr-summarise
 #| echo: true
+#| output-location: fragment
 
 palmerpenguins::penguins |> 
   dplyr::group_by(
@@ -1587,16 +1791,21 @@ palmerpenguins::penguins |>
     n = dplyr::n()
   )
 ```
+:::
 
-La operación de agrupamiento más importante. Reduce el data frame para que tenga una sola fila para cada grupo. `summarise()` y `summary()` son sinónimos.
+::: {.fragment}
+La operación de agrupamiento más importante. Reduce el data frame para que tenga una sola fila para cada grupo. `dplyr::summarise()` y `dplyr::summarize()` son sinónimos.
 
-Funciones útiles: centrales (`mean`, `median`), dispersión (`sd`, `IQR`, `mad`), rango (`min`, `max`), posición (`first`, `last`, `nth`), recuento (`n`, `n_distinto`), lógicas (`any`, `all`).
+Funciones útiles: centrales (`base::mean()`, `base::median()`), dispersión (`base::sd()`, `base::IQR()`, `base::mad()`), rango (`base::min()`, `base::max()`), posición (`dplyr::first()`, `dplyr::last()`, `dplyr::nth()`), recuento (`dplyr::n()`, `dplyr::n_distinto()`), lógicas (`dplyr::any()`, `dplyr::all()`).
+:::
 
-## `dplyr` --- grupos
+## `dplyr` --- grupos: ejemplo
 
 ```{r}
+#| label: dplyr-ejemplo-grupos
 #| echo: true
 #| output-location: fragment
+#| code-line-numbers: "|1|2-6|7-10"
 
 palmerpenguins::penguins |> 
   dplyr::group_by(
@@ -1614,14 +1823,18 @@ palmerpenguins::penguins |>
 
 ::: columns
 ::: {.column width="40%"}
+::: {.fragment fragment-index=1}
 Las uniones de transformación (mutating joins) agregan nuevas variables a un data frame a partir de las observaciones coincidentes en otra tabla. Hay cuatro uniones de transformación: la unión interior (inner join) y las tres uniones exteriores (outer joins).
+:::
 
+::: {.fragment fragment-index=3}
 Las uniones de filtro (filtering joins) filtran observaciones en un data frame con base en si coinciden o no con una observación de otra tabla.
 
 Las operaciones de conjuntos (set operations) que tratan las observaciones como elementos de un conjunto.
 :::
+:::
 
-::: {.column width="60%"}
+::: {.column .fragment fragment-index=2 width="60%"}
 ![Tomado de @choueiry2024.](images/mutating_joins.png){fig-align="center"}
 :::
 :::
@@ -1632,10 +1845,13 @@ Las operaciones de conjuntos (set operations) que tratan las observaciones como 
 -   Realizar la **Actividad**.
 
 <br>
+
 <br>
 
-```{R}
+```{r}
+#| label: timer-4
 #| echo: false
+
 countdown_timer(8)
 ```
 
@@ -1648,14 +1864,15 @@ countdown_timer(8)
 Hay varias maneras de importar los datos. Todo depende del formato en que estos se encuentren, aunque lo ideal es siempre tenerlos en formatos de texto plano: .csv, .tsv, txt.
 
 ::: columns
-::: {.column width="50%"}
+::: {.column .fragment width="50%"}
 ### Texto plano
 
 ![](images/readr.png){fig-align="center" width="250"}
 
-Hay varias funciones: `read_csv`, `read_tsv`, `read_csv2`, `read_delim`.
+Hay varias funciones: `reardr::read_csv()`, `reardr::read_tsv()`, `reardr::read_csv2()`, `reardr::read_delim()`.
 
 ```{r}
+#| label: read-csv
 #| eval: false
 #| echo: true
 
@@ -1665,14 +1882,15 @@ reardr::read_csv(
 ```
 :::
 
-::: {.column width="50%"}
+::: {.column .fragment width="50%"}
 ### Excel
 
 ![](images/readxl.png){fig-align="center" width="250"}
 
-Hay varias funciones: `read_excel`, `read_xls`, `read_xlsx`.
+Hay varias funciones: `readxl::()read_excel`, `readxl::()read_xls`, `readxl::()read_xlsx`.
 
 ```{r}
+#| label: read-excel
 #| eval: false
 #| echo: true
 
@@ -1699,9 +1917,12 @@ Hay varios paquetes para realizar tablas en R. Cada uno con enfoques, curvas de 
 
 La idea de una tabla es que sea informativa y legible, por lo cual es recomendable hacer una buena selección de los datos.
 
+::: {.fragment}
 ```{r}
+#| label: organizando-datos
 #| echo: true
 #| output-location: column-fragment
+#| code-line-numbers: "|1|2|3-7|8-11|12-14|15|17"
 
 penguins_resumen <- 
   palmerpenguins::penguins |> 
@@ -1721,14 +1942,18 @@ penguins_resumen <-
 
 penguins_resumen
 ```
+:::
 
 ## `knitr::kable()` {.scrollable}
 
 `kable()` es un generador de tablas muy simple, y es simple por diseño. Sólo genera tablas para datos estrictamente rectangulares. No puede formatear mucho las celdas de la tabla ni combinar celdas. Algunas de las limitaciones de `knitr::kable()` pueden ser subsanadas utilizando el paquete `kableExtra`.
 
+::: {.fragment}
 ```{r}
+#| label: kable
 #| echo: true
 #| output-location: column-fragment
+#| code-line-numbers: "|1|2-12|13-18"
 
 penguins_resumen |> 
   dplyr::mutate(
@@ -1749,6 +1974,7 @@ penguins_resumen |>
     digits = c(2)
   )
 ```
+:::
 
 ## `gt`
 
@@ -1756,11 +1982,13 @@ penguins_resumen |>
 
 ![](images/gt_parts_of_a_table.png){.r-stretch fig-align="center"}
 
-## `gt`
+## `gt` --- ejemplo
 
 ```{r}
+#| label: gt
 #| echo: true
 #| output-location: column-fragment
+#| code-line-numbers: "|1|2|3-10|11-14|15-18|19-25|26-29|30"
 
 penguins_resumen |> 
   gt::gt() |>
@@ -1800,11 +2028,13 @@ penguins_resumen |>
 
 ![](images/flextable_layout.png){fig-align="center"}
 
-## `flextable`
+## `flextable` --- ejemplo
 
 ```{r}
+#| label: flextable
 #| echo: true
 #| output-location: column-fragment
+#| code-line-numbers: "|1|2|3-6|7-11|12-16|17-22|23-25|26-29|30|31"
 
 penguins_resumen |> 
   flextable::flextable() |> 
@@ -1858,10 +2088,13 @@ penguins_resumen |>
 # `r fontawesome::fa("mug-saucer", "white")` Pausa {background-color="#000000" transition="slide-in"}
 
 <br>
+
 <br>
 
-```{R}
+```{r}
+#| label: timer-5
 #| echo: false
+
 countdown_timer(10)
 ```
 

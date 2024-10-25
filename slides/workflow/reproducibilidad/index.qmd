@@ -28,3 +28,308 @@ bibliography: references.bib
 csl: apa.csl
 ---
 
+```{r}
+#| label: setup
+#| output: false
+
+if (!require("here")) install.packages("here"); library("here")
+if (!require("fontawesome")) install.packages("fontawesome"); library("fontawesome")
+```
+
+```{r}
+#| label: countdown
+#| echo: false
+#| 
+countdown_timer <- function(
+    minutes = 1, 
+    play_sound = TRUE, 
+    font_size = "2em", 
+    ...
+) {
+  countdown::countdown(
+    minutes = minutes,
+    play_sound = play_sound,
+    color_border              = "#white",
+    color_text                = "white",
+    color_running_background  = "#009E73",
+    color_running_text        = "white",
+    color_finished_background = "#D55E00",
+    color_finished_text       = "white",
+    font_size = font_size,
+    ...
+  )
+}
+```
+
+## Proposito {.incremental}
+
+-   Mostrar la importancia de la reproducibilidad en la ciencia
+-   Enseñar a manejar los proyectos de RStudio
+-   Enseñar a manejar las rutas relativas
+-   Enseñar la importancia de los nombres
+-   Dar una introducción al control de versiones
+
+## Ciencia abierta
+
+## Taxonomía de la ciencia abierta
+
+## Repetibilidad, Replicabilidad, Reproducibilidad, y otras erres
+
+## Análisis reproducibles
+
+## Entorno de desarrollo integrado (IDE)
+
+# `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
+
+-   Abrir `script_super-analisis.r` que se encuentra en la carpeta `reproducibilidad`
+-   Ejecutar el script
+
+<br>
+
+<br>
+
+```{r}
+#| label: timer-1
+#| echo: false
+
+countdown_timer(5)
+```
+
+## Advertencia
+
+::: {.fragment .r-fit-text}
+Si la primera línea de tu script R es
+
+`setwd("C:\Users\jenny\ruta\que\solo\yo\tengo")`
+
+Iré a tu oficina y LE PRENDERÉ FUEGO A TU ORDENADOR 🔥
+
+*Jenny Bryan*
+:::
+
+::: columns
+::: {.column .fragment width="50%"}
+![`r fontawesome::fa("mastodon")` [\@jennybryan\@fosstodon.org](https://fosstodon.org/@jennybryan)](images/jenny_bryan.jpeg)
+
+:::
+
+::: {.column .fragment width="50%"}
+-   Científica de datos y profesora asociada de estadística en la Universidad de Columbia Británica. Estadista e ingeniera de software en Posit.
+-   Autora de [*Happy Git and GitHub for the useR*](https://happygitwithr.com), [*What they gorgot to teach you about R*](https://rstats.wtf), [*STAT 545: Data wrangling, exploration, and analysis with R*](http://stat545.com).
+-   Autora y responsable de `reprex`, `readxl`, `googlesheets4`, `usethis`, entre otros. 
+:::
+:::
+
+## El problema con `setwd()`
+
+## Proyectos
+
+::: incremental
+-   Un proyecto es una carpeta que contiene todos los archivos relevantes para un trabajo en particular.
+
+-   Los proyectos permiten que las investigaciones sean reproducibles, portátiles y autocontenibles.
+
+-   Trabajar con proyectos implica tener:
+
+    -   **disciplina en el sistema de archivos**: todos los archivos relacionados a un proyecto (datos, imágenes, resultados, scripts, etc) están en la carpeta del proyecto.
+    -   **intencionalidad en el directorio de trabajo**: siempre se trabaja en el directorio del proyecto.
+    -   **disciplina en las rutas de archivos**: todas las rutas son relativas (nunca absolutas) y relativas a la carpeta del proyecto.
+:::
+
+::: footer
+[Más información](https://rstats.wtf/projects)
+:::
+
+## Proyectos de RStudio
+
+![Hay varias formas de crear un proyecto. La más sencilla es `File` \> `New Project`.](images/rstudio_projects.png){fig-align="center"}
+
+::: footer
+[Más información](https://docs.posit.co/ide/user/ide/guide/code/projects.html)
+:::
+
+## Configuración de RStudio
+
+Siempre es recomendable trabajar en un workspace nuevo, así como reiniciar R de vez en cuando.
+
+![Para desactivar `.Rdata` ir a `Tools` \> `Global Options`.](images/rstudio_workspace.png){fig-align="center"}
+
+::: footer
+[Más información](https://rstats.wtf/source-and-blank-slates#always-start-r-with-a-blank-slate)
+:::
+
+## Rutas
+
+::: columns
+::: {.column width="50%"}
+### Rutas absolutas
+
+Indican la ubicación de un archivo o directorio desde el directorio raíz del sistema de archivos. Dificulta la reproducibilidad ya que esa ruta sólo «funciona» en el equipo donde se haya creado.
+
+::: {style="font-size: 70px"}
+    /usuarios/yo/documentos/r/proyecto/scripts/super-analisis.R
+:::
+
+### Rutas relativas
+
+Indican la ubicación de un archivo o directorio a partir de la posición actual del sistema operativo en el sistema de archivos.
+
+::: {style="font-size: 70px"}
+    /scripts/super-analisis.R
+:::
+:::
+
+::: {.column width="50%"}
+![[Allison Horst](https://allisonhorst.com/r-packages-functions).](images/package_here.jpg){fig-align="center"}
+:::
+:::
+
+## You are `here::here()`
+
+## Rutas en Quarto
+
+## El nombre de las cosas
+
+### No {.fragment fragment-index="1"}
+
+::: {.fragment fragment-index="1" style="font-size: 70px"}
+    myabstract.docx
+    Joe’s Filenames Use Spaces and Punctuation.xlsx
+    figure 1.png
+    fig 2.png
+    JW7d^(2sl@deletethisandyourcareerisoverWx2*.txt
+:::
+
+### Sí {.fragment fragment-index="2"}
+
+::: {.fragment fragment-index="2" style="font-size: 70px"}
+    2014-06-08_abstract-for-sla.docx
+    joes-filenames-are-getting-better.xlsx
+    fig01_scatterplot-talk-length-vs-interest.png
+    fig02_histogram-talk-attendance.png
+    1986-01-28_raw-data-from-challenger-o-rings.txt
+:::
+
+## Principios para los nombres (de los archivos)
+
+::: incremental
+1.  Legible por máquinas
+
+    -   Expresiónes regulares (Regex) y globbing[^1] amigable.
+        -   Evitar espacios, puntuación, caracteres acentuados y distinción entre mayúsculas y minúsculas.
+    -   Fácil de computar.
+        -   Uso deliberado de delimitadores: "\_" para delimitar unidades de metadatos y "-" para delimitar palabras
+
+2.  Legible por humanos
+
+    -   El nombre contiene información sobre el contenido.
+
+    -   Relacionado al concepto de URL semántica[^2].
+
+3.  Funciona bien con el orden predeterminado (alfanúmerico)
+
+    -   Poner algo numérico primero.
+
+    -   Utilice la norma ISO 8601 para fechas.
+
+    -   Utilice ceros a la izquierda de otros números.
+:::
+
+[^1]: Definir uno o más patrones globales y generar archivos a partir de coincidencias inclusivas o exclusivas. [Fuente](https://learn.microsoft.com/en-us/dotnet/core/extensions/file-globbing)
+
+[^2]: URLs que son entendibles para el usuario. [Fuente](https://es.wikipedia.org/wiki/URL_semántica)
+
+## Ejemplos
+
+::: columns
+::: {.column .fragment width="50%" fragment-index="1"}
+### Orden lógico
+
+::: {.fragment fragment-index="1" style="font-size: 70px"}
+    01_marshal-data.R
+    02_pre-dea-filtering.R
+    03_dea-with-Limma-voom.R
+    04_explore-dea-results.R
+    90_Limma-model-term-name-fiasco.R
+    helper01_load-counts.R
+    helper02_load-exp-des.R
+    helper03_load-focus-statinf.R
+    helper04_extract-and-tidy.R
+:::
+:::
+
+::: {.column .fragment width="50%" fragment-index="2"}
+### Orden crónologico
+
+::: {.fragment fragment-index="2" style="font-size: 70px"}
+    2015-11-09_package-installation.R
+    2016-05-21_package-installation.R
+    2017-09-05_package-installation.R
+    2018-06-29_package-installation.R
+    2019-02-19_repair-default-library.R
+    2020-06-06_record-existing-pkgs.R
+    2021-06-15_git-config-analysis.R
+    2021-08-29-git-default-branch.R
+    2022-08-11_record-existing-pkgs.R
+:::
+:::
+:::
+
+\
+
+### Ejemplo más complejo {.fragment fragment-index="3"}
+
+::: {.fragment fragment-index="3" style="font-size: 70px"}
+    2013-06-26_BRAFWTNEGASSAY_Plasmid-Cellline-100-1MutantFraction_HO1.csv
+    2013-06-26_BRAFWTNEGASSAY_Plasmid-Cellline-100-1MutantFraction_HO2.csv
+    2013-06-26_BRAFWTNEGASSAY_Plasmid-Cellline-100-1MutantFraction_plateflle.csv
+    2014-02-26_BRAFWTNEGASSAY_FFPEDNA-CRC-1-41_A01.csv
+    2014-02-26_BRAFWTNEGASSAY_FFPEDNA-CRC-1-41_A02.csv
+:::
+
+## Formatos de los nombres
+
+::: columns
+::: {.fragment .column fragment-index="2" width="70%"}
+![[Allison Horst](https://allisonhorst.com/everything-else).](images/that_case.jpeg){fig-align="center"}
+:::
+
+::: {.column width="30%"}
+::: {.incremental fragment-index="1"}
+-   flatcase
+-   SCREAMINGCASE
+-   camelCase
+-   PascalCase
+-   snake_case
+-   SCREAMING_SNAKE_CASE
+-   camel_Snake_Case
+-   Pascal_Snake_Case
+-   kebab-case
+-   SCREAMING-KEBAB-CASE
+-   camel-Kebad-Case
+-   Pascal-Kebad-Case
+:::
+:::
+:::
+
+## Estructura de un proyecto
+
+::: columns
+::: {.column width="50%"}
+:::
+
+::: {.column width="50%"}
+:::
+:::
+
+## Reportes con Quarto
+
+## Formato de los archivos
+
+## Entornos reproducibles
+
+## `renv`
+
+## Paquetes de R
+
+## Control de versione

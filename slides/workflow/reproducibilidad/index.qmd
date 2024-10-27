@@ -69,13 +69,116 @@ countdown_timer <- function(
 -   Enseñar la importancia de los nombres
 -   Dar una introducción al control de versiones
 
+## ¿Estamos en crisis? 
+
+::: columns
+::: {.column width="50%"}
+![Respuesta de 1576 cientificos a @baker2016](images/crisis_01.jpeg){fig-align="center"}
+:::
+
+::: {.column width="50%"}
+::: {layout-ncol=1}
+![Registros de WoS que en el título, resumen o palabras clave contienen: «crisis de reproducibilidad», «crisis científica», «ciencia en crisis», «crisis en la ciencia», «crisis de replicación», o «crisis de replicabilidad». @fanelli2018](images/crisis_grafica.jpeg){fig-align="center"}
+
+![246 biólogo obtiene 256 resultados diferentes. ](images/crisis_articulo.png){fig-align="center"}
+:::
+:::
+:::
+
+## ¿Alguien por favor quiere pensar en los biólogos?
+
+![@baker2016](images/crisis_02.jpeg){fig-align="center"}
+
+## Sí, necesitamos un cambio
+
+::: columns
+::: {.column width="50%"}
+:::
+
+::: {.column width="50%"}
+:::
+:::
+![@korbmacher2023](images/cambios.png){fig-align="center"}
+
 ## Ciencia abierta
+
+::: columns
+::: {.column width="60%"}
+>[«Constructo inclusivo que combina diversos movimientos y prácticas con el fin de que los conocimientos científicos multilingües estén abiertamente disponibles y sean accesibles para todos, así como reutilizables por todos, se incrementen las colaboraciones científicas y el intercambio de información en beneficio de la ciencia y la sociedad, y se abran los procesos de creación, evaluación y comunicación de los conocimientos científicos a los agentes sociales más allá de la comunidad científica tradicional.]{.fragment} [La ciencia abierta comprende todas las disciplinas científicas y todos los aspectos de las prácticas académicas, incluidas las ciencias básicas y aplicadas, las ciencias naturales y sociales y las humanidades, y se basa en los siguientes pilares clave: conocimiento científico abierto, infraestructuras de la ciencia abierta, comunicación científica, participación abierta de los agentes sociales y diálogo abierto con otros sistemas de conocimiento.» @unesco2021]{.fragment}
+:::
+
+::: {.column .fragment width="40%"}
+![Algunos beneficios de la ciencia abierta. @unesco2021](images/ciencia-abierta_definicion.png){fig-align="center"}
+:::
+:::
+
+::: {.footer}
+[Política Nacional De Ciencia Abierta 2022-2031, Resolución 0777 del 2022](https://redcol.minciencias.gov.co/Content/ciencia_abierta)
+:::
+
+## Valores fundamentales y principios rectores
+
+![Valores fundamentales y principios rectores de la ciencia abierta. @unesco2021](images/ciencia-abierta_valores_principios.png){fig-align="center"}
 
 ## Taxonomía de la ciencia abierta
 
+::: {.r-stack}
+
+![](images/ciencia-abierta_taxonomia.png){.fragment .fade-out fig-align="center"}
+
+![](images/ciencia-abierta_taxonomia_zoom.png){.fragment fig-align="center"}
+:::
+
+::: {.footer}
+Imagen original [@dasilveira2023], <https://zenodo.org/records/7858978>. FAIR: **F**indable, **A**ccessible, **I**nteroperable, **R**eusable.
+:::
+
+## Investigación abierta reproducible
+
+::: columns
+::: {.column width="50%"}
+> [Reproducibilidad significa que los datos y el código de investigación están disponibles para que otros sean capaces de obtener los mismos resultados alcanzados en sus trabajos. Este concepto está íntimamente relacionado con el de replicabilidad, el acto de repetir una metodología científica con el objetivo de alcanzar conclusiones similares. Estos conceptos son elementos centrales de la investigación empírica.]{.fragment}
+>
+> [Mejorar la reproducibilidad conduce a aumentar el rigor y la calidad de los trabajos científicos y, por tanto, a una mayor confianza en la ciencia. @bezjak2018]{.fragment}
+:::
+
+::: {.column .fragment width="50%"}
+![La reproducibilidad se aplica directamente al método científico. @bezjak2018](images/ciencia_metodo.png){fig-align="center"}
+:::
+:::
+
 ## Repetibilidad, Replicabilidad, Reproducibilidad, y otras erres
 
-## Análisis reproducibles
+::: {.fragment}
+|            @goodman2016            |  @claerbout1992  | @associationforcomputingmachineryacm2020 |
+|:------------------------:|:---------------:|:---------------------------:|
+|                                    |                  |              Repetibilidad               |
+|  Reproducibilidad de los métodos   | Reproducibilidad |              Replicabilidad              |
+| Reproducibilidad de los resultados |  Replicabilidad  |             Reproducibilidad             |
+|    Reproducibilidad inferencial    |                  |                                          |
+
+: Comparación de términos. Traducido de @plesser2018.
+:::
+
+::: {.fragment}
+![Explicación de la terminología sobre reproducibilidad y replicabilidad. @whitaker2017.](images/reproducible-matrix.jpg){fig-align="center"}
+:::
+
+## El espectro de la reproducibilidad
+
+::: {layout-ncol=1}
+::: {.fragment}
+![Espectro de reproducibilidad más común. @peng2011.](images/reproducibility_spectrum_1.png){fig-align="center"}
+:::
+
+::: {.fragment}
+![Compartir datos y código se considera suficiente para que muchos reproduzcan el análisis de datos. Sin embargo, esto no es suficiente. @akalin2021.](images/reproducibility_spectrum_2.png){fig-align="center"}
+:::
+:::
+
+## Cómo fomentar la investigación abierta reproducible
+
+![Estrategias para hacer de la investigación reproducible y la formación en ciencia abierta la norma en las instituciones de investigación. @kohrs2023](images/ciencia-abierta_once-estrategias.jpg){fig-align="center"}
 
 ## Entorno de desarrollo integrado (IDE)
 

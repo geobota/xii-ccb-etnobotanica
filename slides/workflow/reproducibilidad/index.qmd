@@ -26,6 +26,8 @@ format:
     footer: "[Etnobotánica Cuantitativa en R](https://geobota.github.io/xii-ccb-etnobotanica/)"
 bibliography: references.bib
 csl: apa.csl
+nocite: |
+  @positsoftware2022; @positsoftware2024; @lopp2019; @slingsby2024; @campitelli2024
 ---
 
 ```{r}
@@ -64,10 +66,7 @@ countdown_timer <- function(
 ## Proposito {.incremental}
 
 -   Mostrar la importancia de la reproducibilidad en la ciencia
--   Enseñar a manejar los proyectos de RStudio
--   Enseñar a manejar las rutas relativas
--   Enseñar la importancia de los nombres
--   Dar una introducción al control de versiones
+-   Enseñar el flujo de trabajo orientados a proyectos
 
 ## ¿Estamos en crisis? 
 
@@ -82,7 +81,7 @@ countdown_timer <- function(
 :::
 
 ::: {.fragment}
-![246 biólogo obtiene 256 resultados diferentes. @oza2023](images/crisis_articulo.png){fig-align="center" width="800"}
+![246 biólogo obtiene 246 resultados diferentes. @oza2023](images/crisis_articulo.png){fig-align="center" width="800"}
 :::
 :::
 :::
@@ -262,6 +261,7 @@ Algo similar ocurre con `rm(list = ls())`.
 
 ::: columns
 ::: {.column width="50%"}
+::: {.fragment fragment-index=1}
 Aplicación que proporciona servicios integrales para facilitar el desarrollo de software.
 
 Ventajas:
@@ -271,7 +271,9 @@ Ventajas:
 -   Manejo de librerías
 -   Construir, compilar o ejecutar
 -   y mucho más…
+:::
 
+{.fragment fragment-index=2}
 IDEs populares:
 
 -   Emacs
@@ -279,8 +281,9 @@ IDEs populares:
 -   vim
 -   VS Code
 :::
+:::
 
-::: {.column width="50%"}
+::: {.column .fragment fragment-index=1 width="50%"}
 ![[Apariencia por defecto de RStudio.](https://docs.posit.co/ide/user/ide/get-started/)](images/rstudio_ide.jpeg){fig-align="center"}
 :::
 :::
@@ -302,6 +305,39 @@ IDEs populares:
 ::: footer
 [Más información](https://rstats.wtf/source-and-blank-slates#always-start-r-with-a-blank-slate)
 :::
+
+## Flujo de trabajo orienta a proyectos[^4] 
+
+[^4]: Project-oriented workflow
+
+::: {.fragment}
+Enfoque de organización que estructura todo el trabajo, código, datos y resultados relacionados con un proyecto en una única carpeta o estructura de carpetas organizada. Esta metodología facilita el manejo y la reproducibilidad de proyectos, especialmente en ciencia de datos, programación y análisis.
+:::
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: {.incremental}
+-   Estructura organizada de carpetas
+-   Separación de código y datos
+-   Control de versiones
+-   Scripts y documentación reproducibles
+-   Portabilidad
+:::
+:::
+
+::: {.column .fragment width="50%"}
+### Ventajas
+
+::: {.incremental}
+-   Reproducibilidad
+-   Colaboración
+-   Escalabilidad
+:::
+:::
+:::
+
 
 ## Proyectos
 
@@ -449,7 +485,7 @@ readr::read_csv(here::here("data/raw_data.csv")) # opción 2
 #| label: timer-3
 #| echo: false
 
-countdown_timer(5)
+countdown_timer(10)
 ```
 
 ## El nombre de las cosas
@@ -594,6 +630,53 @@ helper04_extract-and-tidy.R
 -   Pascal-Kebad-Case
 :::
 :::
+
+::: {.fragment}
+R no acepta todos los formatos listados. Formatos sugeridos: camelCase, flatcase, PascalCase, period.case, snake_case.
+:::
+
+## «Lo lamento, pero hizo que el emperador perdiera el estilo»
+
+::: columns
+::: {.column .fragment width="50%"}
+Un buen estilo de codificación es como una correcta puntuación: se puede prescindir de él, perofacilitalalectura. Todas las guías de estilo se basan fundamentalmente en opiniones. Algunas decisiones realmente facilitan el uso del código, pero muchas decisiones son arbitrarias. Lo más importante de una guía de estilo es que proporciona coherencia, lo que facilita la escritura del código porque hay que tomar menos decisiones.
+
+![](images/meme_assignment.jpg)
+:::
+
+::: {.column .fragment width="50%"}
+### Guías de estilo
+
+::: {.incremental}
+-   [Guía de estilo de Bioconductor](https://contributions.bioconductor.org/r-code.html#r-code)
+-   [Guía de estilo de Colin Gillespie](https://csgillespie.wordpress.com/2010/11/23/r-style-guide/)
+-   [Guía de estilo de Google](https://google.github.io/styleguide/Rguide.html)
+-   [Guía de estilo del Tidyverse](https://style.tidyverse.org)
+:::
+
+::: {.fragment}
+Dos paquetes de R soportan la Guía de estilo del Tidyverse: `styler` y `lintr`.
+
+![Styler añade un complemento de RStudio que facilita aplicar el estilo.](images/styler_0.1.gif){fig-align="center"}
+:::
+:::
+:::
+
+# `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
+
+-   Leer la Guía de estilo del Tidyverse <https://style.tidyverse.org>
+-   Practicar el estilo.
+
+<br>
+
+<br>
+
+```{r}
+#| label: timer-4
+#| echo: false
+
+countdown_timer(10)
+```
 
 ## Estructura de un proyecto
 
@@ -765,7 +848,7 @@ read.csv(
 <br>
 
 ```{r}
-#| label: timer-4
+#| label: timer-5
 #| echo: false
 
 countdown_timer(10)
@@ -796,10 +879,6 @@ Imágenes de @bryan2024.
 ## Una API humana para el análisis
 
 ![Siempre que se pueda, se ha de apostar por [formatos abiertos](https://es.wikipedia.org/wiki/Formato_abierto): `CSV`, `JPEG`, `HTML`, `ODS`, `ODT`, `PDF`, `PNG`, `SVG`, `TSV`, `TXT`. Imagen @bryan2024.](images/input-code-output.jpg){fig-align="center"}
-
-## Entornos reproducibles
-
-## `renv`
 
 ## Control de versiones
 
@@ -839,7 +918,7 @@ Un método básico y rudimentario del control de versiones es tener copias de un
 :::
 
 ::: {.column width="50%"}
-
+![Logo de Git.](images/git_logo.png){fig-align="center"}
 :::
 :::
 
@@ -849,14 +928,80 @@ Un método básico y rudimentario del control de versiones es tener copias de un
 :::
 
 ::: {.column width="50%"}
-![[The Octocat](https://octodex.github.com), la mascota de GitHub.](images/octocat.png){fig-align="center"}
+![El invertocat logo de Github. La silueta es [The Octocat](https://octodex.github.com), la mascota de GitHub.](images/github_invertocat-logo.png){fig-align="center"}
 :::
 :::
 
+## Entornos reproducibles
 
+::: {.columns .fragment}
+::: {.column width="60%"}
+Un entorno (environment) consiste en todas las dependencias necesarias para que el código se ejecute correctamente. Esto incluye el propio R, los paquetes de R y las dependencias del sistema. Puede ser difícil gestionar entornos reproducibles:
 
+::: {.incremental}
+-   El código que solía ejecutarse ya no se ejecuta, a pesar de que el código no ha cambiado.
+-   Tener miedo de actualizar o instalar un nuevo paquete, ya que podría romper su código o el de otra persona.
+-   Escribir `install.packages()` en tu entorno no hace nada, o no hace lo *correcto*.
+:::
+:::
 
-## Referencias
+::: {.column width="40%"}
+![«El proyecto cebolla»: apostar por el flujo de trabajo orientado a proyectos significa adoptar herramientas que permitan gestionar mediante programación cada una de las capas de la configuración del proyecto. @bryan2024](images/project-oyster-greyed.svg){fig-align="center"}
+:::
+:::
+
+::: {.fragment}
+Estos retos pueden abordarse mediante una cuidadosa combinación de herramientas y estrategias. Acá sólo abordamos: la actualización segura de paquetes y la colaboración en equipo. Quedando por fuera el manejo de varias versiones de R y las dependencias del sistema, para lo cual es recomendable investigar sobre **rig** y **Docker**.
+:::
+
+::: {.footer}
+<https://xkcd.com/1987/>
+:::
+
+## `renv`
+
+::: columns
+::: {.column .fragment width="50%"}
+`renv` ayuda a crear entornos reproducibles para sus proyectos de R, haciendo los proyectos:
+
+::: {.incremental}
+-   Aislados: la instalación de un paquete nuevo o actualizado para un proyecto no romperá sus otros proyectos, y viceversa. `renv` proporciona a cada proyecto su propia biblioteca privada.
+-   Portátil: transporte fácilmente sus proyectos de un ordenador a otro, incluso a través de diferentes plataformas. `renv` facilita la instalación de los paquetes de los que depende su proyecto.
+-   Reproducible: `renv` registra las versiones exactas de los paquetes de los que depende, y asegura que esas versiones exactas son las que se instalan allá donde vaya.
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![](images/renv_logo.png){fig-align="center" width="250"}
+
+![Los verbos y sustantivos más importantes de `renv`.](images/renv_verbos.png){fig-align="center"}
+:::
+:::
+
+::: {.footer}
+<https://rstudio.github.io/renv/>
+:::
+
+## {background-color="black" background-image="images/renv_resume.png" background-size="contain"}
+
+::: {.footer}
+<https://rcd.ucsb.edu/sites/default/files/2023-12/dls-202311-renv-white.pdf>
+:::
+
+# `r fontawesome::fa("mug-saucer", "white")` Pausa {background-color="#000000" transition="slide-in"}
+
+<br>
+
+<br>
+
+```{r}
+#| label: timer-6
+#| echo: false
+
+countdown_timer(10)
+```
+
+## Referencias {visibility="uncounted"}
 
 ::: {#refs}
 :::

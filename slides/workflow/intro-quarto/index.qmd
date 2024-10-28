@@ -130,7 +130,7 @@ Quarto permite combinar en un mismo entorno texto y código para producir result
 :::
 
 ::: {.column .fragment width="50%"}
-![](images/quarto_org.png){fig-align="center"}
+![Imagen de [Krishnamurthy (2015)](https://kdheepak.com/blog/writing-papers-with-markdown/)](images/scientific-markdown.png){fig-align="center"}
 :::
 :::
 

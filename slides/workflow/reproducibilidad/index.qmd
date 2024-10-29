@@ -36,6 +36,7 @@ nocite: |
 
 if (!require("here")) install.packages("here"); library("here")
 if (!require("fontawesome")) install.packages("fontawesome"); library("fontawesome")
+if (!require("countdown")) install.packages("countdown"); library("countdown")
 ```
 
 ```{r}

@@ -1,0 +1,631 @@
+---
+title: "Análisis descriptivos"
+subtitle: "XII Congreso Colombiano de Botánica"
+author:
+  - name: "Álex Espinosa Correa"
+    affiliation: "Universidad de Antioquia"
+  - name: "Bladimir Vera Marín"
+    affiliation: "Universidad de Antioquia"
+# date: 2024-11-02
+
+format: 
+  revealjs:
+    theme:
+      - simple
+      - ../../custom.scss
+    width: 1920
+    height: 1080
+    embed-resources: true
+    slide-number: true
+    preview-links: true
+    controls: true
+    touch: false
+    # chalkboard: true
+    code-block-height: 850px
+    logo: "https://github.com/geobota/geobota.github.io/blob/main/images/xii-ccb/xii-ccb-logo.png?raw=true"
+    footer: "[Etnobotánica Cuantitativa en R](https://geobota.github.io/xii-ccb-etnobotanica/)"
+# bibliography: references.bib
+# csl: apa.csl
+
+execute:
+  echo: true
+---
+
+```{r}
+#| label: setup
+#| outpur: false
+#| echo: false
+
+if (!require("tidyverse")) install.packages("tidyverse"); library("tidyverse")
+if (!require("readxl")) install.packages("readxl"); library("readxl")
+if (!require("janitor")) install.packages("janitor"); library("janitor")
+if (!require("visdat")) install.packages("visdat"); library("visdat")
+if (!require("ggthemes")) install.packages("ggthemes"); library("ggthemes")
+if (!require("gt")) install.packages("gt"); library("gt")
+if (!require("flextable")) install.packages("flextable"); library("flextable")
+if (!require("ethnobotanyR")) install.packages("ethnobotanyR"); library("ethnobotanyR")
+if (!require("countdown")) install.packages("countdown"); library("countdown")
+```
+
+```{r}
+#| label: countdown
+#| echo: false
+
+countdown_timer <- function(
+    minutes = 1, 
+    play_sound = TRUE, 
+    font_size = "2em", 
+    ...
+) {
+  countdown::countdown(
+    minutes = minutes,
+    play_sound = play_sound,
+    color_border              = "#white",
+    color_text                = "white",
+    color_running_background  = "#009E73",
+    color_running_text        = "white",
+    color_finished_background = "#D55E00",
+    color_finished_text       = "white",
+    font_size = font_size,
+    ...
+  )
+}
+```
+
+## Proposito
+
+-   Enseñar el manejo y análisis de datos etnobotánicos
+
+# {transition="slide-in"}
+
+::: {.r-fit-text}
+*Para poder hacer una tarta de<br>manzana a partir de cero hay<br>que inventar primero el universo.*
+
+Carl Sagan
+:::
+
+## Tidyverse y la ciencia de datos
+
+![El Tidyverse tiene multipes paquetes que nos ayudaran durante todo el proceso de analizar los datos. Tomado de @çetinkaya-rundel2023.](images/data-science_tidyverse.png){#data-science-2 fig-align="center"}
+
+## Datos ordenados
+
+Hay tres reglas interrelacionadas que hacen que un conjunto de datos esté ordenado:
+
+1.  Cada variable es una columna; cada columna es una variable.
+2.  Cada observación es una fila; cada fila es una observación.
+3.  Cada valor es una celda; cada celda es un único valor.
+
+::: {.fragment}
+![Las siguientes tres reglas hacen que un conjunto de datos esté ordenado: las variables son columnas, las observaciones son filas y los valores son celdas. Tomado de @wickham2023a.](images/tidy-1.svg){#tidydata fig-align="center"}
+:::
+
+## Análisis exploratorio de datos (EDA)
+
+El EDA no es un proceso formal con una serie de normas estrictas. Más que nada, EDA es un estado mental. EDA es un ciclo iterativo. Donde:
+
+-   Generar preguntas sobre sus datos.
+-   Buscar respuestas visualizando, transformando y modelizando sus datos.
+-   Utilizar lo que aprende para refinar sus preguntas y/o generar otras nuevas.
+
+Durante las fases iniciales del AED debes sentirte libre para investigar todas las ideas que se te ocurran. Algunas de estas ideas resultarán y otras serán callejones sin salida.
+
+## Configuración
+
+Siempre es buena idea cargar los paquetes que usaremos durante el análisis. 
+
+```{r}
+#| label: setup-mostar
+#| eval: false
+
+if (!require("here")) install.packages("here"); library("here")
+if (!require("tidyverse")) install.packages("tidyverse"); library("tidyverse")
+if (!require("readxl")) install.packages("readxl"); library("readxl")
+if (!require("janitor")) install.packages("janitor"); library("janitor")
+if (!require("visdat")) install.packages("visdat"); library("visdat")
+if (!require("ggthemes")) install.packages("ggthemes"); library("ggthemes")
+if (!require("gt")) install.packages("gt"); library("gt")
+if (!require("flextable")) install.packages("flextable"); library("flextable")
+if (!require("ethnobotanyR")) install.packages("ethnobotanyR"); library("ethnobotanyR")
+```
+
+Esta forma de cargar los datos asegura cierta reproducibilidad, aunque no se recomienda si se usa `renv`. Sólo sería necesario instalar los paquetes una vez y cargarlos con `library("nombre_paquete")`. 
+
+## Importando los datos
+
+Normalmente, los datos estas en `.xlsx`. Los podemos importar con `readxl::read_excel()`.
+
+```{r}
+#| label: raw-data-1
+
+raw_data <- 
+  readxl::read_excel(
+    "raw-data/raw_data.xlsx"
+  )
+
+raw_data
+```
+
+
+## Exportando los datos
+
+Tener datos en formatos privativos nunca es buena idea. Mejor en texto plano.
+
+```{r}
+#| label: export-raw-data
+#| eval: false
+
+readr::write_csv(
+  raw_data,
+  here::here(
+    "raw-data",
+    "raw_data.csv"
+  )
+)
+```
+
+Volvemos a cargar los datos.
+
+```{r}
+#| label: raw-data-2
+#| eval: false
+
+raw_data <-
+  readr::read_csv(
+    here::here(
+      "raw-data",
+      "raw_data.csv"
+    )
+  )
+```
+
+## Explorando los datos
+
+Comenzamos explorando los datos con `dplyr::glimpse()`, `base::str()`, `utils::View()`.
+
+```{r}
+#| label: glimpse
+
+raw_data |>
+  dplyr::glimpse()
+```
+
+## Explorando los datos
+
+Podemos hacer algo más visual usando `visdat::vis_dat(raw_data)`
+
+```{r}
+#| label: figura-visdat
+#| output-location: slide
+#| fig-align: center
+#| fig-width: 14
+#| fig-height: 10
+
+raw_data |> 
+  visdat::vis_dat()
+```
+
+
+## Limpiando los datos
+
+```{r}
+#| label: clean-data
+#| output-location: slide
+#| code-line-numbers: "|3|4|5-12|6|7|8-10|13-15"
+
+clean_data <-
+  raw_data |>
+  janitor::clean_names() |>
+  stats::na.omit() |>
+  dplyr::mutate(
+    especie = stringr::str_squish(especie),
+    nombre_comun = stringr::str_to_sentence(stringr::str_squish(nombre_comun)),
+    nombre_comun = dplyr::case_when(
+      especie == "Mentha rotundifolia" ~ " Menta guatavita",
+      .default = nombre_comun
+    )
+  ) |> 
+  dplyr::arrange(
+    familia,
+    especie
+  )
+
+clean_data
+```
+
+## Conociendo a los conocedores: edad
+
+```{r}
+#| label: resumen-edad-conocedores
+#| output-location: fragment
+
+resumen_edad <- 
+  clean_data |> 
+  dplyr::group_by(
+    sexo
+  ) |> 
+  dplyr::summarise(
+    n = dplyr::n(),
+    media_edad = base::mean(edad, na.rm = TRUE),
+    mediana_edad = stats::median(edad, na.rm = TRUE),
+    edad_min = base::min(edad, na.rm = TRUE),
+    edad_max = base::max(edad, na.rm = TRUE),
+    rango_edad = edad_max - edad_min
+  )
+
+resumen_edad
+```
+
+## Conociendo a los conocedores: edad por sexo
+
+```{r}
+#| label: figura-edad-conocedores
+#| output-location: slide
+#| fig-align: center
+#| fig-width: 14
+#| fig-height: 10
+
+figura_edad <- 
+  clean_data |> 
+  ggplot2::ggplot(
+    ggplot2::aes(
+      forcats::as_factor(edad),
+      fill = sexo
+    )
+  ) + 
+  ggplot2::geom_bar(
+    position = "dodge"
+  )
+
+figura_edad
+```
+
+## Frecuencia por especies: cálculo
+
+```{r}
+#| label: calculo-especies-frecuencia
+#| output-location: fragment
+
+frecuencia_especies <- 
+  clean_data |>
+  dplyr::count(especie, sort = TRUE) |> 
+  dplyr::mutate(
+    porcentaje = n / sum(n),
+    especie = forcats::fct_reorder(especie, -n)
+  )
+
+frecuencia_especies 
+```
+
+## Frecuencia por especies: figura
+
+```{r}
+#| label: figura-especies-frecuencia
+#| output-location: slide
+#| fig-align: center
+#| fig-width: 14
+#| fig-height: 10
+
+figura_frecuencia_especies_1 <- 
+  frecuencia_especies |> 
+  ggplot2::ggplot(
+    ggplot2::aes(
+      especie, porcentaje
+    )
+  ) + 
+  ggplot2::geom_bar(stat = "identity") + 
+  ggplot2::scale_y_continuous(
+    labels = scales::label_percent()
+  ) + 
+  ggplot2::theme(
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+
+figura_frecuencia_especies_1
+```
+
+## Frecuencia por especies: tabla {.scrollable}
+
+```{r}
+#| label: tabla-especies
+#| output-location: slide
+
+tabla_frecuencia_especies <- 
+  frecuencia_especies |>
+  flextable::flextable() |>
+  flextable::set_table_properties(width = 1, layout = "autofit") |> 
+  flextable::labelizor(
+    part = "header",
+    labels = c(
+      especie = "Especie",
+      porcentaje = "Porcentaje"
+    )
+  ) |>
+  flextable::theme_apa() |>
+  flextable::mk_par(
+    j = "especie",
+    value = flextable::as_paragraph(flextable::as_i(especie))
+  ) |>
+  flextable::mk_par(
+    j = "porcentaje",
+    value = flextable::as_paragraph(flextable::fmt_pct(porcentaje))
+  ) |>
+  flextable::autofit()
+
+tabla_frecuencia_especies
+```
+
+
+## Frecuencia por especies: otra forma
+
+```{r}
+#| label: figura_especies-frecuencia-otra
+#| output-location: slide
+#| fig-align: center
+#| fig-width: 14
+#| fig-height: 10
+
+figura_frecuencia_especies_2 <- 
+  clean_data |> 
+  ggplot2::ggplot(
+    ggplot2::aes(
+      forcats::fct_infreq(especie)
+    )
+  ) +
+  ggplot2::geom_bar() + 
+  ggplot2::theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+figura_frecuencia_especies_2
+```
+
+## Especies por sexo: cálculo
+
+```{r}
+#| label: calculo-especies-sexo
+#| output-location: fragment
+
+especies_por_sexo <- 
+  clean_data |> 
+  dplyr::group_by(
+    especie, sexo
+  ) |> 
+  dplyr::count() |> 
+  dplyr::ungroup() |> 
+  dplyr::group_by(
+    especie
+  ) |> 
+  dplyr::mutate(
+    porcentaje = n / sum(n),
+    especie = forcats::fct_reorder(especie, -n)
+  )
+
+especies_por_sexo
+```
+
+## Especies por sexo: figura
+
+```{r}
+#| label: figura-especies-sexo
+#| output-location: slide
+#| fig-align: center
+#| fig-width: 14
+#| fig-height: 10
+
+figura_especies_por_sexo <- 
+  especies_por_sexo |> 
+  ggplot2::ggplot(
+    ggplot2::aes(
+      especie,
+      n,
+      fill = sexo
+    )
+  ) + 
+  ggplot2::geom_bar(
+    stat = "identity",
+    position = "dodge"
+  ) + 
+  ggplot2::theme(
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+
+figura_especies_por_sexo
+```
+
+## Especies y géneros por familia: cálculo
+
+```{r}
+#| label: calculo-numeros-familia
+#| output-location: fragment
+
+numeros_por_familia_wide <-
+  clean_data |>
+  dplyr::group_by(
+    familia
+  ) |>
+  dplyr::summarise(
+    n_generos = dplyr::n_distinct(genero),
+    n_especies = dplyr::n_distinct(especie)
+  )
+
+numeros_por_familia_wide
+```
+
+## Especies y géneros por familia: pivotear
+
+```{r}
+#| label: calculo-numeros-familia-pivot
+#| output-location: fragment
+
+numeros_por_familia_long <-
+  numeros_por_familia_wide |>
+  tidyr::pivot_longer(
+    cols = c(n_generos, n_especies),
+    names_to = "tipo",
+    values_to = "conteo"
+  )
+
+numeros_por_familia_long
+```
+
+## Especies y géneros por familia: figura
+
+```{r}
+#| label: figura-especies-generos
+#| output-location: slide
+#| fig-align: center
+#| fig-width: 14
+#| fig-height: 10
+
+fig_numeros_por_familia <-
+  numeros_por_familia_long |>
+  ggplot2::ggplot(
+    ggplot2::aes(
+      x = familia,
+      y = conteo,
+      fill = tipo
+    )
+  ) +
+  ggplot2::geom_bar(
+    stat = "identity",
+    position = "dodge"
+  ) +
+  ggplot2::labs(
+    # title = "Número de géneros y especies por familia",
+    x = NULL,
+    y = "Conteo",
+    fill = NULL
+  ) +
+  ggplot2::theme(
+    axis.text.x = ggplot2::element_text(angle = 45, hjust = 1)
+  ) +
+  ggthemes::scale_fill_colorblind(
+    labels = c("Especies", "Género")
+  )
+
+fig_numeros_por_familia
+```
+
+## Especies y géneros por familia: tabla
+
+```{r}
+#| label: tabla-especies-generos
+#| output-location: slide
+
+tabla_numeros_por_familia <- 
+  numeros_por_familia_wide |> 
+  flextable::flextable() |> 
+  flextable::set_table_properties(width = 1, layout = "autofit") |> 
+  flextable::labelizor(
+    part = "header",
+    labels = c(
+      especie = "Especie",
+      n_generos = "Géneros",
+      n_especies = "Especies"
+    )
+  ) |>
+  flextable::theme_apa() |>
+  flextable::autofit()
+
+tabla_numeros_por_familia
+```
+
+## Partes usadas: pivotear 
+
+```{r}
+#| label: pivotear-partes-usadas
+#| output-location: fragment
+
+parte_usada_data_long <-
+  clean_data |>
+  dplyr::select(
+    familia:especie,
+    h:lat
+  ) |>
+  tidyr::pivot_longer(
+    -c(familia, genero, especie),
+    names_to = "parte",
+    values_to = "uso"
+  )
+
+parte_usada_data_long
+```
+
+## Partes usadas: crear vectores
+
+```{r}
+#| label: crear-vector-especies-principales
+#| output-location: fragment
+
+vector_especies_principales <-
+  frecuencia_especies |>
+  dplyr::slice_max(n, n = 8) |>
+  dplyr::pull(especie) |>
+  base::as.character()
+
+vector_especies_principales
+```
+
+```{r}
+#| label: crear-vector-partes
+#| output-location: fragment
+
+vector_partes_etiquetas <- 
+  c(
+    "fl" = "Flor", 
+    "fr" = "Fruto", 
+    "h" = "Hoja", 
+    "r" = "Raíz", 
+    "t" = "Tallo"
+  )
+
+vector_partes_etiquetas
+```
+
+## Partes usadas: figura
+
+```{r}
+#| label: figura-partes-usadas
+#| output-location: slide
+#| fig-align: center
+#| fig-width: 14
+#| fig-height: 10
+
+fig_parte_usada <- 
+  parte_usada_data_long |>
+  dplyr::filter(
+    especie %in% vector_especies_principales,
+    uso != 0
+  ) |>
+  ggplot2::ggplot() +
+  ggplot2::aes(
+    x = parte
+  ) +
+  ggplot2::geom_bar() +
+  ggplot2::scale_x_discrete(
+    labels = vector_partes_etiquetas
+  ) + 
+  ggplot2::facet_wrap(
+    ~ base::factor(especie),
+    ncol = 4
+  ) + 
+  ggplot2::theme_minimal() +
+  ggplot2::theme(
+    strip.text = ggplot2::element_text(face = "italic")
+  )
+```
+
+# `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
+
+-   Crear un documento `.qmd` en la carpeta `analisis-descriptivos`
+-   Realizar un EDA de `datos_san-cristobal.xlsx` que se encuentran en la carpeta `data` en `analisis-descriptivos`
+
+<br>
+
+<br>
+
+```{r}
+#| label: timer-1
+#| echo: false
+
+countdown_timer(30)
+```

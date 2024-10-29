@@ -259,8 +259,8 @@ Algo similar ocurre con `rm(list = ls())`.
 
 ## Entorno de desarrollo integrado (IDE)
 
-::: columns
-::: {.column width="50%"}
+::::: columns
+:::: {.column width="50%"}
 ::: {.fragment fragment-index=1}
 Aplicación que proporciona servicios integrales para facilitar el desarrollo de software.
 
@@ -273,7 +273,7 @@ Ventajas:
 -   y mucho más…
 :::
 
-{.fragment fragment-index=2}
+::: {.fragment fragment-index=2}
 IDEs populares:
 
 -   Emacs
@@ -281,12 +281,12 @@ IDEs populares:
 -   vim
 -   VS Code
 :::
-:::
+::::
 
-::: {.column .fragment fragment-index=1 width="50%"}
+:::: {.column .fragment fragment-index=1width="50%"}
 ![[Apariencia por defecto de RStudio.](https://docs.posit.co/ide/user/ide/get-started/)](images/rstudio_ide.jpeg){fig-align="center"}
-:::
-:::
+::::
+:::::
 
 ## Siempre empezar R desde cero
 

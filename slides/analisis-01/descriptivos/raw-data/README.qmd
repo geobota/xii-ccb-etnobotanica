@@ -1,0 +1,24 @@
+# README
+
+Sexo: F, femenino; M, masculino
+Generación: J, joven; N, niños
+Conocedor: código de cada informante
+Edad: edad de cada informante
+Mezclada: 0, no mezclada; 1, mezclada.
+Cultivada: 0, silvestre, 1, cultivada
+H: hoja
+T: tallo
+Fl: flor
+Fr: fruto
+R: raíz
+Sem: semilla
+Lat: latex
+AlH: alimentación humana
+Me: medicinal
+Orn: ornamental
+Fi: fibras
+AlA: alimentación animal
+Am: ambiental
+UC: usos culturales
+Com: combustible
+Otr: otro

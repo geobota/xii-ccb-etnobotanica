@@ -1,0 +1,15 @@
+{
+  "hash": "8939a89f0a4e4aece98d1df7de19200b",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Unidad 0: Preparación\"\ntoc: true\n---\n\n\n\n\nSi está inscrito en el curso y tiene problemas con la instalación, póngase en contacto con los organizadores. \n\n-   Instalar R, [versión 4.4.1 o posterior](https://cran.rstudio.com)\n-   Instalar RStudio, [versión 2024.09.0+375 o posterior](https://posit.co/download/rstudio-desktop/)\n-   Instalar Quarto, [versión 1.5.57 o posterior](https://quarto.org/docs/get-started/)\n    -   Después de instalar Quarto, instalar `TinyTeX`\n-   Descargar o clonar el repositorio del curso <https://github.com/geobota/etnobotanica-workshop.git>\n-   Instalar los paquetes de R necesarios.\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\ninstall.packages(\n  c(\n    \"tidyverse\"\n  )\n)\n```\n:::\n\n\n\n\n## Instalar R\n\n(@)   Visitar <https://posit.co/download/rstudio-desktop/>\n\n![](images/r_instalacion_00.png)\n\n(@)   Bajar en la página hasta aquí\n\n![](images/r_instalacion_01.png)\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

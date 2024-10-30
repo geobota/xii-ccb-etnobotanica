@@ -1,0 +1,15 @@
+{
+  "hash": "ed8b8bc2654de73ba163531c90505e80",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Directorio de trabajo de Quarto\"\nauthor:\n  - name: \"Álex Espinosa Correa\"\n    affiliation: \"Universidad de Antioquia\"\ndate: \"2024-11-02\"\nlang: es\nexecute:\n  echo: true\nformat:\n  html:\n    embed-resources: true\n---\n\n\n\nEste es un archivo Quarto. Contiene texto (que usted está leyendo), así como código R.\n\nCuando pulse el botón **Renderizar** se generará un documento que incluye tanto el contenido así como la salida de cualquier fragmento de código de R incrustado en el documento.\n\nAntes de `Renderizar` el documento, escriba sus predicciones de lo que devolverá el siguiente código.\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\ngetwd()\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"/Users/alex/github/r/xii-ccb-etnobotanica/materials/reproducibilidad/ejercicio/scripts\"\n```\n\n\n:::\n:::\n\n::: {.cell labe='change-wd'}\n\n```{.r .cell-code}\nsetwd(\"..\") # .. significa «una carpeta arriba de donde yo esté»\ngetwd()\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"/Users/alex/github/r/xii-ccb-etnobotanica/materials/reproducibilidad/ejercicio\"\n```\n\n\n:::\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\ngetwd()\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"/Users/alex/github/r/xii-ccb-etnobotanica/materials/reproducibilidad/ejercicio/scripts\"\n```\n\n\n:::\n:::\n\n\n\nAhora que tienes tus predicciones, `Renderiza` este documento para ver si has acertado. Si ves algo diferente de lo que habías previsto coméntalo.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

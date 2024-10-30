@@ -11,9 +11,11 @@ subtitle: "XII Congreso Colombiano de Botánica <br>Popayán, Colombia <br>Novie
 
 {{< fa calendar-days >}} **Fecha:** 2-3 de noviembre del 2024
 
+{{< fa clock >}} **Horario:** 09:00 - 13:00 y 14:00 - 18:00
+
 {{< fa location-dot >}} **Lugar:** Popayán, Colombia
 
-{{< fa clock >}} **Duración:** 16 horas
+<!-- {{< fa clock >}} **Duración:** 16 horas -->
 
 {{< fa users >}} **Cupos:** 20
 
@@ -107,25 +109,25 @@ Conoce como afiliarte en el siguiente enlace: [proceso de afiliación a la ACB](
 
 -   [Instalación y configuración del software necesario](preparacion/)
 
-## Unidad 1: Flujo de trabajo
+## Unidad 1: flujo de trabajo
 
 -   Introducción a Quarto
 -   Introducción a R
 -   Reproducibilidad
 
-## Unidad 2: Análisis I
+## Unidad 2: análisis I
 
 -   Análisis descriptivos
 -   Índices etnobotánicos
 
-## Unidad 3: Análisis II
+## Unidad 3: análisis II
 
 -   Pruebas de normalidad
 -   Homogeneidad de varianza
 -   Chi cuadrado
 -   Anova simple
 
-## Unidad 4: Análisis III
+## Unidad 4: análisis III
 
 -   Pruebas no paramétricas
 -   Pruebas de correlación

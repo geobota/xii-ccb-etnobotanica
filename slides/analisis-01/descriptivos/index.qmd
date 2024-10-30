@@ -617,7 +617,7 @@ fig_parte_usada <-
 # `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
 
 -   Crear un documento `.qmd` en la carpeta `analisis-descriptivos`
--   Realizar un EDA de `datos_san-cristobal.xlsx` que se encuentran en la carpeta `data` en `analisis-descriptivos`
+-   Realizar un EDA de `datos_san-cristobal.xlsx` que se encuentran en la carpeta `data` en `analisis-01`
 
 <br>
 

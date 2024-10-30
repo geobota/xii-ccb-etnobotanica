@@ -1,12 +1,22 @@
 ---
-title: "Unidad 0: Preparación"
+title: "Unidad 0: preparación"
+author: "Álex Espinosa-Correa"
+date: 2024-10-30
 toc: true
 ---
 
 ::: {.callout-warning}
 ## Requisitos
 
-Debido a las restricciones impuestas por la universidad organizadora, se requiere que cada participante disponga de su propio ordenador personal. En este equipo, deberá estar instalado el software necesario para el desarrollo del curso.
+Debido a las restricciones impuestas por la universidad organizadora, se requiere que cada participante disponga de su propio ordenador personal. En este equipo, deberá tener instalado el software necesario para el desarrollo del curso.
+:::
+
+::: {.callout-important}
+Si está inscrito al curso, descargue los materiales (clone el repositorio) del curso  <https://github.com/geobota/etnobotanica-workshop> el sábado 2 de noviembre por la mañana.
+:::
+
+::: {.callout-important}
+Si está inscrito en el curso y tiene problemas con la instalación, póngase en contacto con [los organizadores](/index.qmd).
 :::
 
 Si está inscrito en el curso y tiene problemas con la instalación, póngase en contacto con los organizadores. 
@@ -15,8 +25,8 @@ Si está inscrito en el curso y tiene problemas con la instalación, póngase en
 -   Instalar RStudio, [versión 2024.09.0+375 o posterior](https://posit.co/download/rstudio-desktop/)
 -   Instalar Quarto, [versión 1.5.57 o posterior](https://quarto.org/docs/get-started/)
     -   Después de instalar Quarto, instalar `TinyTeX`
--   Descargar o clonar el repositorio del curso <https://github.com/geobota/etnobotanica-workshop.git>
--   Instalar los paquetes de R necesarios.
+-   Descargar los materiales (clonar el repositorio) del curso <https://github.com/geobota/etnobotanica-workshop.git>
+-   Instalar los paquetes de R necesarios
 ```{r}
 #| echo: true
 #| eval: false
@@ -28,20 +38,144 @@ install.packages(
 )
 ```
 
+::: {.callout-important}
+Si está inscrito al curso, descargue los materiales (clone el repositorio) del curso  <https://github.com/geobota/etnobotanica-workshop> el sábado 2 de noviembre por la mañana.
+:::
+
 ## Instalar R
 
-(@)   Visitar <https://posit.co/download/rstudio-desktop/>
+Este es un paso a paso de cómo instalar R en Windows.
+
+-   Ir a <https://posit.co/download/rstudio-desktop/>
 
 ![](images/r_instalacion_00.png)
 
-(@)   Bajar en la página hasta aquí
+-   Ir hasta esta sección de la página. Hacer clic en **DOWNLOAD AND INSTALL R**
 
 ![](images/r_instalacion_01.png)
 
-(@)   
+-   Hacer clic en Download R for Windows 
 
 ![](images/r_instalacion_02.png)
 
-(@)   
+-   Hacer clic en **base**
 
 ![](images/r_instalacion_03.png)
+
+-   Hacer clic en **Download R-4.4.1 for Windows**. Esto iniciara la descarga de `R-4.4.1-win.exe`
+
+![](images/r_instalacion_04.png)
+
+-   Buscar donde se ha descargado `R-4.4.1-win.exe` y hacer doble clic sobre él para abrir. Se abrirá esta ventana. Hacer clic en **Aceptar**. 
+
+![](images/r_instalacion_07.png)
+
+::: {.callout-note}
+En este punto de la instalación se activará el **Control de cuentas de usuario** de Windows. Hacer clic en **Sí**
+:::
+
+-   Hacer clic en **Siguiente**
+
+![](images/r_instalacion_08.png)
+
+-   Hacer clic en **Siguiente**
+
+![](images/r_instalacion_09.png)
+
+-   Hacer clic en **Siguiente**
+
+![](images/r_instalacion_10.png)
+
+-   Hacer clic en **Siguiente**
+
+![](images/r_instalacion_11.png)
+
+-   Hacer clic en **Siguiente**
+
+![](images/r_instalacion_12.png)
+
+-   Esperar a que la instalación termine
+
+![](images/r_instalacion_13.png)
+
+-   Hacer clic en **Finalizar**
+
+![](images/r_instalacion_14.png)
+
+### Instalar RTools
+
+Es recomendable instalar RTools. Evitaremos algunos problemas al instalar ciertos paquetes
+
+-   Regresar a esta ventana. Hacer clic en **RTools**
+
+![](images/r_instalacion_03.png)
+
+-   Hacer clic en **RTools 4.4**
+
+![](images/r_instalacion_05.png)
+
+-   Hacer clic en **Rtools44 installer** o **64-bit ARM Rtools44 installer** dependiendo de la configuración de su computadora. Comenzará la descarga de `rtools44-6335-6327.exe` o `rtools44-aarch64-6335-6327.exe`, respectivamente. Buscar donde se ha descargado el archivo, hacer doble clic y seguir las instrucciones. 
+
+![](images/r_instalacion_06.png)
+
+## Instalar RStudio
+
+Este es un paso a paso de cómo instalar RStudio en Windows.
+
+-   Ir a <https://posit.co/download/rstudio-desktop/>
+
+![](images/r_instalacion_00.png)
+
+-   Ir hasta esta sección de la página. Hacer clic en **DOWNLOAD RSTUDIO DESKTOP FOR WINDOWS**. Esto iniciara la descarga `RStudio-2024.09.0-375.exe`
+
+![](images/r_instalacion_01.png)
+
+-   Buscar donde se ha descargado `RStudio-2024.09.0-375.exe` y hacer doble clic sobre él para abrir. Se abrirá esta ventana. Hacer clic en **Siguiente**
+
+![](images/rstudio_instalacion_01.png)
+
+-   Hacer clic en **Instalar**
+
+![](images/rstudio_instalacion_02.png)
+
+-   Esperar a que la instalación termine 
+
+![](images/rstudio_instalacion_03.png)
+
+-   Hacer clic en **Terminar**
+
+![](images/rstudio_instalacion_04.png)
+
+## Instalar Quarto
+
+-   Ir a <https://quarto.org>
+
+-   Hacer clic en **Get Started**
+
+-   Hacer clic en **Download Quarto CLI**
+
+### Instalar TinyTex
+
+## Descargar los archivos (clonar el repositorio) del curso
+
+::: {.callout-important}
+Si está inscrito al curso, descargue los materiales (clone el repositorio) del curso  <https://github.com/geobota/etnobotanica-workshop> el sábado 2 de noviembre por la mañana.
+:::
+
+-   Ir a <https://github.com/geobota/etnobotanica-workshop>
+
+-   Hacer clic en **\<\> Code** y copiar la URL bajo la pestaña HTTPS <https://github.com/geobota/etnobotanica-workshop.git>
+
+::: {.callout-tip}
+En este punto, podría descargar los archivos. Hacer clic en la opción **Download zip**. Esto descargará el archivo `etnobotanica-workshop-main.zip`, el cual tendrá que descomprimir. 
+:::
+
+-   En RStudio, ir a **File** \> **New Project** \> **Version Control** \> **From Git** > pegar la URL en el cuadro de **Repository URL** y hacer clic en **Create Project**. Esperar a que termine
+
+![Tomado de [Get Started with Quarto](https://github.com/rstudio-conf-2022/get-started-quarto/blob/main/materials/images/clone-repo.gif)](https://rstudio-conf-2022.github.io/get-started-quarto/materials/images/clone-repo.gif)
+
+::: {.callout-tip}
+En en el cuadro de  **Create project as subdirectory of** puede elegir el directorio donde quiere descargar el repositorio.
+:::
+
+## Instalar los paquetes de R necesarios

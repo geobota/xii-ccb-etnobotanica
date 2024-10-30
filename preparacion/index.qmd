@@ -1,0 +1,47 @@
+---
+title: "Unidad 0: Preparación"
+toc: true
+---
+
+::: {.callout-warning}
+## Requisitos
+
+Debido a las restricciones impuestas por la universidad organizadora, se requiere que cada participante disponga de su propio ordenador personal. En este equipo, deberá estar instalado el software necesario para el desarrollo del curso.
+:::
+
+Si está inscrito en el curso y tiene problemas con la instalación, póngase en contacto con los organizadores. 
+
+-   Instalar R, [versión 4.4.1 o posterior](https://cran.rstudio.com)
+-   Instalar RStudio, [versión 2024.09.0+375 o posterior](https://posit.co/download/rstudio-desktop/)
+-   Instalar Quarto, [versión 1.5.57 o posterior](https://quarto.org/docs/get-started/)
+    -   Después de instalar Quarto, instalar `TinyTeX`
+-   Descargar o clonar el repositorio del curso <https://github.com/geobota/etnobotanica-workshop.git>
+-   Instalar los paquetes de R necesarios.
+```{r}
+#| echo: true
+#| eval: false
+
+install.packages(
+  c(
+    "tidyverse"
+  )
+)
+```
+
+## Instalar R
+
+(@)   Visitar <https://posit.co/download/rstudio-desktop/>
+
+![](images/r_instalacion_00.png)
+
+(@)   Bajar en la página hasta aquí
+
+![](images/r_instalacion_01.png)
+
+(@)   
+
+![](images/r_instalacion_02.png)
+
+(@)   
+
+![](images/r_instalacion_03.png)

@@ -9,7 +9,7 @@ subtitle: "XII Congreso Colombiano de Botánica <br>Popayán, Colombia <br>Novie
 
 # Información general
 
-{{< fa calendar-days >}} **Fecha:** 2-3 de noviembre del 2024
+{{< fa calendar-days >}} **Fecha:** 2 y 3 de noviembre del 2024
 
 {{< fa clock >}} **Horario:** 09:00 - 13:00 y 14:00 - 18:00
 

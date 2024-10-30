@@ -179,3 +179,6 @@ En en el cuadro de  **Create project as subdirectory of** puede elegir el direct
 :::
 
 ## Instalar los paquetes de R necesarios
+
+-   Abrir RStudio
+

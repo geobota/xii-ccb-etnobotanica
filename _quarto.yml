@@ -32,7 +32,7 @@ website:
   navbar:
     # logo: images/logo_reproducible_quarto.png
     right:
-      - text: "Acerca"
+      - text: "Inicio"
         href: index.qmd
       - text: "Preparación"
         href: preparacion/index.qmd

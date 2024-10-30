@@ -1,5 +1,8 @@
 project:
   type: website
+  render:
+    - "*.qmd"
+    - "!materials/"
 
 lang: es
 date-format: iso
@@ -29,8 +32,10 @@ website:
   navbar:
     # logo: images/logo_reproducible_quarto.png
     right:
-      - text: "Inicio"
+      - text: "Acerca"
         href: index.qmd
+      - text: "Preparación"
+        href: preparacion/index.qmd
       - text: "Otros cursos"
         menu:
           - text: "Introducción a la Aerobiología"

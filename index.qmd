@@ -103,22 +103,20 @@ Conoce como afiliarte en el siguiente enlace: [proceso de afiliación a la ACB](
 
 # Contenido
 
-## Unidad 0: Pre-trabajo
+## Unidad 0: Preparación
 
--   Instalación y configuración del software necesario
+-   [Instalación y configuración del software necesario](preparacion/)
 
 ## Unidad 1: Flujo de trabajo
 
--   Introducción a R y RStudio
 -   Introducción a Quarto
--   Análisis reproducibles
+-   Introducción a R
+-   Reproducibilidad
 
 ## Unidad 2: Análisis I
 
 -   Análisis descriptivos realizados en etnobotánica
--   Realización de gráficos en R
--   índices etnobotánicos
--   Diagramaciones índices etnobotánicos
+-   Índices etnobotánicos
 
 ## Unidad 3: Análisis II
 
@@ -134,7 +132,6 @@ Conoce como afiliarte en el siguiente enlace: [proceso de afiliación a la ACB](
 -   Regresión lineal
 -   Clúster
 -   Análisis de Componentes Principales (PCA)
--   Análisis de redundancia (RDA)
 
 # Otros cursos
 

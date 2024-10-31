@@ -26,7 +26,10 @@ Si está inscrito en el curso y tiene problemas con la instalación, póngase en
 -   Instalar Quarto, [versión 1.5.57 o posterior](https://quarto.org/docs/get-started/)
     -   Después de instalar Quarto, instalar `TinyTeX`
 -   Descargar los materiales (clonar el repositorio) del curso <https://github.com/geobota/etnobotanica-workshop.git>
--   Instalar los paquetes de R necesarios
+-   Instalar los paquetes necesarios de R 
+-   Sujeto al desarrollo de las demás actividades del curso
+    -   Instalar Git, [versión 2.47.0 o posterior](https://git-scm.com)
+    -   Instalar [GitHub Desktop](https://github.com/apps/desktop)
 ```{r}
 #| echo: true
 #| eval: false
@@ -231,7 +234,7 @@ En este punto, podría descargar los archivos. Hacer clic en la opción **Downlo
 En en el cuadro de  **Create project as subdirectory of** puede elegir el directorio donde quiere descargar el repositorio.
 :::
 
-## Instalar los paquetes de R necesarios
+## Instalar los paquetes necesarios de R 
 
 -   Abrir RStudio (la apariencia puede variar)
 
@@ -257,3 +260,116 @@ install.packages(
 ```
 
 -   La descarga e instalación de paquetes puede tardar según su conexión a internet y las especificaciones de su equipo.
+
+
+## Instalar Git
+
+::: {.callout-important}
+Dependiendo del tiempo necesario para desarrollar las otras actividades, es posible que se aborden Git y GitHub en profundidad.
+:::
+
+-   Ir a <https://git-scm.com>. Hacer clic en **Download for Windows**
+
+![](images/git_instalacion_01.png)
+
+::: {.callout-note collapse="true"}
+## Alternativa de descarga
+
+Ir a <https://gitforwindows.org>. Hacer clic en **Download**. Esto iniciara la descarga de `GitHubDesktopSetup-x64.exe`
+
+![](images/git_instalacion_03.png)
+:::
+
+-   Hacer clic en **Click here to download**. Esto iniciara la descarga de `GitHubDesktopSetup-x64.exe`
+
+![](images/git_instalacion_02.png)
+
+-   Buscar donde se ha descargado `GitHubDesktopSetup-x64.exe`. Hacer doble clic sobre él para abrir. Se abrirá esta ventana. Hacer clic en **Next**
+
+![](images/git_instalacion_04.png)
+
+-   Hacer clic en **Next**
+
+![](images/git_instalacion_05.png)
+
+-   Hacer clic en **Next**
+
+![](images/git_instalacion_06.png)
+
+-   Hacer clic en **Next**
+
+![](images/git_instalacion_07.png)
+
+-   Hacer clic en **Next**
+
+![](images/git_instalacion_08.png)
+
+-   Hacer clic en **Next**
+
+![](images/git_instalacion_09.png)
+
+-   Hacer clic en **Next**
+
+![](images/git_instalacion_10.png)
+
+-   Hacer clic en **Next**
+
+![](images/git_instalacion_11.png)
+
+-   Hacer clic en **Next**
+
+![](images/git_instalacion_12.png)
+
+-   Hacer clic en **Next**
+
+![](images/git_instalacion_13.png)
+
+-   Hacer clic en **Next**
+
+![](images/git_instalacion_14.png)
+
+-   Hacer clic en **Next**
+
+![](images/git_instalacion_15.png)
+
+-   Hacer clic en **Next**
+
+![](images/git_instalacion_16.png)
+
+-   Hacer clic en **Next**
+
+![](images/git_instalacion_17.png)
+
+-   Hacer clic en **Next**
+
+![](images/git_instalacion_18.png)
+
+-   Esperar a que la instalación termine
+
+![](images/git_instalacion_19.png)
+
+-   Hacer clic en **Finish**
+
+![](images/git_instalacion_20.png)
+
+## Instalar GitHub Desktop
+
+::: {.callout-important}
+Dependiendo del tiempo necesario para desarrollar las otras actividades, es posible que se aborden Git y GitHub en profundidad.
+:::
+
+-   Ir a <https://github.com/apps/desktop>. Hacer clic en **Download now**
+
+![](images/github_instalacion_01.png)
+
+-   Hacer clic en **Download for Windows (64bit)**. Esto iniciara la descarga de `GitHubDesktopSetup-x64.exe`
+
+![](images/github_instalacion_02.png)
+
+-   Buscar donde se ha descargado `GitHubDesktopSetup-x64.exe`. Hacer doble clic sobre él para abrir. Se abrirá esta ventana 
+
+![](images/github_instalacion_03.png)
+
+-   Esperar hasta que termine al instalación y aparezca esta ventana
+
+![](images/github_instalacion_04.png)

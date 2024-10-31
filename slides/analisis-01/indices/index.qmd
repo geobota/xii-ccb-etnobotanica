@@ -26,6 +26,9 @@ format:
     footer: "[Etnobotánica Cuantitativa en R](https://geobota.github.io/xii-ccb-etnobotanica/)"
 bibliography: references.bib
 csl: apa.csl
+
+execute:
+  echo: true
 ---
 
 ```{r}
@@ -71,27 +74,277 @@ countdown_timer <- function(
 
 ## Proposito
 
--   Enseñar el manejo y análisis de datos etnobotánicos
+-   Enseñar la obtención de los principales índices etnobotánicos
+
+## `ethnobotanyR`
+
+`ethnobotanyR` proporciona una plataforma fácil de usar para que los etnobotánicos trabajen con evaluaciones cuantitativas de etnobotánica. Cuenta con un conjunto de funcionen que proporcionan muchos de los principales indices etnobotánicos. Aunque utiliza funciones del `tidyverse` para funcionar, no sigue completamente los conceptos de este. 
+
+::: {.fragment}
+Una de las principales diferencias es en la forma en que han de estar organizados los datos. 
+
+```{r}
+#| label: ethnobotanyR-ethnobotanydata
+
+ethnobotanyR::ethnobotanydata |> 
+  dplyr::glimpse()
+```
+:::
 
 ## Importando los datos
 
 Habiendo explorado nuestros datos, podemos proceder con más análisis.
 
 ```{r}
-#| label: raw-data-1
+#| label: clean-data
 
-raw_data <- 
-  readxl::read_excel(
-    "raw-data/raw_data.xlsx"
+clean_data <- 
+  readr::read_csv(
+    "proccesed-data/proccesed_data.csv"
   )
 
-raw_data
+clean_data
 ```
 
 ::: aside
 En esta demostración se usan rutas relativas en lugar de here::here() debido a la organización del proyecto y el modo de renderizado.
 :::
 
-## Índices etnobotánicos
+## Preparando los datos
+
+Crearemos dos objectos: `index_data` y `taxonomy_data`. Con el primero estimaremos los índices y el segundo lo utilizaremos para la creación de tablas. 
+
+::: columns
+::: {.column .fragment width="50%"}
+`ethnobotanyR` requiere que la variable donde están los conocedores se llame `informant` y donde están las especies se llame `sp_name`. El resto son las variables etnobotánicas sobre las que queremos realizar las estimaciones.
+
+```{r}
+#| label: index-data
+
+index_data <-
+  clean_data |>
+  dplyr::select(
+    informant = conocedor,
+    sp_name = especie,
+    al_h:otr
+  )
+```
+:::
+
+::: {.column .fragment width="50%"}
+A partir de los datos procesados `clean-data`, obtenedremos la familia, genero, especie y nombre común de cada una de las especies. 
+
+```{r}
+#| label: taxonomy-data
+
+taxonomy_data <-
+  clean_data |>
+  dplyr::select(
+    nombre_comun:especie
+  ) |>
+  dplyr::relocate(
+    nombre_comun,
+    .after = especie
+  ) |>
+  dplyr::distinct()
+
+```
+:::
+:::
+
+## Índices Etnobotánicos
+
+Los índices etnobotánicos cuantifican y analizan el conocimiento tradicional de las plantas en comunidades indígenas o tradicionales. Estas herramientas permiten evaluar aspectos como la diversidad de especies, el uso medicinal y la importancia cultural de las plantas. Ejemplos incluyen el Índice de Importancia Cultural y el Índice de Fidelidad de Uso.
+
+## Uso reportado por especie (URs)
+
+El Uso Reportado por Especie (URs) cuantifica la importancia de una planta en una comunidad, basada en los usos reportados por sus miembros. Este índice mide el conocimiento y uso tradicional de una especie en categorías como medicinal, alimentaria, ceremonial o constructiva. URs se calcula sumando los usos mencionados por cada informante para cada categoría de uso en la especie.
+
+$$
+UR_{s} = \sum_{u=u_1}^{^uNC} \sum_{i=i_1}^{^iN} UR_{ui}
+$$
+```{r}
+#| label: use-report-index
+
+use_report_index <-
+  index_data |>
+  ethnobotanyR::URs()
+
+use_report_index
+```
+
+## Índice de Importancia Cultural (CI)
+
+El índice de importancia cultural (CI) indica la relevancia de una especie para un grupo cultural. Este índice se calcula dividiendo el uso reportado por especie (URs) entre el número de informantes, mostrando la diversidad de usos de la especie.
+
+$$
+CI_{s} = \sum_{u=u_1}^{^uNC} \sum_{i=i_1}^{^iN} UR_{ui/N}
+$$
+
+```{r}
+#| labe: cultural-importance-index
+
+cultural_importance_index <-
+  index_data |>
+  ethnobotanyR::CIs()
+
+cultural_importance_index
+```
+
+## Frecuencia de Citación por especie (FC)
+
+Este índice suma la frecuencia de citación de cada especie en las comunidades evaluadas, indicando cuántos informantes mencionan el uso de una especie.
+
+$$
+FC_s = \sum_{i=i_1}^{^iN}{UR_i}
+$$
+
+```{r}
+#| label: frequency-citation-index
+
+frequency_citation_index <-
+  index_data |>
+  ethnobotanyR::FCs()
+
+frequency_citation_index
+```
+
+## Número de usos por especie (NU)
+
+Este índice relaciona cada especie registrada con las diversas categorías de uso documentadas por el investigador.
+
+$$
+NU_s = \sum_{u=u_1}^{^uNC}
+$$
+
+```{r}
+#| label: number-uses-index
+
+number_uses_index <-
+  index_data |>
+  ethnobotanyR::NUs()
+
+number_uses_index
+```
+
+## Índice de Frecuencia Relativa de Citación (RFC)
+
+Este índice mide la frecuencia de citación de cada especie en el área de estudio. Relaciona la cantidad de citas de cada especie con el total de usos mencionados por todos los informantes encuestados.
+
+$$
+RFC_s = \frac{FC_s}{N} = \frac{\sum_{i=i_1}^{^iN} UR_i}{N}
+$$
+
+```{r}
+#| label: relative-frequency-citation-index
+
+relative_frequency_citation_index <-
+  index_data |>
+  ethnobotanyR::RFCs()
+
+relative_frequency_citation_index
+```
+
+## Índice de Importancia Relativa (RI)
+
+Este índice combina la frecuencia relativa de citación de las especies citadas por encima del valor máximo (RFCs(max)) con el número relativo de usos de estas especies sobre el valor máximo (RNUs(max)).
+
+$$
+RI_s = \frac{RFC_{s(max)}+RNU_{s(max)}}{2} 
+$$
+
+```{r}
+#| label: relative-importance-index
+
+relative_importance_index <-
+  index_data |>
+  ethnobotanyR::RIs()
+
+relative_importance_index
+```
+
+## Índice de Valor de Uso
+
+Este índice calcula el número de usos distintos (Ui) mencionados por cada informante en relación con el total de informantes entrevistados (N).
+
+::: columns
+::: {.column width="50%"}
+$$
+UV_{s} =  \sum_{i=i_1}^{^iN} \sum_{u=u_1}^{^uNC} UR_{ui/N}
+$$
+:::
+
+::: {.column width="50%"}
+$$
+UV_{s} = \sum U_i/N
+$$
+:::
+:::
+
+```{r}
+#| label: use_value-index
+
+use_value_index <-
+  index_data |>
+  ethnobotanyR::UVs()
+```
+
+## Valor Cultural de las Ethnoespecies (CVe)
+
+Este índice mide la relevancia cultural, práctica y económica de las especies.
+
+-   UCe: Número de usos reportados para las etnoespecies, dividido por el total de -   usos posibles de cada etnoespecie en el estudio.
+-   ICe: Proporción de informantes que consideran útiles las etnoespecies, respecto al -    total de informantes.
+-   IUce: Proporción de informantes que mencionan cada uso de las etnoespecies, respecto al total de informantes
+
+$$
+CV_{e} = {Uc_{e}}  \cdot{IC_{e}}  \cdot \sum {IUc_{e}}
+$$
+
+```{r}
+#| label: cultural-value-index
+cultural_value_index <-
+  index_data |>
+  ethnobotanyR::CVe()
+
+cultural_value_index
+```
+
+## Nivel de Fidelidad por Especie
+
+Este índice calcula el porcentaje de informantes que usan una planta para un propósito específico en relación con todos los usos registrados para todas las plantas. Este índice compara el número de informantes que asignan un uso particular a una planta con el total de usos registrados para esa especie.
+
+$$
+FL_{s} = \frac {N_{s}*100}{FC_{s}}
+$$
+
+```{r}
+#| label: fidelity-level-index
+
+fidelity_level_index <-
+  index_data |>
+  ethnobotanyR::FLs()
+
+fidelity_level_index
+```
+
+# `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
+
+-   Crear un documento `.qmd` en la carpeta `analisis-descriptivos`
+-   Estimar los índices etnobotánicos a partir de los datos explorados en **Análisis descriptivos**
+
+<br>
+
+<br>
+
+```{r}
+#| label: timer-1
+#| echo: false
+
+countdown_timer(20)
+```
+
+
+
 
 

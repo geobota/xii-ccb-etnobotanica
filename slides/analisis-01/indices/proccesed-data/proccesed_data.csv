@@ -1,0 +1,277 @@
+nombre_comun,familia,genero,especie,sexo,generacion,conocedor,edad,mezclada,cultivada,h,t,fl,fr,r,sem,lat,al_h,me,orn,fi,al_a,am,uc,com,otr
+Curibano,Acanthaceae,Justicia,Justicia pectoralis,F,J,J13,15,0,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Penicilina,Acanthaceae,Justicia,Justicia adhatoda,F,J,J5,15,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Penicilina,Acanthaceae,Justicia,Justicia adhatoda,F,J,J7,15,0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Penicilina,Acanthaceae,Justicia,Justicia adhatoda,F,J,J8,15,0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Penicilina,Acanthaceae,Justicia,Justicia adhatoda,F,J,J9,16,1,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Penicilina,Acanthaceae,Justicia,Justicia adhatoda,F,J,J10,15,0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Genciano,Acanthaceae,Thunbergia,Thunbergia alata,F,J,J6,16,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Genciano,Acanthaceae,Thunbergia,Thunbergia alata,F,J,J7,15,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Genciano,Acanthaceae,Thunbergia,Thunbergia alata,F,J,J8,15,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+Genciano,Acanthaceae,Thunbergia,Thunbergia alata,F,J,J9,16,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0
+Genciano,Acanthaceae,Thunbergia,Thunbergia alata,F,J,J10,15,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0
+Genciano,Acanthaceae,Thunbergia,Thunbergia alata,F,J,J5,15,1,0,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Quiebra barrigo,Acanthaceae,Trichanthera,Trichanthera gigantea,F,J,J1,15,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+Quiebra barrigo,Acanthaceae,Trichanthera,Trichanthera gigantea,F,J,J14,15,0,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Quiebra barrigo,Acanthaceae,Trichanthera,Trichanthera gigantea,F,J,J15,15,0,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Quiebra barrigo,Acanthaceae,Trichanthera,Trichanthera gigantea,F,J,J16,16,0,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Quiebra barrigo,Acanthaceae,Trichanthera,Trichanthera gigantea,M,J,J3,15,0,1,1,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0
+Quiebra barrigo,Acanthaceae,Trichanthera,Trichanthera gigantea,F,J,J6,16,1,0,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0
+Quiebra barrigo,Acanthaceae,Trichanthera,Trichanthera gigantea,M,N,N1,12,0,1,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+Sauco,Virbuneaceae,Sambucus,Sambucus mexicana,F,J,J1,15,0,0,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Sauco,Virbuneaceae,Sambucus,Sambucus mexicana,F,J,J10,15,1,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Sauco,Virbuneaceae,Sambucus,Sambucus mexicana,F,J,J11,17,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Sauco,Virbuneaceae,Sambucus,Sambucus mexicana,F,J,J13,15,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Sauco,Virbuneaceae,Sambucus,Sambucus mexicana,F,J,J2,15,0,0,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Sauco,Virbuneaceae,Sambucus,Sambucus mexicana,M,J,J3,15,0,0,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Sauco,Virbuneaceae,Sambucus,Sambucus mexicana,M,J,J4,15,0,0,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Sauco,Virbuneaceae,Sambucus,Sambucus mexicana,F,J,J5,15,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Sauco,Virbuneaceae,Sambucus,Sambucus mexicana,F,J,J6,16,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Sauco,Virbuneaceae,Sambucus,Sambucus mexicana,F,J,J7,15,1,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Sauco,Virbuneaceae,Sambucus,Sambucus mexicana,F,J,J8,15,1,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Sauco,Virbuneaceae,Sambucus,Sambucus mexicana,F,J,J9,16,1,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Sauco,Virbuneaceae,Sambucus,Sambucus mexicana,M,N,N1,12,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Abrojo,Amaranthaceae,Alternanthera,Alternanthera pubiflora,F,J,J10,15,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Abrojo,Amaranthaceae,Alternanthera,Alternanthera pubiflora,F,J,J11,17,0,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Abrojo,Amaranthaceae,Alternanthera,Alternanthera pubiflora,M,J,J12,18,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Abrojo,Amaranthaceae,Alternanthera,Alternanthera pubiflora,F,J,J14,15,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Abrojo,Amaranthaceae,Alternanthera,Alternanthera pubiflora,F,J,J16,16,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Abrojo,Amaranthaceae,Alternanthera,Alternanthera pubiflora,F,J,J7,15,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Abrojo,Amaranthaceae,Alternanthera,Alternanthera pubiflora,F,J,J8,15,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Cebolla de rama,Amaryllidaceae,Allium,Allium fistulosum,F,J,J1,15,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Cebolla de rama,Amaryllidaceae,Allium,Allium fistulosum,F,J,J10,15,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Cebolla de rama,Amaryllidaceae,Allium,Allium fistulosum,M,J,J12,18,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Cebolla de rama,Amaryllidaceae,Allium,Allium fistulosum,F,J,J13,15,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Cebolla de rama,Amaryllidaceae,Allium,Allium fistulosum,F,J,J14,15,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Cebolla de rama,Amaryllidaceae,Allium,Allium fistulosum,F,J,J15,15,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Cebolla de rama,Amaryllidaceae,Allium,Allium fistulosum,F,J,J16,16,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Cebolla de rama,Amaryllidaceae,Allium,Allium fistulosum,M,J,J17,15,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Cebolla de rama,Amaryllidaceae,Allium,Allium fistulosum,F,J,J18,18,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Cebolla de rama,Amaryllidaceae,Allium,Allium fistulosum,F,J,J2,15,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Cebolla de rama,Amaryllidaceae,Allium,Allium fistulosum,M,J,J3,15,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Cebolla de rama,Amaryllidaceae,Allium,Allium fistulosum,M,J,J4,15,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Cebolla de rama,Amaryllidaceae,Allium,Allium fistulosum,F,J,J5,15,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Cebolla de rama,Amaryllidaceae,Allium,Allium fistulosum,F,J,J6,16,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Cebolla de rama,Amaryllidaceae,Allium,Allium fistulosum,F,J,J7,15,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Cebolla de rama,Amaryllidaceae,Allium,Allium fistulosum,F,J,J8,15,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Cebolla de rama,Amaryllidaceae,Allium,Allium fistulosum,F,J,J9,16,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Cebolla de rama,Amaryllidaceae,Allium,Allium fistulosum,M,N,N1,12,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Cebolla de rama,Amaryllidaceae,Allium,Allium fistulosum,F,N,N2,9,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Cebolla de rama,Amaryllidaceae,Allium,Allium fistulosum,M,N,N3,11,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Cebolla de rama,Amaryllidaceae,Allium,Allium fistulosum,F,N,N4,10,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Cebolla de rama,Amaryllidaceae,Allium,Allium fistulosum,F,N,N5,10,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Cebolla de rama,Amaryllidaceae,Allium,Allium fistulosum,F,N,N6,8,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Tol de novia,Asteraceae,Achillea,Achillea millefolium,F,J,J10,15,1,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Tol de novia,Asteraceae,Achillea,Achillea millefolium,F,J,J11,17,0,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Tol de novia,Asteraceae,Achillea,Achillea millefolium,M,J,J12,18,0,1,1,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0
+Tol de novia,Asteraceae,Achillea,Achillea millefolium,F,J,J13,15,0,1,1,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0
+Tol de novia,Asteraceae,Achillea,Achillea millefolium,M,J,J17,15,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+Tol de novia,Asteraceae,Achillea,Achillea millefolium,F,J,J6,16,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+Tol de novia,Asteraceae,Achillea,Achillea millefolium,F,J,J7,15,1,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Tol de novia,Asteraceae,Achillea,Achillea millefolium,F,J,J8,15,1,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Manrrubio,Asteraceae,Ageratum,Ageratum conyzoides,M,J,J12,18,0,1,0,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Masequia,Asteraceae,Bidens,Bidens pilosa,F,J,J10,15,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Masequia,Asteraceae,Bidens,Bidens pilosa,F,J,J11,17,0,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Masequia,Asteraceae,Bidens,Bidens pilosa,M,J,J12,18,0,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Masequia,Asteraceae,Bidens,Bidens pilosa,F,J,J6,16,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Masequia,Asteraceae,Bidens,Bidens pilosa,F,J,J7,15,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Masequia,Asteraceae,Bidens,Bidens pilosa,F,J,J8,15,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Masequia,Asteraceae,Bidens,Bidens pilosa,M,N,N1,12,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Calendula,Asteraceae,Calendula,Calendula officinalis,F,J,J10,15,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Calendula,Asteraceae,Calendula,Calendula officinalis,F,J,J11,17,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Calendula,Asteraceae,Calendula,Calendula officinalis,F,J,J13,15,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Calendula,Asteraceae,Calendula,Calendula officinalis,F,J,J16,16,0,1,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0
+Calendula,Asteraceae,Calendula,Calendula officinalis,F,J,J18,18,0,1,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0
+Calendula,Asteraceae,Calendula,Calendula officinalis,F,J,J5,15,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Calendula,Asteraceae,Calendula,Calendula officinalis,F,J,J6,16,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Calendula,Asteraceae,Calendula,Calendula officinalis,F,J,J7,15,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Calendula,Asteraceae,Calendula,Calendula officinalis,F,J,J8,15,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Calendula,Asteraceae,Calendula,Calendula officinalis,F,N,N2,9,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Calendula,Asteraceae,Calendula,Calendula officinalis,M,N,N3,11,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Calendula,Asteraceae,Calendula,Calendula officinalis,F,N,N4,10,0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+Calendula,Asteraceae,Calendula,Calendula officinalis,F,N,N5,10,1,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Calendula,Asteraceae,Calendula,Calendula officinalis,F,N,N6,8,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+Calendula,Asteraceae,Calendula,Calendula officinalis,M,J,J17,15,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Cardo santo,Asteraceae,Cnicus,Cnicus benedictus,F,J,J10,15,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Cardo santo,Asteraceae,Cnicus,Cnicus benedictus,M,J,J12,18,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Cardo santo,Asteraceae,Cnicus,Cnicus benedictus,F,J,J6,16,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Cardo santo,Asteraceae,Cnicus,Cnicus benedictus,F,J,J7,15,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Cardo santo,Asteraceae,Cnicus,Cnicus benedictus,F,J,J8,15,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Cardo santo,Asteraceae,Cnicus,Cnicus benedictus,F,J,J9,16,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Manzanilla,Asteraceae,Matricaria,Matricaria chamomilla,F,J,J15,15,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Rosa amarilla,Asteraceae,Tagetes,Tagetes patula,F,J,J10,15,0,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0
+Rosa amarilla,Asteraceae,Tagetes,Tagetes patula,F,J,J11,17,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Rosa amarilla,Asteraceae,Tagetes,Tagetes patula,F,J,J13,15,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Rosa amarilla,Asteraceae,Tagetes,Tagetes patula,F,J,J14,15,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Rosa amarilla,Asteraceae,Tagetes,Tagetes patula,F,J,J15,15,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Rosa amarilla,Asteraceae,Tagetes,Tagetes patula,F,J,J16,16,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Rosa amarilla,Asteraceae,Tagetes,Tagetes patula,F,J,J18,18,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Rosa amarilla,Asteraceae,Tagetes,Tagetes patula,F,J,J5,15,0,1,1,1,0,1,0,0,0,0,0,0,0,0,0,1,0,0
+Rosa amarilla,Asteraceae,Tagetes,Tagetes patula,F,J,J6,16,0,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0
+Rosa amarilla,Asteraceae,Tagetes,Tagetes patula,F,J,J7,15,0,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0
+Rosa amarilla,Asteraceae,Tagetes,Tagetes patula,F,J,J8,15,0,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0
+Rosa amarilla,Asteraceae,Tagetes,Tagetes patula,F,J,J9,16,0,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0
+Rosa amarilla,Asteraceae,Tagetes,Tagetes patula,F,N,N2,9,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Rosa amarilla,Asteraceae,Tagetes,Tagetes patula,M,N,N3,11,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Rosa amarilla,Asteraceae,Tagetes,Tagetes patula,F,N,N4,10,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+Rosa amarilla,Asteraceae,Tagetes,Tagetes patula,F,N,N5,10,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Rosa amarilla,Asteraceae,Tagetes,Tagetes patula,F,N,N6,8,0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+Chicoria,Asteraceae,Taraxacum,Taraxacum dens-leonis,F,J,J10,15,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Chicoria,Asteraceae,Taraxacum,Taraxacum dens-leonis,M,J,J12,18,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Chicoria,Asteraceae,Taraxacum,Taraxacum dens-leonis,F,J,J13,15,0,0,1,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Chicoria,Asteraceae,Taraxacum,Taraxacum dens-leonis,F,J,J15,15,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Chicoria,Asteraceae,Taraxacum,Taraxacum dens-leonis,F,J,J16,16,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0
+Chicoria,Asteraceae,Taraxacum,Taraxacum dens-leonis,F,J,J5,15,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Chicoria,Asteraceae,Taraxacum,Taraxacum dens-leonis,F,J,J6,16,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Chicoria,Asteraceae,Taraxacum,Taraxacum dens-leonis,F,J,J7,15,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Chicoria,Asteraceae,Taraxacum,Taraxacum dens-leonis,F,J,J8,15,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Caracucho,Balsaminaceae,Impatiens,Impatiens walleriana,F,J,J10,15,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+Caracucho,Balsaminaceae,Impatiens,Impatiens walleriana,F,J,J16,16,0,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Caracucho,Balsaminaceae,Impatiens,Impatiens walleriana,F,J,J6,16,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Caracucho,Balsaminaceae,Impatiens,Impatiens walleriana,F,J,J7,15,0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+Caracucho,Balsaminaceae,Impatiens,Impatiens walleriana,F,J,J8,15,0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+Caracucho,Balsaminaceae,Impatiens,Impatiens walleriana,F,J,J9,16,0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+Caracucho,Balsaminaceae,Impatiens,Impatiens walleriana,F,J,J5,15,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,0,0
+Gualanday,Bignoniaceae,Jacaranda,Jacaranda mimosifolia,F,J,J14,15,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Gualanday,Bignoniaceae,Jacaranda,Jacaranda mimosifolia,M,J,J17,15,0,0,1,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Gualanday,Bignoniaceae,Jacaranda,Jacaranda mimosifolia,M,N,N1,12,1,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Cofrey,Boraginaceae,Symphytum,Symphytum officinale,F,J,J6,16,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Cofrey,Boraginaceae,Symphytum,Symphytum officinale,F,J,J7,15,1,1,1,1,0,0,0,0,0,0,1,0,0,1,0,0,0,0
+Cofrey,Boraginaceae,Symphytum,Symphytum officinale,F,J,J8,15,1,1,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+Cofrey,Boraginaceae,Symphytum,Symphytum officinale,F,J,J9,16,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Borraja,Boraginaceae,Borago,Borago officinalis,F,N,J10,15,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0
+Borraja,Boraginaceae,Borago,Borago officinalis,F,J,J5,15,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,0,0
+Borraja,Boraginaceae,Borago,Borago officinalis,F,J,J6,16,0,1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+Borraja,Boraginaceae,Borago,Borago officinalis,F,J,J7,15,0,1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+Borraja,Boraginaceae,Borago,Borago officinalis,F,J,J8,15,0,1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+Borraja,Boraginaceae,Borago,Borago officinalis,F,J,J9,16,0,1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+Col,Brassicaceae,Brassica,Brassica oleracea,F,J,J1,15,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Col,Brassicaceae,Brassica,Brassica oleracea,F,J,J10,15,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Col,Brassicaceae,Brassica,Brassica oleracea,F,J,J13,15,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Col,Brassicaceae,Brassica,Brassica oleracea,F,J,J18,18,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Col,Brassicaceae,Brassica,Brassica oleracea,F,J,J2,15,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Col,Brassicaceae,Brassica,Brassica oleracea,M,J,J3,15,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Col,Brassicaceae,Brassica,Brassica oleracea,M,J,J4,15,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Col,Brassicaceae,Brassica,Brassica oleracea,F,J,J5,15,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Col,Brassicaceae,Brassica,Brassica oleracea,F,J,J6,16,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Col,Brassicaceae,Brassica,Brassica oleracea,F,J,J7,15,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Col,Brassicaceae,Brassica,Brassica oleracea,F,J,J8,15,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Col,Brassicaceae,Brassica,Brassica oleracea,F,J,J9,16,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Col,Brassicaceae,Brassica,Brassica oleracea,F,N,N2,9,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Col,Brassicaceae,Brassica,Brassica oleracea,M,N,N3,11,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Col,Brassicaceae,Brassica,Brassica oleracea,F,N,N4,10,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Col,Brassicaceae,Brassica,Brassica oleracea,F,N,N5,10,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Col,Brassicaceae,Brassica,Brassica oleracea,F,N,N6,8,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Toronjil,Lamiaceae,Melissa,Melissa officinalis,F,J,J1,15,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Toronjil,Lamiaceae,Melissa,Melissa officinalis,F,J,J11,17,0,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Toronjil,Lamiaceae,Melissa,Melissa officinalis,M,J,J12,18,0,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Toronjil,Lamiaceae,Melissa,Melissa officinalis,F,J,J14,15,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Toronjil,Lamiaceae,Melissa,Melissa officinalis,M,J,J17,15,0,1,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0
+Toronjil,Lamiaceae,Melissa,Melissa officinalis,F,J,J2,15,1,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Toronjil,Lamiaceae,Melissa,Melissa officinalis,M,J,J3,15,1,1,1,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0
+Toronjil,Lamiaceae,Melissa,Melissa officinalis,M,J,J4,15,1,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Menta piperita,Lamiaceae,Mentha,Mentha piperita,F,J,J1,15,0,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Menta piperita,Lamiaceae,Mentha,Mentha piperita,F,J,J2,15,0,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Menta piperita,Lamiaceae,Mentha,Mentha piperita,M,J,J3,15,0,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Menta piperita,Lamiaceae,Mentha,Mentha piperita,M,J,J4,15,0,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+ Menta guatavita,Lamiaceae,Mentha,Mentha rotundifolia,F,J,J11,17,0,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+ Menta guatavita,Lamiaceae,Mentha,Mentha rotundifolia,F,J,J13,15,0,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+ Menta guatavita,Lamiaceae,Mentha,Mentha rotundifolia,F,J,J16,16,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+ Menta guatavita,Lamiaceae,Mentha,Mentha rotundifolia,M,J,J17,15,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+Hierba buena,Lamiaceae,Mentha,Mentha spicata,F,J,J10,15,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Hierba buena,Lamiaceae,Mentha,Mentha spicata,F,J,J18,18,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Hierba buena,Lamiaceae,Mentha,Mentha spicata,F,J,J5,15,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+Hierba buena,Lamiaceae,Mentha,Mentha spicata,F,J,J6,16,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+Hierba buena,Lamiaceae,Mentha,Mentha spicata,F,J,J7,15,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Hierba buena,Lamiaceae,Mentha,Mentha spicata,F,J,J8,15,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Hierba buena,Lamiaceae,Mentha,Mentha spicata,F,J,J9,16,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+Hierba buena,Lamiaceae,Mentha,Mentha spicata,M,N,N1,12,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Hierba buena,Lamiaceae,Mentha,Mentha spicata,F,N,N2,9,1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Hierba buena,Lamiaceae,Mentha,Mentha spicata,M,N,N3,11,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Hierba buena,Lamiaceae,Mentha,Mentha spicata,F,N,N4,10,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Hierba buena,Lamiaceae,Mentha,Mentha spicata,F,N,N5,10,1,1,1,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Hierba buena,Lamiaceae,Mentha,Mentha spicata,F,N,N6,8,1,1,1,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Albahaca,Lamiaceae,Ocimum,Ocimum basilicum,F,J,J11,17,0,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Albahaca,Lamiaceae,Ocimum,Ocimum basilicum,M,J,J12,18,0,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Malva,Malvaceae,Malva,Malva parviflora,M,J,J12,18,1,1,1,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Malva,Malvaceae,Malva,Malva parviflora,F,J,J14,15,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Yanten,Plantaginaceae,Plantago,Plantago major,F,J,J10,15,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Yanten,Plantaginaceae,Plantago,Plantago major,F,J,J18,18,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Yanten,Plantaginaceae,Plantago,Plantago major,F,J,J5,15,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Yanten,Plantaginaceae,Plantago,Plantago major,F,J,J6,16,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Yanten,Plantaginaceae,Plantago,Plantago major,F,J,J7,15,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Yanten,Plantaginaceae,Plantago,Plantago major,F,J,J8,15,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Yanten,Plantaginaceae,Plantago,Plantago major,F,J,J9,16,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Yanten,Plantaginaceae,Plantago,Plantago major,F,N,N2,9,1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Yanten,Plantaginaceae,Plantago,Plantago major,M,N,N3,11,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Yanten,Plantaginaceae,Plantago,Plantago major,F,N,N4,10,1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Yanten,Plantaginaceae,Plantago,Plantago major,F,N,N5,10,1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Yanten,Plantaginaceae,Plantago,Plantago major,F,N,N6,8,1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Limoncillo,Poaceae,Cymbopogon,Cymbopogon citratus,F,J,J1,15,1,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Limoncillo,Poaceae,Cymbopogon,Cymbopogon citratus,F,J,J10,15,1,1,1,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Limoncillo,Poaceae,Cymbopogon,Cymbopogon citratus,F,J,J13,15,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Limoncillo,Poaceae,Cymbopogon,Cymbopogon citratus,F,J,J15,15,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Limoncillo,Poaceae,Cymbopogon,Cymbopogon citratus,F,J,J2,15,1,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Limoncillo,Poaceae,Cymbopogon,Cymbopogon citratus,M,J,J4,15,1,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Limoncillo,Poaceae,Cymbopogon,Cymbopogon citratus,F,J,J5,15,0,1,1,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Limoncillo,Poaceae,Cymbopogon,Cymbopogon citratus,F,J,J6,16,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Limoncillo,Poaceae,Cymbopogon,Cymbopogon citratus,F,J,J7,15,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Limoncillo,Poaceae,Cymbopogon,Cymbopogon citratus,F,J,J8,15,1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Limoncillo,Poaceae,Cymbopogon,Cymbopogon citratus,F,J,J9,16,1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Limoncillo,Poaceae,Cymbopogon,Cymbopogon citratus,M,N,N1,12,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Barbasco,Polygonaceae,Polygonum,Polygonum punctatum,M,J,J12,18,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Barbasco,Polygonaceae,Polygonum,Polygonum punctatum,F,J,J16,16,0,1,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0
+Verdolaga,Portulacaceae,Portulaca,Portulaca oleracea,F,J,J13,15,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Verdolaga,Portulacaceae,Portulaca,Portulaca oleracea,F,J,J16,16,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Tomatera,Solanaceae,Lycopersicon,Lycopersicon esculentum,F,J,J1,15,1,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0
+Tomatera,Solanaceae,Lycopersicon,Lycopersicon esculentum,M,J,J12,18,1,1,1,1,1,0,0,0,0,1,1,0,0,0,0,0,0,0
+Tomatera,Solanaceae,Lycopersicon,Lycopersicon esculentum,F,J,J13,15,1,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0
+Tomatera,Solanaceae,Lycopersicon,Lycopersicon esculentum,F,J,J14,15,1,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0
+Tomatera,Solanaceae,Lycopersicon,Lycopersicon esculentum,M,J,J17,15,1,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0
+Tomatera,Solanaceae,Lycopersicon,Lycopersicon esculentum,F,J,J18,18,1,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0
+Tomatera,Solanaceae,Lycopersicon,Lycopersicon esculentum,F,J,J2,15,1,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0
+Tomatera,Solanaceae,Lycopersicon,Lycopersicon esculentum,M,J,J3,15,1,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0
+Tomatera,Solanaceae,Lycopersicon,Lycopersicon esculentum,M,J,J4,15,1,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0
+Tomatera,Solanaceae,Lycopersicon,Lycopersicon esculentum,M,N,N1,12,1,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0
+Tomatera,Solanaceae,Lycopersicon,Lycopersicon esculentum,M,N,N3,11,1,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0
+Tomatera,Solanaceae,Lycopersicon,Lycopersicon esculentum,F,N,N4,10,1,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0
+Tomatera,Solanaceae,Lycopersicon,Lycopersicon esculentum,F,N,N5,10,1,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0
+Tomatera,Solanaceae,Lycopersicon,Lycopersicon esculentum,F,N,N6,8,1,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0
+Ortiga,Urticaceae,Urtica,Urtica ballotifolia,F,J,J1,15,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+Ortiga,Urticaceae,Urtica,Urtica ballotifolia,F,J,J10,15,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Ortiga,Urticaceae,Urtica,Urtica ballotifolia,F,J,J18,18,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+Ortiga,Urticaceae,Urtica,Urtica ballotifolia,F,J,J2,15,0,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Ortiga,Urticaceae,Urtica,Urtica ballotifolia,M,J,J3,15,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Ortiga,Urticaceae,Urtica,Urtica ballotifolia,M,J,J4,15,0,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Ortiga,Urticaceae,Urtica,Urtica ballotifolia,F,J,J5,15,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Ortiga,Urticaceae,Urtica,Urtica ballotifolia,F,J,J6,16,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Ortiga,Urticaceae,Urtica,Urtica ballotifolia,F,J,J8,15,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Ortiga,Urticaceae,Urtica,Urtica ballotifolia,F,N,N2,9,1,1,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0
+Ortiga,Urticaceae,Urtica,Urtica ballotifolia,M,N,N3,11,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+Ortiga,Urticaceae,Urtica,Urtica ballotifolia,F,N,N4,10,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+Ortiga,Urticaceae,Urtica,Urtica ballotifolia,F,N,N5,10,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+Pronto alivio,Verbenaceae,Lippia,Lippia americana,F,J,J10,15,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Pronto alivio,Verbenaceae,Lippia,Lippia americana,F,J,J5,15,1,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Pronto alivio,Verbenaceae,Lippia,Lippia americana,F,J,J6,16,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Pronto alivio,Verbenaceae,Lippia,Lippia americana,F,J,J7,15,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Pronto alivio,Verbenaceae,Lippia,Lippia americana,F,J,J8,15,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Pronto alivio,Verbenaceae,Lippia,Lippia americana,F,J,J9,16,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Orozul,Verbenaceae,Phyla,Phyla scaberrima,F,J,J10,15,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Orozul,Verbenaceae,Phyla,Phyla scaberrima,F,J,J5,15,0,1,1,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0
+Orozul,Verbenaceae,Phyla,Phyla scaberrima,F,J,J6,16,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Orozul,Verbenaceae,Phyla,Phyla scaberrima,F,J,J7,15,1,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Orozul,Verbenaceae,Phyla,Phyla scaberrima,F,J,J8,15,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Orozul,Verbenaceae,Phyla,Phyla scaberrima,F,J,J9,16,1,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Verbena negra,Verbenaceae,Stachytarpheta,Stachytarpheta cayennensis,F,J,J10,15,1,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Verbena negra,Verbenaceae,Stachytarpheta,Stachytarpheta cayennensis,M,J,J17,15,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,0,0
+Verbena negra,Verbenaceae,Stachytarpheta,Stachytarpheta cayennensis,F,J,J5,15,1,1,1,1,1,0,0,0,0,1,1,0,0,0,0,0,0,0
+Verbena negra,Verbenaceae,Stachytarpheta,Stachytarpheta cayennensis,F,J,J6,16,1,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Verbena negra,Verbenaceae,Stachytarpheta,Stachytarpheta cayennensis,F,J,J7,15,1,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Verbena negra,Verbenaceae,Stachytarpheta,Stachytarpheta cayennensis,F,J,J8,15,1,1,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0
+Verbena negra,Verbenaceae,Stachytarpheta,Stachytarpheta cayennensis,F,J,J9,16,1,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Verbena blanca,Verbenaceae,Verbena,Verbena litoralis,F,J,J10,15,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,0,0
+Verbena blanca,Verbenaceae,Verbena,Verbena litoralis,F,J,J5,15,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,0,0
+Verbena blanca,Verbenaceae,Verbena,Verbena litoralis,F,J,J6,16,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,0,0
+Verbena blanca,Verbenaceae,Verbena,Verbena litoralis,F,J,J7,15,0,1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+Verbena blanca,Verbenaceae,Verbena,Verbena litoralis,F,J,J8,15,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,0,0
+Verbena blanca,Verbenaceae,Verbena,Verbena litoralis,F,J,J9,16,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,0,0

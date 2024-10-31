@@ -24,8 +24,8 @@ format:
     code-block-height: 850px
     logo: "https://github.com/geobota/geobota.github.io/blob/main/images/xii-ccb/xii-ccb-logo.png?raw=true"
     footer: "[Etnobotánica Cuantitativa en R](https://geobota.github.io/xii-ccb-etnobotanica/)"
-# bibliography: references.bib
-# csl: apa.csl
+bibliography: references.bib
+csl: apa.csl
 
 execute:
   echo: true

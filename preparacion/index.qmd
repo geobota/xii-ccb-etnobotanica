@@ -33,13 +33,23 @@ Si está inscrito en el curso y tiene problemas con la instalación, póngase en
 
 install.packages(
   c(
-    "tidyverse"
+    "carData", "countdown", "ethnobotanyR", "flextable", 
+    "fontawesome", "foreign", "fossil", "ggthemes", "gt", 
+    "here", "infer", "janitor", "lattice", "maps", "MVN", 
+    "palmerpenguins", "permute", "plyr", "psych", 
+    "randomcoloR", "readxl", "Rmisc", "rstatix", 
+    "shapefiles", "showtext", "sp", "sysfonts", 
+    "tidymodels", "tidyverse", "vegan", "visdat"
   )
 )
 ```
 
 ::: {.callout-important}
 Si está inscrito al curso, descargue los materiales (clone el repositorio) del curso  <https://github.com/geobota/etnobotanica-workshop> el sábado 2 de noviembre por la mañana.
+:::
+
+::: {.callout-note}
+En las instalaciones de programas mostradas en este paso a paso se activará el **Control de cuentas de usuario** de Windows. Hacer clic en **Sí**
 :::
 
 ## Instalar R
@@ -66,13 +76,9 @@ Este es un paso a paso de cómo instalar R en Windows.
 
 ![](images/r_instalacion_04.png)
 
--   Buscar donde se ha descargado `R-4.4.1-win.exe` y hacer doble clic sobre él para abrir. Se abrirá esta ventana. Hacer clic en **Aceptar**. 
+-   Buscar donde se ha descargado `R-4.4.1-win.exe` y hacer doble clic sobre él para abrir. Se abrirá esta ventana. Hacer clic en **Aceptar**
 
 ![](images/r_instalacion_07.png)
-
-::: {.callout-note}
-En este punto de la instalación se activará el **Control de cuentas de usuario** de Windows. Hacer clic en **Sí**
-:::
 
 -   Hacer clic en **Siguiente**
 
@@ -126,7 +132,7 @@ Este es un paso a paso de cómo instalar RStudio en Windows.
 
 ![](images/r_instalacion_00.png)
 
--   Ir hasta esta sección de la página. Hacer clic en **DOWNLOAD RSTUDIO DESKTOP FOR WINDOWS**. Esto iniciara la descarga `RStudio-2024.09.0-375.exe`
+-   Ir hasta esta sección de la página. Hacer clic en **DOWNLOAD RSTUDIO DESKTOP FOR WINDOWS**. Esto iniciara la descarga de `RStudio-2024.09.0-375.exe`
 
 ![](images/r_instalacion_01.png)
 
@@ -148,13 +154,60 @@ Este es un paso a paso de cómo instalar RStudio en Windows.
 
 ## Instalar Quarto
 
--   Ir a <https://quarto.org>
+-   Ir a <https://quarto.org>. Hacer clic en **Get Started**
 
--   Hacer clic en **Get Started**
+![](images/quarto_instalacion_01.png)
 
--   Hacer clic en **Download Quarto CLI**
+-   Hacer clic en **Download Quarto CLI**. Esto iniciara la descarga de `quarto-1.6.32-win.msi`
+
+![](images/quarto_instalacion_02.png)
+
+-   Buscar donde se ha descargado `quarto-1.6.32-win.msi` y hacer doble clic sobre él para abrir. Se abrirá esta ventana. Hacer clic en **Next**
+
+![](images/quarto_instalacion_03.png)
+
+-   Hacer clic en **Next**
+
+![](images/quarto_instalacion_04.png)
+
+-   Hacer clic en **Next**
+
+![](images/quarto_instalacion_05.png)
+
+-   Esperar a que termine
+
+![](images/quarto_instalacion_06.png)
+
+-   Hacer clic en **Fonish**
+
+![](images/quarto_instalacion_07.png)
+
 
 ### Instalar TinyTex
+
+-   Abrir RStudio (la apariencia puede variar)
+
+![](images/tinytext_instalacion_01.png)
+
+-   Hacer clic en la pestaña **Terminal** que se encuentra en el lado izquierdo
+
+![](images/tinytext_instalacion_02.png)
+
+-   Copiar el siguiente código. Pegar en la **Terminal** usando {{< kbd Ctrl-Shift-V >}}. Presionar {{< kbd Enter >}}
+
+```{.bash filename="Terminal"}
+quarto install tinytex
+```
+
+![](images/tinytext_instalacion_03.png)
+
+-   Esperar a que termine la descarga e instalación de TinyTex
+
+![](images/tinytext_instalacion_04.png)
+
+-   Al finanilizar la descarga e instalación, la terminal se ha de ver así
+
+![](images/tinytext_instalacion_05.png)
 
 ## Descargar los archivos (clonar el repositorio) del curso
 
@@ -180,5 +233,27 @@ En en el cuadro de  **Create project as subdirectory of** puede elegir el direct
 
 ## Instalar los paquetes de R necesarios
 
--   Abrir RStudio
+-   Abrir RStudio (la apariencia puede variar)
 
+![](images/tinytext_instalacion_01.png)
+
+-   Copiar el siguiente código. Pegar en la **Console** usando {{< kbd Ctrl-C >}}, Presionar {{< kbd Enter >}}
+
+```{r}
+#| echo: true
+#| eval: false
+
+install.packages(
+  c(
+    "carData", "countdown", "ethnobotanyR", "flextable", 
+    "fontawesome", "foreign", "fossil", "ggthemes", "gt", 
+    "here", "infer", "janitor", "lattice", "maps", "MVN", 
+    "palmerpenguins", "permute", "plyr", "psych", 
+    "randomcoloR", "readxl", "Rmisc", "rstatix", 
+    "shapefiles", "showtext", "sp", "sysfonts", 
+    "tidymodels", "tidyverse", "vegan", "visdat"
+  )
+)
+```
+
+-   La descarga e instalación de paquetes puede tardar según su conexión a internet y las especificaciones de su equipo.

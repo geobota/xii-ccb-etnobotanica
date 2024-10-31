@@ -146,6 +146,9 @@ raw_data <-
 raw_data
 ```
 
+::: aside
+En esta demostración se usan rutas relativas en lugar de here::here() debido a la organización del proyecto y el modo de renderizado.
+:::
 
 ## Exportando los datos
 
@@ -232,6 +235,8 @@ clean_data <-
 
 clean_data
 ```
+
+Después de organizar los datos, es recomendable guardarlos como datos procesados.
 
 ## Conociendo a los conocedores: edad
 

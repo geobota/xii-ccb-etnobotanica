@@ -442,3 +442,64 @@ tbl_index_result <-
 tbl_index_result
 ```
 
+## Gráficar los índices
+
+## Gráficos circulares
+
+Estos diagramas normalmente son usados para definir la relación entre los diferentes usos y las especies que se registran en la investigación. En estaclase de digramas también se puede observar la relación de los informantes y las diferentes categorías de uso registradas.
+
+```{r}
+#| label: gráfico-circular
+#| output-location: slide
+#| fig-align: center
+#| fig-width: 14
+#| fig-height: 10
+
+ethnobotanyR::ethnoChord(
+  index_data,
+  by = "informant"
+)
+```
+
+
+## Gráfico de Lluvia
+
+Esta clase de gráficos evidencia la relación entre los diferentes usos, las especies registradas y los informantes participantes de la investigación etnobotánica.
+
+
+`ethnobotanyR::ethno_alluvial` necesita dos elementos para poder funcionar: una paleta de colores con igual número de colores que de especies y correct internal assignment for stat = "stratum"
+
+```{r}
+#| label: configuracion-alluvial
+
+vector_paleta_colores <-
+  randomcoloR::distinctColorPalette(
+    k = index_data |>  dplyr::select(sp_name) |> dplyr::n_distinct()
+  )
+
+# correct internal assignment for stat = "stratum"
+StatStratum <- ggalluvial::StatStratum
+```
+
+```{r}
+#| label: gráfico-alluvial
+#| output-location: slide
+#| fig-align: center
+#| fig-width: 14
+#| fig-height: 10
+
+fig_ethno_alluvial <-
+  ethnobotanyR::ethno_alluvial(
+    index_data,
+    alpha = 0.2,
+    colors = vector_paleta_colores
+  ) +
+  ggplot2::theme(
+    legend.position = "none"
+  ) +
+  ggplot2::geom_label(
+    stat = "stratum",
+    ggplot2::aes(label = ggplot2::after_stat(stratum))
+  )
+```
+

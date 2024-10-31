@@ -1,0 +1,97 @@
+---
+title: "Índices etnobotánicos"
+subtitle: "XII Congreso Colombiano de Botánica"
+author:
+  - name: "Álex Espinosa Correa"
+    affiliation: "Universidad de Antioquia"
+  - name: "Bladimir Vera Marín"
+    affiliation: "Universidad de Antioquia"
+# date: 2024-11-02
+
+format: 
+  revealjs:
+    theme:
+      - simple
+      - ../../custom.scss
+    width: 1920
+    height: 1080
+    embed-resources: true
+    slide-number: true
+    preview-links: true
+    controls: true
+    touch: false
+    # chalkboard: true
+    code-block-height: 850px
+    logo: "https://github.com/geobota/geobota.github.io/blob/main/images/xii-ccb/xii-ccb-logo.png?raw=true"
+    footer: "[Etnobotánica Cuantitativa en R](https://geobota.github.io/xii-ccb-etnobotanica/)"
+bibliography: references.bib
+csl: apa.csl
+---
+
+```{r}
+#| label: setup
+#| outpur: false
+#| echo: false
+
+if (!require("tidyverse")) install.packages("tidyverse"); library("tidyverse")
+if (!require("readxl")) install.packages("readxl"); library("readxl")
+if (!require("janitor")) install.packages("janitor"); library("janitor")
+if (!require("visdat")) install.packages("visdat"); library("visdat")
+if (!require("ggthemes")) install.packages("ggthemes"); library("ggthemes")
+if (!require("gt")) install.packages("gt"); library("gt")
+if (!require("flextable")) install.packages("flextable"); library("flextable")
+if (!require("ethnobotanyR")) install.packages("ethnobotanyR"); library("ethnobotanyR")
+if (!require("countdown")) install.packages("countdown"); library("countdown")
+```
+
+```{r}
+#| label: countdown
+#| echo: false
+
+countdown_timer <- function(
+    minutes = 1, 
+    play_sound = TRUE, 
+    font_size = "2em", 
+    ...
+) {
+  countdown::countdown(
+    minutes = minutes,
+    play_sound = play_sound,
+    color_border              = "#white",
+    color_text                = "white",
+    color_running_background  = "#009E73",
+    color_running_text        = "white",
+    color_finished_background = "#D55E00",
+    color_finished_text       = "white",
+    font_size = font_size,
+    ...
+  )
+}
+```
+
+## Proposito
+
+-   Enseñar el manejo y análisis de datos etnobotánicos
+
+## Importando los datos
+
+Habiendo explorado nuestros datos, podemos proceder con más análisis.
+
+```{r}
+#| label: raw-data-1
+
+raw_data <- 
+  readxl::read_excel(
+    "raw-data/raw_data.xlsx"
+  )
+
+raw_data
+```
+
+::: aside
+En esta demostración se usan rutas relativas en lugar de here::here() debido a la organización del proyecto y el modo de renderizado.
+:::
+
+## Índices etnobotánicos
+
+

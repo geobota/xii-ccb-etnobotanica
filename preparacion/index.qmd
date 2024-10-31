@@ -43,7 +43,8 @@ install.packages(
     "palmerpenguins", "permute", "plyr", "psych", 
     "randomcoloR", "readxl", "Rmisc", "rstatix", 
     "shapefiles", "showtext", "sp", "sysfonts", 
-    "tidymodels", "tidyverse", "vegan", "visdat"
+    "tidymodels", "tidyverse", "vegan", "visdat",
+    "knitr", "rmarkdown"
   )
 )
 ```
@@ -255,7 +256,8 @@ install.packages(
     "palmerpenguins", "permute", "plyr", "psych", 
     "randomcoloR", "readxl", "Rmisc", "rstatix", 
     "shapefiles", "showtext", "sp", "sysfonts", 
-    "tidymodels", "tidyverse", "vegan", "visdat"
+    "tidymodels", "tidyverse", "vegan", "visdat",
+    "knitr", "rmarkdown"
   )
 )
 ```

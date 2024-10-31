@@ -344,7 +344,101 @@ fidelity_level_index
 countdown_timer(20)
 ```
 
+## Un tabla para gobernarlos a todos
 
+Una de las formas de presentar los datos es en tablas. Realicemos una usando `flextable`. 
 
+```{r}
+#| label: index-result
+#| output-location: slide
 
+index_result <-
+  taxonomy_data |>
+  dplyr::rename(
+    "sp_name" = especie
+  ) |>
+  dplyr::full_join(
+    use_report_index,
+    by = "sp_name"
+  ) |>
+  dplyr::full_join(
+    cultural_importance_index,
+    by = "sp_name"
+  ) |>
+  dplyr::full_join(
+    frequency_citation_index,
+    by = "sp_name"
+  ) |>
+  dplyr::full_join(
+    number_uses_index,
+    by = "sp_name"
+  ) |>
+  dplyr::full_join(
+    relative_frequency_citation_index,
+    by = "sp_name"
+  ) |>
+  dplyr::full_join(
+    relative_importance_index,
+    by = "sp_name"
+  ) |>
+  dplyr::full_join(
+    use_value_index,
+    by = "sp_name"
+  ) |>
+  dplyr::full_join(
+    cultural_value_index,
+    by = "sp_name"
+  ) |>
+  dplyr::arrange(
+    familia
+  )
+
+index_result
+```
+
+## Hay tabla
+
+```{r}
+#| label: tbl-index-result
+#| output-location: slide
+
+tbl_index_result <-
+  index_result |>
+  dplyr::select(
+    !genero
+  ) |>
+  flextable::flextable() |>
+  flextable::labelizor(
+    part = "header",
+    labels = c(
+      familia = "Familia",
+      # genero = "Género",
+      sp_name = "Especie",
+      nombre_comun = "Nombre común",
+      URs = "Usos\nReportados (UR)",
+      CI = "Importancia\nCultural (CI)",
+      FCs = "Frecuencia de\nCitacion (FC)",
+      NUs = "Número\nde usos (NU)",
+      RFCs = "Frecuencia\nRelativa de\nCitación (RFCs)",
+      RIs = "Importancia\nRelativa (RI)",
+      UV = "Valor de\nUso (UV)",
+      CVe = "Valor\nCultura (CV)"
+    )
+  ) |>
+  flextable::theme_apa() |>
+  flextable::mk_par(
+    j = c("sp_name"),
+    value = flextable::as_paragraph(flextable::as_i(sp_name))
+  ) |>
+  flextable::merge_v(
+    j = c("familia")
+  ) |>
+  flextable::colformat_num(
+    j = c("URs", "FCs", "NUs"),
+    big.mark = ""
+  ) |>
+  flextable::autofit()
+
+tbl_index_result
+```
 

@@ -178,7 +178,7 @@ Este es un paso a paso de cómo instalar RStudio en Windows.
 
 ![](images/quarto_instalacion_06.png)
 
--   Hacer clic en **Fonish**
+-   Hacer clic en **Finish**
 
 ![](images/quarto_instalacion_07.png)
 

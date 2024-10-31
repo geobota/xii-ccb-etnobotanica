@@ -2,6 +2,7 @@
 title: "Unidad 0: preparación"
 author: "Álex Espinosa-Correa"
 date: 2024-10-30
+date-modified: 2024-10-31
 toc: true
 ---
 

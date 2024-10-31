@@ -35,11 +35,25 @@
     "text": "Descargar los archivos (clonar el repositorio) del curso\n\n\n\n\n\n\nImportante\n\n\n\nSi está inscrito al curso, descargue los materiales (clone el repositorio) del curso https://github.com/geobota/etnobotanica-workshop el sábado 2 de noviembre por la mañana.\n\n\n\nIr a https://github.com/geobota/etnobotanica-workshop\nHacer clic en &lt;&gt; Code y copiar la URL bajo la pestaña HTTPS https://github.com/geobota/etnobotanica-workshop.git\n\n\n\n\n\n\n\nTip\n\n\n\nEn este punto, podría descargar los archivos. Hacer clic en la opción Download zip. Esto descargará el archivo etnobotanica-workshop-main.zip, el cual tendrá que descomprimir.\n\n\n\nEn RStudio, ir a File &gt; New Project &gt; Version Control &gt; From Git &gt; pegar la URL en el cuadro de Repository URL y hacer clic en Create Project. Esperar a que termine\n\n\n\n\nTomado de Get Started with Quarto\n\n\n\n\n\n\n\n\nTip\n\n\n\nEn en el cuadro de Create project as subdirectory of puede elegir el directorio donde quiere descargar el repositorio."
   },
   {
-    "objectID": "preparacion/index.html#instalar-los-paquetes-de-r-necesarios",
-    "href": "preparacion/index.html#instalar-los-paquetes-de-r-necesarios",
+    "objectID": "preparacion/index.html#instalar-los-paquetes-necesarios-de-r",
+    "href": "preparacion/index.html#instalar-los-paquetes-necesarios-de-r",
     "title": "Unidad 0: preparación",
-    "section": "Instalar los paquetes de R necesarios",
-    "text": "Instalar los paquetes de R necesarios\n\nAbrir RStudio (la apariencia puede variar)\n\n\n\nCopiar el siguiente código. Pegar en la Console usando Ctrl-CCtrl-C, Presionar EnterEnter\n\n\ninstall.packages(\n  c(\n    \"carData\", \"countdown\", \"ethnobotanyR\", \"flextable\", \n    \"fontawesome\", \"foreign\", \"fossil\", \"ggthemes\", \"gt\", \n    \"here\", \"infer\", \"janitor\", \"lattice\", \"maps\", \"MVN\", \n    \"palmerpenguins\", \"permute\", \"plyr\", \"psych\", \n    \"randomcoloR\", \"readxl\", \"Rmisc\", \"rstatix\", \n    \"shapefiles\", \"showtext\", \"sp\", \"sysfonts\", \n    \"tidymodels\", \"tidyverse\", \"vegan\", \"visdat\"\n  )\n)\n\n\nLa descarga e instalación de paquetes puede tardar según su conexión a internet y las especificaciones de su equipo."
+    "section": "Instalar los paquetes necesarios de R",
+    "text": "Instalar los paquetes necesarios de R\n\nAbrir RStudio (la apariencia puede variar)\n\n\n\nCopiar el siguiente código. Pegar en la Console usando Ctrl-CCtrl-C, Presionar EnterEnter\n\n\ninstall.packages(\n  c(\n    \"carData\", \"countdown\", \"ethnobotanyR\", \"flextable\", \n    \"fontawesome\", \"foreign\", \"fossil\", \"ggthemes\", \"gt\", \n    \"here\", \"infer\", \"janitor\", \"lattice\", \"maps\", \"MVN\", \n    \"palmerpenguins\", \"permute\", \"plyr\", \"psych\", \n    \"randomcoloR\", \"readxl\", \"Rmisc\", \"rstatix\", \n    \"shapefiles\", \"showtext\", \"sp\", \"sysfonts\", \n    \"tidymodels\", \"tidyverse\", \"vegan\", \"visdat\"\n  )\n)\n\n\nLa descarga e instalación de paquetes puede tardar según su conexión a internet y las especificaciones de su equipo."
+  },
+  {
+    "objectID": "preparacion/index.html#instalar-git",
+    "href": "preparacion/index.html#instalar-git",
+    "title": "Unidad 0: preparación",
+    "section": "Instalar Git",
+    "text": "Instalar Git\n\n\n\n\n\n\nImportante\n\n\n\nDependiendo del tiempo necesario para desarrollar las otras actividades, es posible que se aborden Git y GitHub en profundidad.\n\n\n\nIr a https://git-scm.com. Hacer clic en Download for Windows\n\n\n\n\n\n\n\n\nAlternativa de descarga\n\n\n\n\n\nIr a https://gitforwindows.org. Hacer clic en Download. Esto iniciara la descarga de GitHubDesktopSetup-x64.exe\n\n\n\n\n\nHacer clic en Click here to download. Esto iniciara la descarga de GitHubDesktopSetup-x64.exe\n\n\n\nBuscar donde se ha descargado GitHubDesktopSetup-x64.exe. Hacer doble clic sobre él para abrir. Se abrirá esta ventana. Hacer clic en Next\n\n\n\nHacer clic en Next\n\n\n\nHacer clic en Next\n\n\n\nHacer clic en Next\n\n\n\nHacer clic en Next\n\n\n\nHacer clic en Next\n\n\n\nHacer clic en Next\n\n\n\nHacer clic en Next\n\n\n\nHacer clic en Next\n\n\n\nHacer clic en Next\n\n\n\nHacer clic en Next\n\n\n\nHacer clic en Next\n\n\n\nHacer clic en Next\n\n\n\nHacer clic en Next\n\n\n\nHacer clic en Next\n\n\n\nEsperar a que la instalación termine\n\n\n\nHacer clic en Finish"
+  },
+  {
+    "objectID": "preparacion/index.html#instalar-github-desktop",
+    "href": "preparacion/index.html#instalar-github-desktop",
+    "title": "Unidad 0: preparación",
+    "section": "Instalar GitHub Desktop",
+    "text": "Instalar GitHub Desktop\n\n\n\n\n\n\nImportante\n\n\n\nDependiendo del tiempo necesario para desarrollar las otras actividades, es posible que se aborden Git y GitHub en profundidad.\n\n\n\nIr a https://github.com/apps/desktop. Hacer clic en Download now\n\n\n\nHacer clic en Download for Windows (64bit). Esto iniciara la descarga de GitHubDesktopSetup-x64.exe\n\n\n\nBuscar donde se ha descargado GitHubDesktopSetup-x64.exe. Hacer doble clic sobre él para abrir. Se abrirá esta ventana\n\n\n\nEsperar hasta que termine al instalación y aparezca esta ventana"
   },
   {
     "objectID": "index.html",

@@ -3,7 +3,7 @@ project:
   render:
     - "*.qmd"
     - "!materials/"
-    - "!slides/"
+    # - "!slides/"
 
 lang: es
 date-format: iso
@@ -38,6 +38,19 @@ website:
       - text: "Preparación"
         href: preparacion/index.qmd
       - text: "Día 1"
+        menu:
+          - text: "Introducción al curso"
+            href: slides/intro/
+          - text: "Introducción a Quarto"
+            href: slides/workflow/intro-quarto/
+          - text: "Introducción a R"
+            href: slides/workflow/intro-r/
+          - text: "Reproducibilidad"
+            href: slides/workflow/reproducibilidad/
+          - text: "Análisis descriptivos"
+            href: slides/analisis-01/descriptivos/
+          - text: "Índices etnobotánicos"
+            href: slides/analisis-01/indices/
       - text: "Día 2"
       - text: "Otros cursos"
         menu:

@@ -461,7 +461,6 @@ ethnobotanyR::ethnoChord(
 )
 ```
 
-
 ## Gráfico de Lluvia
 
 Esta clase de gráficos evidencia la relación entre los diferentes usos, las especies registradas y los informantes participantes de la investigación etnobotánica.
@@ -480,6 +479,8 @@ vector_paleta_colores <-
 # correct internal assignment for stat = "stratum"
 StatStratum <- ggalluvial::StatStratum
 ```
+
+## Gráfico de Lluvia
 
 ```{r}
 #| label: gráfico-alluvial

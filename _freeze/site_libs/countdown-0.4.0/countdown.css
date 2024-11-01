@@ -40,7 +40,7 @@
   color: white;
 }
 .countdown.finished {
-  border-color: #BF5400FF;
+  border-color: #BF5401FF;
   background-color: #D55E00;
 }
 .countdown.finished .countdown-digits {
@@ -106,7 +106,7 @@
   opacity: 0;
   color: white;
   background-color: #D55E00;
-  border-color: #BF5400FF;
+  border-color: #BF5401FF;
 }
 
 .countdown.running:hover .countdown-controls > button,

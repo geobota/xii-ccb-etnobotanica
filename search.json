@@ -1005,7 +1005,7 @@
     "href": "slides/intro/index.html#preparativos",
     "title": "Etnobotánica Cuantitativa en R",
     "section": "Preparativos",
-    "text": "Preparativos\n\nContenido del curso geobota.github.io\n¿Tienes la versión 4.4.1 o posterior de R?\n¿Tienes la versión 2024.09.0+375 o posterior de RStudio?\n¿Tienes la versión 1.5.57 o posterior de Quarto?\n¿Descargaste o clonaste el repositorio https://github.com/geobota/etnobotanica-workshop.git?\n¿Instalaste los paquetes necesarios?\n\ninstall.packages(\n  c(\n    \"tidyverse\", \"gt\", \"here\", \"quarto\", \"rmarkdown\", \"palmerpenguins\"\n  )\n)"
+    "text": "Preparativos\n\nContenido del curso geobota.github.io\n¿Tienes la versión 4.4.1 o posterior de R?\n¿Tienes la versión 2024.09.0+375 o posterior de RStudio?\n¿Tienes la versión 1.5.57 o posterior de Quarto?\n¿Descargaste o clonaste el repositorio https://github.com/geobota/etnobotanica-workshop.git?\n¿Instalaste los paquetes necesarios?\n\ninstall.packages(\n  c(\n    \"carData\", \"countdown\", \"ethnobotanyR\", \"flextable\", \n    \"fontawesome\", \"foreign\", \"fossil\", \"ggthemes\", \"gt\", \n    \"here\", \"infer\", \"janitor\", \"lattice\", \"maps\", \"MVN\", \n    \"palmerpenguins\", \"permute\", \"plyr\", \"psych\", \n    \"randomcoloR\", \"readxl\", \"Rmisc\", \"rstatix\", \n    \"shapefiles\", \"showtext\", \"sp\", \"sysfonts\", \n    \"tidymodels\", \"tidyverse\", \"vegan\", \"visdat\",\n    \"knitr\", \"rmarkdown\"\n  )\n)"
   },
   {
     "objectID": "slides/intro/index.html#estructura",

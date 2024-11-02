@@ -78,7 +78,7 @@ countdown_timer <- function(
 
 ## `ethnobotanyR`
 
-`ethnobotanyR` proporciona una plataforma fácil de usar para que los etnobotánicos trabajen con evaluaciones cuantitativas de etnobotánica. Cuenta con un conjunto de funcionen que proporcionan muchos de los principales indices etnobotánicos. Aunque utiliza funciones del `tidyverse` para funcionar, no sigue completamente los conceptos de este. 
+`ethnobotanyR` proporciona una plataforma fácil de usar para que los etnobotánicos trabajen con evaluaciones cuantitativas de etnobotánica. Cuenta con un conjunto de funcionen que proporcionan muchos de los principales indices etnobotánicos. Aunque utiliza funciones del `tidyverse`, no sigue completamente los conceptos de este. 
 
 ::: {.fragment}
 Una de las principales diferencias es en la forma en que han de estar organizados los datos. 

@@ -1,11 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://geobota.github.io/xii-ccb-etnobotanica/slides/workflow/intro-r/index.html</loc>
+    <lastmod>2024-11-02T05:05:53.156Z</lastmod>
+  </url>
+  <url>
+    <loc>https://geobota.github.io/xii-ccb-etnobotanica/slides/analisis-01/indices/index.html</loc>
+    <lastmod>2024-11-02T05:07:58.881Z</lastmod>
+  </url>
+  <url>
+    <loc>https://geobota.github.io/xii-ccb-etnobotanica/slides/workflow/intro-quarto/index.html</loc>
+    <lastmod>2024-11-02T05:04:01.257Z</lastmod>
+  </url>
+  <url>
     <loc>https://geobota.github.io/xii-ccb-etnobotanica/preparacion/index.html</loc>
-    <lastmod>2024-10-31T20:53:29.823Z</lastmod>
+    <lastmod>2024-11-01T22:16:43.450Z</lastmod>
   </url>
   <url>
     <loc>https://geobota.github.io/xii-ccb-etnobotanica/index.html</loc>
-    <lastmod>2024-10-31T04:04:17.853Z</lastmod>
+    <lastmod>2024-10-31T19:43:43.775Z</lastmod>
+  </url>
+  <url>
+    <loc>https://geobota.github.io/xii-ccb-etnobotanica/slides/intro/index.html</loc>
+    <lastmod>2024-11-02T05:00:42.760Z</lastmod>
+  </url>
+  <url>
+    <loc>https://geobota.github.io/xii-ccb-etnobotanica/slides/workflow/reproducibilidad/index.html</loc>
+    <lastmod>2024-11-02T05:06:57.654Z</lastmod>
+  </url>
+  <url>
+    <loc>https://geobota.github.io/xii-ccb-etnobotanica/slides/analisis-01/descriptivos/index.html</loc>
+    <lastmod>2024-11-02T05:07:23.204Z</lastmod>
   </url>
 </urlset>

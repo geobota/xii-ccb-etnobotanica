@@ -101,7 +101,7 @@ countdown_timer(5)
 #| label: timer-2
 #| echo: false
 
-countdown_timer(1)
+countdown_timer(5)
 ```
 
 ## Qué es Quarto
@@ -726,7 +726,7 @@ tres especies [@anderson1936; @fisher1936].
 #| label: timer-4
 #| echo: false
 
-countdown_timer(7)
+countdown_timer(15)
 ```
 
 ## Código
@@ -820,7 +820,7 @@ Las opciones disponibles para personalizar la salida incluyen:
 #| label: timer-5
 #| echo: false
 
-countdown_timer(3)
+countdown_timer(5)
 ```
 
 # `r fontawesome::fa("person-chalkboard", "white")` Demostración {background-color="#009E73" transition="slide-in"}
@@ -835,7 +835,7 @@ countdown_timer(3)
 #| label: timer-6
 #| echo: false
 
-countdown_timer(10)
+countdown_timer(15)
 ```
 
 # `r fontawesome::fa("mug-saucer", "white")` Pausa {background-color="#000000" transition="slide-in"}
@@ -848,5 +848,5 @@ countdown_timer(10)
 #| label: timer-7
 #| echo: false
 
-countdown_timer(10)
+countdown_timer(15)
 ```

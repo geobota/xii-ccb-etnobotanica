@@ -632,5 +632,5 @@ fig_parte_usada <-
 #| label: timer-1
 #| echo: false
 
-countdown_timer(30)
+countdown_timer(40)
 ```

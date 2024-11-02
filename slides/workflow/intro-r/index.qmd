@@ -577,7 +577,7 @@ Siempre es buena idea hacer un [**reprex**](https://reprex.tidyverse.org) (minim
 #| label: timer-1
 #| echo: false
 
-countdown_timer(5)
+countdown_timer(15)
 ```
 
 ## {background-color="black" background-image="images/tidyverse.png" transition="slide-in"}
@@ -1061,7 +1061,7 @@ Uno de los estilos recomendables es [la guía de estilo del tidyverse](https://s
 #| label: timer-2
 #| echo: false
 
-countdown_timer(10)
+countdown_timer(15)
 ```
 
 # Visualizando distribuciones
@@ -1421,7 +1421,7 @@ DATA |>
 #| label: timer-3
 #| echo: false
 
-countdown_timer(7)
+countdown_timer(15)
 ```
 
 # «En el principio era el Verbo»
@@ -1852,7 +1852,7 @@ Las operaciones de conjuntos (set operations) que tratan las observaciones como 
 #| label: timer-4
 #| echo: false
 
-countdown_timer(8)
+countdown_timer(15)
 ```
 
 ## Tidyverse y la ciencia de datos
@@ -2095,7 +2095,7 @@ penguins_resumen |>
 #| label: timer-5
 #| echo: false
 
-countdown_timer(10)
+countdown_timer(15)
 ```
 
 ## Referencias {visibility="uncounted"}

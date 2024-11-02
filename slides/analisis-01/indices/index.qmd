@@ -287,6 +287,8 @@ $$
 use_value_index <-
   index_data |>
   ethnobotanyR::UVs()
+
+use_value_index
 ```
 
 ## Valor Cultural de las Ethnoespecies (CVe)
@@ -341,7 +343,7 @@ fidelity_level_index
 #| label: timer-1
 #| echo: false
 
-countdown_timer(20)
+countdown_timer(30)
 ```
 
 ## Un tabla para gobernarlos a todos
@@ -444,6 +446,20 @@ tbl_index_result
 
 ## Gráficar los índices
 
+::::: columns
+::: {.column .fragment width="50%"}
+
+![https://xkcd.com/1945/](images/scientific_paper_graph_quality.png)
+
+:::
+
+::: {.column .fragment width="50%"}
+
+![https://xkcd.com/1967/](images/violin_plots.png)
+
+:::
+:::::
+
 ## Gráficos circulares
 
 Estos diagramas normalmente son usados para definir la relación entre los diferentes usos y las especies que se registran en la investigación. En estaclase de digramas también se puede observar la relación de los informantes y las diferentes categorías de uso registradas.
@@ -502,5 +518,20 @@ fig_ethno_alluvial <-
     stat = "stratum",
     ggplot2::aes(label = ggplot2::after_stat(stratum))
   )
+
+fig_ethno_alluvial
 ```
 
+# `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
+
+-   Practicar la creación de gráficas
+
+<br>
+
+<br>
+
+```{r}
+#| label: timer-1
+#| echo: false
+
+countdown_timer(30)

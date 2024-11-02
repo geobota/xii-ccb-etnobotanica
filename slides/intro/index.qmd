@@ -120,7 +120,14 @@ countdown_timer <- function(
 ``` r
 install.packages(
   c(
-    "tidyverse", "gt", "here", "quarto", "rmarkdown", "palmerpenguins"
+    "carData", "countdown", "ethnobotanyR", "flextable", 
+    "fontawesome", "foreign", "fossil", "ggthemes", "gt", 
+    "here", "infer", "janitor", "lattice", "maps", "MVN", 
+    "palmerpenguins", "permute", "plyr", "psych", 
+    "randomcoloR", "readxl", "Rmisc", "rstatix", 
+    "shapefiles", "showtext", "sp", "sysfonts", 
+    "tidymodels", "tidyverse", "vegan", "visdat",
+    "knitr", "rmarkdown"
   )
 )
 ```
@@ -132,39 +139,46 @@ install.packages(
 -   `r fontawesome::fa("laptop-code", fill = "#0072B2")` [Actividad]{style="color: #0072B2;"}
 -   `r fontawesome::fa("mug-saucer", fill = "#000000")` [Pausa]{style="color: #000000;"}
 
-## Programación
+::: {.fragment}
 
+### Durante las sesiones
+
+-   `r fa("square", fill = "yellow")` = «Álex aprenda a explicar» o «necesito más tiempo»
+
+-   `r fa("square", fill = "pink")` = Complete la actividad.
+
+-   Mano levantada = tengo una pregunta o tengo un problema.
+:::
+
+## Programación 
+
+::::: columns
+::: {.column width="50%"}
+::: {.incremental}
+-   Introducción al curso
+-   Introducción a Quarto
+-   Introducción a R
+-   Análisis descriptivos
+-   Índices etnobotánicos
+:::
+:::
+
+::: {.column width="50%"}
+::: {.incremental}
+-   Pruebas de normalidad
+-   Homogeneidad de varianza
+-   Chi cuadrado
+-   Anova simple
+-   Pruebas no paramétricas
+-   Pruebas de correlación
+-   Regresión lineal
+-   Clúster
+-   Análisis de Componentes Principales (PCA)
+:::
+:::
+:::::
 
 #  {background-color="#009E73" transition="slide-in"}
 
 [¡Comencemos!]{.r-fit-text}
 
-## Etnobotánica
-
-## ¿Por qué cuántitativa?
-
-## ¿Por qué en R?
-
-# `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
-
--   Ejemplo de actividad
--   Ejemplo de actividad
--   Ejemplo de actividad
-
-<br>
-<br>
-
-```{R}
-#| echo: false
-countdown_timer(1)
-```
-
-# `r fontawesome::fa("mug-saucer", "white")` Pausa {background-color="#000000" transition="slide-in"}
-
-<br>
-<br>
-
-```{R}
-#| echo: false
-countdown_timer(1)
-```

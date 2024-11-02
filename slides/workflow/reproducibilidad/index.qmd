@@ -392,7 +392,7 @@ La barra de herramientas de proyectos se encuentra en la esquina superior derech
 #| label: timer-2
 #| echo: false
 
-countdown_timer(2)
+countdown_timer(5)
 ```
 
 ## Rutas
@@ -486,7 +486,7 @@ readr::read_csv(here::here("data/raw_data.csv")) # opción 2
 #| label: timer-3
 #| echo: false
 
-countdown_timer(10)
+countdown_timer(15)
 ```
 
 ## El nombre de las cosas
@@ -676,7 +676,7 @@ Dos paquetes de R soportan la Guía de estilo del Tidyverse: `styler` y `lintr`.
 #| label: timer-4
 #| echo: false
 
-countdown_timer(10)
+countdown_timer(15)
 ```
 
 ## Estructura de un proyecto
@@ -852,7 +852,7 @@ read.csv(
 #| label: timer-5
 #| echo: false
 
-countdown_timer(10)
+countdown_timer(15)
 ```
 
 ## Flujo de trabajo
@@ -999,7 +999,7 @@ Estos retos pueden abordarse mediante una cuidadosa combinación de herramientas
 #| label: timer-6
 #| echo: false
 
-countdown_timer(10)
+countdown_timer(15)
 ```
 
 ## Referencias {visibility="uncounted"}

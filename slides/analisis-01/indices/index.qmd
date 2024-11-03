@@ -330,22 +330,6 @@ fidelity_level_index <-
 fidelity_level_index
 ```
 
-# `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
-
--   Crear un documento `.qmd` en la carpeta `analisis-descriptivos`
--   Estimar los índices etnobotánicos a partir de los datos explorados en **Análisis descriptivos**
-
-<br>
-
-<br>
-
-```{r}
-#| label: timer-1
-#| echo: false
-
-countdown_timer(30)
-```
-
 ## Un tabla para gobernarlos a todos
 
 Una de las formas de presentar los datos es en tablas. Realicemos una usando `flextable`. 
@@ -524,7 +508,9 @@ fig_ethno_alluvial
 
 # `r fontawesome::fa("laptop-code", "white")` Actividad {background-color="#0072B2" transition="slide-in"}
 
--   Practicar la creación de gráficas
+-   Crear un documento `.qmd` en la carpeta `analisis-01`
+-   Estimar los índices etnobotánicos a partir de los datos que se encuentran `processed_data`
+-   Gráficar los índices
 
 <br>
 
@@ -534,4 +520,5 @@ fig_ethno_alluvial
 #| label: timer-1
 #| echo: false
 
-countdown_timer(30)
+countdown_timer(15)
+```
